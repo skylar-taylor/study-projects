@@ -1,0 +1,296 @@
+---
+title: "Factor Analysis"
+author: "Sky Taylor"
+format: 
+  html:
+    self-contained: true
+    mainfont: Times
+editor: visual
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
+
+```{r, message=FALSE}
+#load packages
+library(readr)
+library(psych)
+library(EFAtools)
+library(tidyverse)
+library(lavaan)
+library(semPlot)
+library(semptools)
+library(flextable)
+```
+
+```{r, message=FALSE}
+#read in the data
+explore <- read_csv("explore.csv")
+confirm <- read_csv("confirm.csv")
+```
+
+# Exploratory Factor Analysis
+
+## Descriptive Statistics
+
+Descriptive statistics and correlation coefficients were calculated for each of the variables, shown in @tbl-descriptive. Items x4 and x8 had weak inter-item correlations, indicating that they are not related to the other items and hence may have different underlying factors.
+
+```{r, warning=FALSE}
+#summarise variables
+summary <- explore %>%
+  summarise(across(everything(), list(
+    Mean = mean,
+    SD = sd,
+    Lower_CI = ~mean(.) - qt(0.975, n() - 1) * sd(.) / sqrt(n()),
+    Upper_CI = ~mean(.) + qt(0.975, n() - 1) * sd(.) / sqrt(n())
+  )))
+
+#reformat
+descriptive <- summary |> 
+    pivot_longer(cols = everything(),
+               names_to = "Variable_Statistic",
+               values_to = "Value") |> 
+  separate(Variable_Statistic, c("Variable", "Statistic"), sep = "_") |> 
+  pivot_wider(names_from = Statistic,
+              values_from = Value) |> 
+  rename(
+    Lower_CI = Lower,
+    Upper_CI = Upper) 
+
+#calculate correlations
+correlations <- as.data.frame(cor(explore)) |> 
+  mutate(
+    Variable = c("x1", "x2", "x3", "x4", "x5", "x6", "x7", "x8")
+  )
+
+#join tables
+descriptive <- descriptive |> 
+  left_join(correlations, by = "Variable") |> 
+  flextable() |> 
+  colformat_double(digits = 2)
+```
+
+```{r}
+#| label: tbl-descriptive
+#| tbl-cap: "Descriptive statistics and correlation coefficients for the explore dataset."
+descriptive |> 
+  add_footer_lines("Note. SD = standard deviation, CI = 95% confidence interval.")
+```
+
+## Suitability of Data
+
+To determine whether the data are suitable for factor analysis, the Kaiser-Meyer-Olkin (KMO) measure of sampling adequacy was used to evaluate the proportion of variance among variables that could be attributed to underlying factors. The overall KMO of 0.803 is considered *meritorious* and indicates that the data are suitable for factor analysis. Additionally, the Bartlett’s test of Sphericity, used to assess the significance of inter-item correlations, was significant, $\chi^2$(28) = 2755.5, *p* \< .001, further indicating that factor analysis is appropriate.
+
+```{r, results=FALSE}
+#criteria tests
+KMO(explore)
+BARTLETT(explore)
+```
+
+## Determining Number of Factors
+
+Parallel analysis was conducted using principle component analysis (PCA) to calculate eigenvalues. Based on the scree-plot (@fig-scree) the PCA-determined eigenvalues indicate 2 factors should be extracted.
+
+```{r}
+#| label: fig-scree
+#| fig-cap: "Scree plot for the explore dataset."
+scree_plot <- PARALLEL(explore, eigen_type = "PCA")
+plot(scree_plot)
+```
+
+## Extracting Factors
+
+2 factors were extracted using maximum likelihood as the extraction method. Model fit indices indicated good fit, with a non-significant chi-square, $\chi^2$(13) = 13.02, *p* = .446, a comparative fit index (CFI) of 1.00, and a root mean square error of approximation (RMSEA) of .00 with a 90% CI of \[.00, .06\] which is entirely below the threshold for good fit of .08.
+
+The oblique rotation method 'promax' was used to allow for correlations between factors. This method was appropriate as the correlation between factor 1 and factor 2 was .307, which is considered a medium correlation. Factor loadings are presented in @tbl-loadings (Model 1). Based on the factor loadings, items x1, x2, and x3 load strongly onto factor 1 and items x5, x6, and x7 load strongly onto factor 2. Additionally, these items correlated highly with items from the same factor and weakly with items from the other factor (@tbl-descriptive).
+
+Factors x4 and x8 load poorly onto both factors and hence were removed and a two-factor EFA was conducted (Model 2). Model fit indices indicated good fit for the extraction of 2 factors for Model 2. The chi-square was non-significant, $\chi^2$(4) = 2.87, *p* = .580, the CFI remained 1.00, and the RMSEA remained at .00 with the 90% CI of \[.00, .08\] remaining within the threshold for good fit of .08. The correlation between factor 1 and factor 2 was .295, which is slightly less than in the original analysis however remains meaningful, suggesting oblique rotation was appropriate.
+
+Factor loadings, presented in @tbl-loadings (Model 2) were as expected, with items x1, x2, and x3 loading strongly and positively onto factor 1 and items x5, x6, and x7 loading strongly and positively onto factor 2. All items loaded strongly onto their primary factor, with a minimum primary factor loading of .964, indicating their strong association with the factor. Additionally, all items had negligible loadings onto the secondary factor, with a maximum secondary factor loading of (negative) .019, indicating little association between items and their secondary factors.
+
+```{r}
+#extracting factors
+efa1 <- EFA(explore, n_factors = 2, method = "ML")
+
+#oblique rotation using promax
+rotated_efa <- EFA(explore, n_factors = 2, method = "ML", rotation = "promax")
+loadings <- as.data.frame.matrix(rotated_efa$rot_loadings)  |> 
+  mutate(item = c("x1", "x2", "x3", "x4", "x5", "x6", "x7", "x8"), .before = F1)
+
+#remove items with poor factor loadings
+explore2 <- explore |> 
+  select(-x4, -x8)
+
+#extracting factors
+efa2 <- EFA(explore2, n_factors = 2, method = "ML")
+
+#oblique rotation using promax
+rotated_efa2 <- explore2 |> 
+  EFA(n_factors = 2, method = "ML", rotation = "promax")
+loadings2 <- as.data.frame.matrix(rotated_efa2$rot_loadings) |> 
+  mutate(item = c("x1", "x2", "x3", "x5", "x6", "x7"), .before = F1)
+
+#combine factor loading tables
+loadings_combined <- left_join(loadings, loadings2, by = "item") |> 
+  rename(
+    Model1_F1 = F1.x,
+    Model1_F2 = F2.x,
+    Model2_F1 = F1.y,
+    Model2_F2 = F2.y
+  ) |> 
+  flextable() |> 
+  colformat_double(digits = 2) |> 
+  separate_header()
+```
+
+```{r}
+#| label: tbl-loadings
+#| tbl-cap: "Factor loadings using maximum likelihood method and promax rotation."
+loadings_combined
+```
+
+# Confirmatory Factor Analysis
+
+## Descriptive Statistics
+
+@tbl-descriptive_cfa shows the descriptive statistics and correlation coefficients for the confirm dataset, which were similar to those from the EFA (@tbl-descriptive).
+
+```{r, warning=FALSE}
+#descriptive statistics
+
+summary_cfa <- confirm |> 
+  select(-x4, -x8) |> 
+  summarise(across(everything(), list(
+    Mean = mean,
+    SD = sd,
+    Lower_CI = ~mean(.) - qt(0.975, n() - 1) * sd(.) / sqrt(n()),
+    Upper_CI = ~mean(.) + qt(0.975, n() - 1) * sd(.) / sqrt(n())
+  )))
+
+
+descriptive_cfa <- summary_cfa |> 
+    pivot_longer(cols = everything(),
+               names_to = "Variable_Statistic",
+               values_to = "Value") |> 
+  separate(Variable_Statistic, c("Variable", "Statistic"), sep = "_") |> 
+  pivot_wider(names_from = Statistic,
+              values_from = Value) |> 
+  rename(
+    Lower_CI = Lower,
+    Upper_CI = Upper)
+
+
+#calculate correlations
+correlations_cfa <- as.data.frame(cor(confirm |> select(-x4, -x8))) |> 
+  mutate(
+    Variable = c("x1", "x2", "x3", "x5", "x6", "x7")
+  )
+
+#join tables
+descriptive_cfa <- descriptive_cfa |> 
+  left_join(correlations_cfa, by = "Variable") |> 
+  flextable() |> 
+  colformat_double(digits = 2)
+```
+
+```{r}
+#| label: tbl-descriptive_cfa
+#| tbl-cap: "Descriptive statistics and correlation coefficients for the confirm dataset."
+descriptive_cfa |> 
+  add_footer_lines("Note. SD = standard deviation, CI = 95% confidence interval.")
+```
+
+## Model Fit
+
+The model was fit using maximum likelihood estimation. Model fit indices indicated good fit, with a non-significant chi-square, $\chi^2$(8) = 6.41, *p* = .602, a CFI of 1.00, a Tucker-Lewis Index (TLI) of 1.00, a RMSEA of .00 with a 90% CI of \[.00, .06\] which is entirely below the threshold for good fit of .08, and a standardised root mean square residual (SEMR) of 0.01.
+
+```{r}
+#define model
+model1 <- '
+F1 =~ x1 + x2 + x3 
+F2 =~ x5 + x6 + x7
+'
+
+#cfa using variance standardization
+model1.fit <- cfa(model1, data = confirm, std.lv = TRUE)
+
+#standardizing items
+cfa_summary <- summary(model1.fit, fit.measures=TRUE, standardized = TRUE)
+```
+
+## Standardized Residuals
+
+Standardized residuals (@tbl-std_resid) were obtained to investigate the presence of problematic cases, with values greater than 1.96 indicating a problematic case. All standardized residuals were below the threshold, suggesting that no items were problematic, which is consistent with the good fit indices that were obtained.
+
+```{r}
+#| label: tbl-std_resid
+#| tbl-cap: "Standardized residuals"
+
+std_resid <- residuals(model1.fit, type="standardized")
+std_residuals <- as.data.frame(std_resid$cov) |> 
+  mutate(" " = c("x1", "x2", "x3", "x5", "x6", "x7"), .before = x1) |> 
+  flextable() |> 
+  colformat_double(digits = 2)
+
+std_residuals
+```
+
+## Modification Indices
+
+Modification indices were obtained (@tbl-modification) to determine if there were any changes that could improve the model. All modification indices were below the critical value of 3.84, indicating that model fit will not improve through the inclusion of additional relationships. Therefore, the present model will be retained and interpreted.
+
+```{r}
+#| label: tbl-modification
+#| tbl-cap: "Modification indices."
+
+mod <- modificationindices(model1.fit) |> 
+  select(lhs, op, rhs, mi) |> 
+  flextable() |> 
+  colformat_double(digits = 3)
+
+mod
+```
+
+## Parameter Estimates
+
+Standardized estimates were calculated to facilitate interpretation, such that the variances of each factor were fixed to 1 and the item loadings were standardized. @tbl-cfa_pe shows the parameter estimates and variances. The standardize all method was chosen as to obtain comparable coefficients for each item.
+
+The standardized coefficients indicate that all items loaded significantly and strongly onto the expected factors, with items x2 and x3 demonstrating the strongest relationship to their corresponding factor and item x7 showing the weakest, yet still very strong, relationship with its corresponding factor.
+
+@fig-cfa_diagram shows the final model from the CFA with standardized coefficients.
+
+```{r}
+#| label: tbl-cfa_pe
+#| tbl-cap: "Parameter estimates and variances."
+
+estimates <- cfa_summary$pe |> 
+  select(-exo, -std.lv, -std.nox) |> 
+  flextable() |> 
+  colformat_double(digits = 2) |> 
+  colformat_double(j = "pvalue", digits = 3)
+
+estimates |> 
+  add_footer_lines("Note. est = standardize variances method, std.all = standardize all method")
+```
+
+```{r, results = FALSE, fig.show='hide'}
+#plotting standardized model
+plot_cfa <- semPaths(model1.fit, 
+           whatLabels = "std",
+           sizeMan = 10,
+           edge.label.cex = 1.15,
+           style = "ram",
+           layout = "tree",
+           rotation = 4
+           )
+
+#adding significance stars
+plot_cfa_sig <- mark_sig(plot_cfa, model1.fit)
+```
+
+```{r}
+#| label: fig-cfa_diagram
+#| fig-cap: "Path diagram representing the factor structure from the confirmatory factor analysis. Note: *** p<.001"
+plot(plot_cfa_sig)
+```
