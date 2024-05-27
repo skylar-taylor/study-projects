@@ -1,0 +1,279 @@
+---
+title: "Mediation"
+author: "Sky Taylor"
+format: 
+  html:
+    self-contained: true
+    mainfont: Times
+editor: visual
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, message = FALSE}
+#load packages
+library(psych)
+library(tidyverse)
+library(lavaan)
+library(semPlot)
+library(semptools)
+library(kableExtra)
+```
+
+## Generating Data
+
+```{r}
+set.seed(22335)
+X <- rnorm(250) 
+M1 <- 0.60*X + rnorm(250) 
+M2 <- 0.35*X + rnorm(250)
+M3 <- 0.55*X + rnorm(250)
+Y <- 0.35*M1 + 0.1*M2 + 0.33*M3 + rnorm(250) 
+
+df <- data.frame(wellbeing=X, comprehension=M1, memory=M2, engagement=M3, grade=Y)
+```
+
+## Descriptive Statistics
+
+Firstly, descriptive statistics were calculated for each of the variables, shown in @tbl-descriptive.
+
+```{r}
+#| label: tbl-descriptive
+#| tbl-cap: "Descriptive statistics."
+descriptive <- describe(df, fast = TRUE) |>  kable(digits = 2) |> remove_column(2)
+descriptive |> 
+  footnote(general = ". sd = standard deviation, se = standard error.", footnote_as_chunk = T) |> 
+  kable_classic()
+```
+
+## Prior Simple Regressions
+
+Before conducting the analysis, the criteria for a mediation were assessed. Linear regression models were used to determine whether the following prerequisites were met: (1) wellbeing must significantly predict each of the mediators, (2) each of the mediators must significantly predict grades, and (3) wellbeing should, arguably, significantly predict grades. @tbl-regression shows that all of the simple regressions were significant, hence meeting the criteria, making a mediation analysis appropriate.
+
+```{r}
+#| label: tbl-regression
+#| tbl-cap: "OLS linear regression of zero-order relationships."
+
+#wellbeing predicting grades
+model_wg <- lm(grade ~ wellbeing, data = df)
+
+#wellbeing predicting comprehension
+model_wc <- lm(comprehension ~ wellbeing, data = df)  
+
+#wellbeing predicting memory
+model_wm <- lm(memory ~ wellbeing, data = df)  
+
+#wellbeing predicting engagement
+model_we <- lm(engagement ~ wellbeing, data = df)  
+
+#comprehension predicting grades
+model_cg <- lm(grade ~ comprehension, data = df)  
+
+#memory predicting grades
+model_mg <- lm(grade ~ memory, data = df)  
+
+#engagement predicting grades
+model_eg <- lm(grade ~ engagement, data = df)  
+
+#summary table of linear models
+regressions_table <- data.frame(
+  Model = c("grade ~ wellbeing", "comprehension ~ wellbeing", "memory ~ wellbeing", "engagement ~ wellbeing", "grade ~ comprehension", "grade ~ memory", "grade ~ engagement"),
+  Estimate = c(
+    summary(model_wg)$coefficients[2, 1],
+    summary(model_wc)$coefficients[2, 1],
+    summary(model_wm)$coefficients[2, 1],
+    summary(model_we)$coefficients[2, 1],
+    summary(model_cg)$coefficients[2, 1],
+    summary(model_mg)$coefficients[2, 1],
+    summary(model_eg)$coefficients[2, 1]
+  ),
+  Std_error = c(
+    summary(model_wg)$coefficients[2, 2],
+    summary(model_wc)$coefficients[2, 2],
+    summary(model_wm)$coefficients[2, 2],
+    summary(model_we)$coefficients[2, 2],
+    summary(model_cg)$coefficients[2, 2],
+    summary(model_mg)$coefficients[2, 2],
+    summary(model_eg)$coefficients[2, 2]
+  ),
+  t_value = c(
+    summary(model_wg)$coefficients[2, 3],
+    summary(model_wc)$coefficients[2, 3],
+    summary(model_wm)$coefficients[2, 3],
+    summary(model_we)$coefficients[2, 3],
+    summary(model_cg)$coefficients[2, 3],
+    summary(model_mg)$coefficients[2, 3],
+    summary(model_eg)$coefficients[2, 3]
+  ),
+  p_value = c(
+    summary(model_wg)$coefficients[2, 4],
+    summary(model_wc)$coefficients[2, 4],
+    summary(model_wm)$coefficients[2, 4],
+    summary(model_we)$coefficients[2, 4],
+    summary(model_cg)$coefficients[2, 4],
+    summary(model_mg)$coefficients[2, 4],
+    summary(model_eg)$coefficients[2, 4]
+  )
+)
+
+regressions <- regressions_table |> kable(digits = c(0, 2, 2, 2, 3))
+
+regressions |> 
+  footnote(general = ". Model intercepts were all non-significant (p > .05) and are not given.", footnote_as_chunk = T) |> 
+  kable_classic()
+```
+
+## Mediation Model
+
+The model was fit using structural equation modelling with maximum likelihood estimates, computing standard errors using 1000 bootstrapped samples. When incorporating comprehension and memory as sequential mediators and engagement as a mediator in parallel, the effect of wellbeing on grades was mediated. Standardised parameter estimates are calculated to facilitate comparisons between effects, specifically allowing the assessment of which moderators have the strongest influence on the relationship between wellbeing and grades. The results are presented in @tbl-parameters1 and are visualised in @fig-plot.
+
+```{r}
+#specify the model
+model1 <- '
+# direct effect
+  grade ~ c*wellbeing
+# mediators
+  comprehension ~ a1*wellbeing
+  memory ~ a2*wellbeing
+  engagement ~ a3*wellbeing
+  memory ~ a4*comprehension
+  grade ~ b1*comprehension
+  grade ~ b2*memory
+  grade ~ b3*engagement
+# indirect effects
+  a1b1 := a1*b1
+  a2b2 := a2*b2
+  a3b3 := a3*b3
+  a1a4b2 := a1*a4*b2
+# total effect
+  total := c + a1b1 + a2b2 + a3b3 + a1a4b2
+'
+```
+
+```{r}
+#| label: tbl-parameters1
+#| tbl-cap: "Standardised parameter estimates and indirect effects for the mediation model."
+
+#fit the mediation model
+model1_fit <- sem(model1, data = df, se = 'bootstrap', bootstrap = 1000)
+
+#standardised parameter estimates
+parameters1 <- standardizedsolution(model1_fit, level = .95)
+
+parameters1  |> 
+  kable(digits = c(2,2,2,2,2,2,2,3,2,2)) |> 
+  footnote(general = ". ci = 95% confidence interval", footnote_as_chunk = T) |> 
+  kable_classic()
+```
+
+```{r,  fig.show='hide'}
+#set matrix for plot
+m <- matrix(NA, 3, 5)
+m[2, 1] <- "wll"
+m[1, 2] <- "cmp"
+m[1, 4] <- "mmr"
+m[3, 3] <- "eng"
+m[2, 5] <- "grd"
+
+#plot the model
+plot <- semPaths(model1_fit, 
+           whatLabels = "est",
+           sizeMan = 10,
+           edge.label.cex = 1.15,
+           style = "ram",
+           layout = m)
+
+#add significance stars
+plot_sig <- mark_sig(plot, model1_fit)
+```
+
+```{r}
+#| label: fig-plot
+#| fig-cap: "Path diagram showing the mediating effects of comprehension (cmp), memory (mmr), and engagement (eng) on the relationship between wellbeing (wll) and grades (grd)."
+
+#print plot
+plot(plot_sig)
+```
+
+Paths between wellbeing and comprehension, memory, and engagement were all significant ($\beta$ = 0.55, SE = 0.04, 95% CI \[0.47, 0.62\], *p* \< .001; $\beta$ = 0.22, SE = 0.07, 95% CI \[0.07, 0.36\], *p* = .003; and $\beta$ = 0.48, SE = 0.04, 95% CI \[0.40, 0.56\], *p* \< .001, respectively). Paths predicting grades from comprehension, memory, and engagement were also all significant ($\beta$ = 0.31, SE = 0.06, 95% CI \[0.19, 0.43\], *p* \< .001; $\beta$ = 0.14, SE = 0.05, 95% CI \[0.04, 0.25\], *p* = .008; and $\beta$ = 0.28, SE = 0.06, 95% CI \[0.17, 0.39\], *p* \< .001, respectively). However, the path between comprehension and memory was not significant ($\beta$ = -0.01, SE = 0.07, 95% CI \[-0.15, 0.13\], *p* = .861), indicating that comprehension does not predict memory.
+
+The indirect effect of wellbeing on grades through comprehension was significant ($\beta$ = 0.17, SE = 0.04, 95% CI \[0.10, 0.24\], *p* \< .001), indicating that comprehension was, as hypothesised, a mediating variable. The indirect effect of wellbeing on grades through engagement was also statistically significant ($\beta$ = 0.13, SE = 0.03, 95% CI \[0.08, 0.19\], *p* \< .001). Whereas the indirect effect via memory, although statistically significant ($\beta$ = 0.03, SE = 0.02, 95% CI \[0.00, 0.06\], *p* = .043), had a 95% confidence interval that includes zero, indicating that if the current sample is one of the 95% that produce confidence intervals containing the population value then there may be no effect of wellbeing on grades through memory.
+
+The indirect effect of wellbeing on grades through the sequential mediation of comprehension and memory was non-significant ($\beta$ = 0.00, SE = 0.01, 95% CI \[-0.01, 0.01\], *p* = .861). Additionally, when accounting for the mediators, the direct path of wellbeing predicting grades was no longer significant ($\beta$ = 0.07, SE = 0.06, 95% CI \[-0.05, 0.19\], *p* = .225). This supports the hypothesis that the relationship between wellbeing and grades would be fully mediated by the mediators comprehension, memory, and engagement. The non-significant path between comprehension and memory and the non-significant indirect effect through this sequential mediation, however, does not support the hypothesis of a serial mediation. Instead, it suggests that a model consisting of 3 parallel mediators would be more appropriate. Based on these results, an alternative exploratory mediation model will be fit.
+
+## Alternative Model
+
+The results from the first model indicate that a parallel model may be more appropriate, hypothesising that paths through comprehension, memory, and engagement separately will fully mediate the relationship between wellbeing and grades. The benefit of fitting this model is that it does not rely on the assumption of a sequential order of the mediators. By removing this assumption each mediator is able to influence the relationship independently which, as the sequential indirect path did not yield a significant result, is likely to better fit the data, hence better representing the underlying process that is being modelled.
+
+@tbl-parameters2 shows the standardised parameter estimates for the parallel mediation model and the results are visualised in @fig-plot_alt. As hypothesised, the direct effect of wellbeing on grades is statistically non-significant after accounting for the mediating effects ($\beta$ = 0.07, SE = 0.06, 95% CI \[-0.05, 0.20\], *p* = .242), indicating a full mediation. Standardised parameter estimates did not differ substantially from the previous model, which is expected due to the high level of similarity between the models. However, this model improves on the previous model as all indirect paths were significant, indicating that the parallel model better represents the data.
+
+The indirect effect through comprehension had the largest standardised effect size ($\beta$ = 0.17) which indicates that the improvements in comprehension caused by greater wellbeing contribute more substantially to improved grades. The intermediate effect size of $\beta$ = 0.13 was associated with the path via engagement, indicating that the positive effects of wellbeing on engagement and subsequently on grades was almost as substantial as the effect through comprehension. The indirect effect through memory, however, had a much lower standardised effect size comparatively ($\beta$ = 0.03) which indicates that the benefits wellbeing has on memory contribute much less meaningfully to grade increases.
+
+```{r}
+#specify the new model
+model2 <- '
+# direct effect
+  grade ~ c*wellbeing
+# mediators
+  comprehension ~ a1*wellbeing
+  memory ~ a2*wellbeing
+  engagement ~ a3*wellbeing
+  grade ~ b1*comprehension
+  grade ~ b2*memory
+  grade ~ b3*engagement
+# indirect effects
+  a1b1 := a1*b1
+  a2b2 := a2*b2
+  a3b3 := a3*b3
+# total effect
+  total := c + a1b1 + a2b2 + a3b3
+'
+```
+
+```{r}
+#| label: tbl-parameters2
+#| tbl-cap: "Standardised parameter estimates and indirect effects for the alternative mediation model."
+
+#fit the new mediation model
+model2_fit <- sem(model2, data = df, se = 'bootstrap', bootstrap = 1000)
+
+#standardised parameter estimates
+parameters2 <- standardizedsolution(model2_fit, level = .95)
+
+parameters2  |> 
+  kable(digits = c(2,2,2,2,2,2,2,3,2,2)) |> 
+  footnote(general = ". ci = 95% confidence interval", footnote_as_chunk = T) |> 
+  kable_classic()
+```
+
+```{r, fig.show='hide'}
+#set matrix for plot
+m2 <- matrix(NA, 8, 3)
+m2[8, 1] <- "wll"
+m2[1, 2] <- "cmp"
+m2[4, 2] <- "mmr"
+m2[6, 2] <- "eng"
+m2[8, 3] <- "grd"
+
+#plot the model
+plot_alt <- semPaths(model2_fit, 
+           whatLabels = "est",
+           sizeMan = 10,
+           edge.label.cex = 1.15,
+           style = "ram",
+           layout = m2
+           )
+
+#add significance stars
+plot_alt_sig <- mark_sig(plot_alt, model2_fit)
+```
+
+```{r}
+#| label: fig-plot_alt
+#| fig-cap: "Path diagram of the alternative model, showing the mediating effects of comprehension (cmp), memory (mmr), and engagement (eng) on the relationship between wellbeing (wll) and grades (grd)."
+
+#print plot
+plot(plot_alt_sig)
+```
