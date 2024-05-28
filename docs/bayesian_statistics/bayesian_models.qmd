@@ -1,0 +1,253 @@
+---
+title: "Bayesian Models"
+author: "Sky Taylor"
+format: 
+  html:
+    self-contained: true
+editor: visual
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
+
+```{r, message = FALSE}
+#load packages
+library(dplyr)
+library(kableExtra)
+library(psych)
+library(BayesFactor)
+library(ggplot2)
+library(bayestestR)
+library(effectsize)
+library(brms)
+library(insight)
+library(parameters)
+library(modelbased)
+
+#read in data
+df <- read.csv("https://raw.githubusercontent.com/DominiqueMakowski/PHQ4R/main/study2/data/data.csv") 
+df$Interoception <- rowSums(df[grep("IAS_\\d", names(df))])
+df <- dplyr::select(df, Gender, MoodDisorder, Interoception, BDI2_Total) |> 
+  filter(Gender %in% c("Female", "Male"))
+```
+
+## Describe and Summarise Dataset
+
+The dataset contains the variables Gender, Mood Disorder, Interoception, and Total BDI-II score across 240 participants.
+
+@tbl-descriptive provides information on the dispersion of interoception and BDI-II scores. @tbl-summary shows summary statistics for interoception and BDI-II scores grouped by gender and mood disorder diagnosis.
+
+```{r}
+#| label: tbl-descriptive
+#| tbl-cap: "Descriptive statistics."
+
+df <- df |> 
+  mutate(
+    Gender = as.factor(Gender),
+    MoodDisorder = as.factor(MoodDisorder)
+  )
+
+descriptive <- df |> 
+  select(Interoception, BDI2_Total) |> 
+  describe(fast = TRUE) |> 
+  as.data.frame()
+
+descriptive |> 
+  select(-vars, -n) |> 
+  kable(digits = 2)
+```
+
+```{r}
+#| label: tbl-summary
+#| tbl-cap: "Summary statistics grouped by gender and mood disorder diagnosis."
+
+N <- nrow(df)
+
+grouped_summary <- df |> 
+  group_by(Gender, MoodDisorder) |> 
+  summarise(
+    'Interoception Mean' = mean(Interoception),
+    'Interoception SD' = sd(Interoception),
+    'BDI-II Mean' = mean(BDI2_Total),
+    'BDI-II SD' = sd(BDI2_Total),
+    n = n(),
+    'Percentage(%)' = 100*n/N
+  )
+
+grouped_summary |> 
+  kable(digits = 2)
+```
+
+## Bayesian Correlation
+
+@fig-cor shows a scatterplot of the BDI-II and Interoception scores, indicating a weak negative correlation.
+
+```{r}
+#| label: fig-cor
+#| fig-cap: "Scatterplot of BDI-II and Interoception scores."
+
+df |> 
+  ggplot(aes(x=BDI2_Total, y=Interoception)) +
+  geom_point() +
+  geom_smooth(method="lm") +
+  labs(x = "BDI-II") +
+  theme_minimal()
+```
+
+```{r}
+#correlation BF
+correlation <- correlationBF(df$BDI2_Total, df$Interoception)
+```
+
+Default priors from the BayesFactor package *correlationBF()* function were used, with the *rscale* parameter being set to medium. The Bayes Factor of $\text{BF}_{10}=647.54$ is extreme evidence for a correlation.
+
+The Markov Chain Monte Carlo (MCMC) sampling technique was used with 500 iterations to approximate the posterior distribution. Upon inspection of the posterior trace plots [@fig-trace], the trace appears stationary and random across iterations.
+
+```{r}
+#| label: fig-trace
+#| fig-cap: "MCMC diagnostic plots."
+
+#MCMC trace plots
+posteriors <- posterior(correlation, iterations = 500)
+plot(posteriors)
+```
+
+@fig-rho_distribution shows the prior and posterior distributions, showing how we should adjust our beliefs given the data. The posterior distribution indicates that a weak negative correlation between total BDI-II and interoception is highly likely. @tbl-indices reports indices to describe the posterior distribution and further indicates the existence of a small negative correlation (*r* = -.26, 95% CI \[-.37, -.15\]), with a probability of direction of 1 which suggests that a negative correlation certainly exists.
+
+```{r}
+#| label: fig-rho_distribution
+#| fig-cap: "Correlation prior and posterior distributions."
+
+#prior distribution
+rscale <- 1/3 #"medium" rscale
+prior <- data.frame(
+  y = dbeta(seq(0, 1, length.out=100), 1/rscale, 1/rscale),
+  x = seq(-1, 1, length.out=100)
+)
+
+#plotting the prior and posterior distributions
+posteriors |> 
+  as.data.frame() |> 
+  ggplot(aes(x=rho)) +
+  geom_area(data=prior, aes(x=x, y=y), fill="#008A71", colour = "black", alpha=.4) +
+  geom_density(fill="#0362CC", alpha = .7) +
+  geom_vline(xintercept=0, linetype="dashed") +
+  theme_bw() +
+  labs(x="Correlation Coefficient", y="Probability") +
+  coord_cartesian(xlim=c(-1, 1))
+```
+
+```{r}
+#| label: tbl-indices
+#| tbl-cap: "Indices of centrality, uncertainty, and effect direction for the correlation posterior."
+
+as.data.frame(posteriors) |> 
+  summarise(
+    Median = median(rho),
+    MAD = mad(rho),
+    CI_low = eti(rho)$CI_low,
+    CI_high = eti(rho)$CI_high,
+    PD = as.numeric(pd(rho))
+  ) |> 
+  kable(digits = 2)
+```
+
+*Note*. MAD = Median Absolute Deviation, CI = 95% Credible Interval computed using equal-tailed intervals, PD = Probability of Direction.
+
+## Bayesian *t*-Test
+
+The *ttestBF()* function from the BayesFactor package was used with default priors. The Bayes Factor $\text{BF}_{10}=0.35$ indicates anecdotal evidence in favour of the null hypothesis that there is not a difference in interoception scores between participants who have a mood disorder than those who don't. This is consistent with the indices of centrality and uncertainty as the credible intervals for the median cross 0 ([@tbl-ttest]) which shows that a difference of 0 is plausible. Additionally, the probability of direction (0.88) is interpreted as uncertain.
+
+```{r}
+#| label: tbl-ttest
+#| tbl-cap: "Indices of centrality, uncertainty, and effect direction for the t-test posterior."
+
+t <- ttestBF(formula= Interoception ~ MoodDisorder, data=df)
+
+describe_posterior(t) |> 
+  as.data.frame() |> 
+  select(Parameter, Median, CI_low, CI_high, pd, BF) |> 
+  kable(digits = 2)
+```
+
+## Bayesian Linear Model
+
+A Bayesian linear model is used to test the hypothesis that there is a relationship between BDI-II scores and interoception scores that is modulated by gender.
+
+To inform priors, the range of data is visualised in @fig-data_vis which shows that BDI-II scores cover a wide range. A normal distribution centred around the mean BDI-II score (*M* = 15.96) with a wide distribution of 10 times the standard deviation (*SD* = 12.06) was used to set a weakly informative prior distribution for the intercept (Normal(15.96, 120.60)). Assuming the intercept is the mean of BDI-II, values of interoception slopes smaller than -1 and larger than 3 are quite extreme and hence the coefficient prior, which centres around 0 to reflect the null hypothesis, gives low plausibility to values outside of this range (Normal(0, 5)). Default priors were used for the effect of gender and the interaction term.
+
+```{r}
+#| label: fig-data_vis
+#| fig-cap: "Scatterplot of BDI-II and interoception grouped by gender."
+
+ggplot(df, aes(x = Interoception, y = BDI2_Total, colour = Gender)) +
+  geom_point(size=3) + 
+  labs(y = "BDI-II") +
+  geom_abline(intercept = 15.96, slope = c(-1, 0, 1, 2, 3), color=c("purple", "red", "orange", "green", "blue"), linewidth = 1) +
+  theme_minimal()
+
+mean <- mean(df$BDI2_Total)
+sd <- sd(df$BDI2_Total)
+```
+
+The MCMC sampling technique was used with 1000 iterations to approximate the posterior distribution. Upon inspection of the posterior trace plots ([@fig-trace2]), the trace appears stationary and random across iterations with no evidence of autocorrelation between successive samples.
+
+@tbl-lm shows that interoception was a significant predictor of BDI-II score (*pd* = 1.00), however the main effect of gender and its interaction with interoception both had an uncertain probability of direction (*pd* = 0.88 and *pd* = 0.93, respectively). This is further evidenced by the 95% credible intervals crossing 0. All effective sample size (ESS) values were below the minimum acceptable threshold of 1000, indicating inaccuracy in the indices of centrality. All $\hat{\text{R}}$ values were less than 1.01, indicating that the chains converged to a common distribution. The Bayesian $\text{R}^2$ = .091 (95% CI \[.037, .161\]) indicates poor model fit. The predicted interaction based on the model is visualised in @fig-predict. Taking this information into account, the Bayesian linear model indicates that the modulating effect of gender on the relationship between BDI-II and interoception, where those who identify as male demonstrated a stronger negative effect, is non-significant.
+
+```{r, results = FALSE}
+#set formula
+f <- brmsformula(BDI2_Total ~ 0 + Intercept + Interoception*Gender)
+
+#get priors
+default_priors <- get_prior(f, data=df)
+
+#set priors
+priors <- c(
+  set_prior("normal(15.96, 60.30)", class = "b", coef = "Intercept"),
+  set_prior("normal(0, 5)", class = "b", coef = "Interoception")) 
+
+#check priors
+validate_priors <- priors |> 
+  validate_prior(f, data=df)
+
+#create model
+model <- brm(f,
+             data = df, 
+             prior = priors,
+             refresh = 0,
+             chains = 4,
+             iter = 1000)
+```
+
+```{r}
+#| label: fig-trace2
+#| fig-cap: "MCMC diagnostic plots."
+plot(model)
+```
+
+```{r}
+#| label: tbl-lm
+#| tbl-cap: "Indices of centrality, uncertainty, and effect direction for the linear model posterior."
+
+parameters(model,
+           centrality="mean", 
+           dipsersion=TRUE,
+           ci=0.95) |> 
+  as.data.frame() |> 
+  select(Parameter, Mean, CI_low, CI_high, pd, Rhat, ESS) |> 
+  kable(digits = 2)
+
+#bayesian r2
+r2 <- performance::r2(model)
+```
+
+```{r}
+#| label: fig-predict
+#| fig-cap: "Predicted relationship based on the Bayesian linear model."
+
+estimate_relation(model) |> 
+  plot() +
+  labs(y = "Predicted BDI-II") +
+  theme_minimal()
+```
