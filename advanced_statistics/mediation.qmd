@@ -4,7 +4,6 @@ author: "Sky Taylor"
 format: 
   html:
     self-contained: true
-    toc: true
 editor: visual
 ---
 
