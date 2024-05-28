@@ -1,0 +1,99 @@
+---
+title: "Distributions"
+author: "Sky Taylor"
+format: 
+  html:
+    self-contained: true
+editor: visual
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, message = FALSE}
+library(ggplot2)
+library(bayestestR)
+library(tidyverse)
+library(kableExtra)
+library(broom)
+library(ThemePark)
+```
+
+```{r}
+#read in data
+df <- read.csv("https://raw.githubusercontent.com/DominiqueMakowski/teaching/master/BayesianStatistics/2024/data/tap1a.csv")
+```
+
+## Visualisations
+
+```{r}
+#| label: fig-rt_hist
+#| fig-cap: "Histogram showing the distribution of reaction times"
+
+df |>
+  ggplot(aes(x=rt)) +
+  geom_histogram(binwidth = 0.25, color= spiderman_theme_colors["blue"], fill = "#447BBE") +
+  labs(x = "Reaction Time", y = "Count") +
+  theme_spiderman()
+```
+
+```{r}
+#| label: fig-conf_hist
+#| fig-cap: "Histogram showing the distribution of confidence scores"
+
+df |>
+  ggplot(aes(x=confidence)) +
+  geom_histogram(binwidth = 0.02, color = starwars_theme_colors["dark"], fill = starwars_theme_colors["medium"]) +
+  labs(x = "Confidence", y = "Count") +  
+  theme_starwars()
+```
+
+## Bootstrapped Correlation Distribution
+
+The bootstrapped correlation distribution has a median value of 0.43, this measure of centrality was chosen as it is robust against extreme values which may be problematic as the distribution is slightly left-skewed. The median absolute deviation (MAD) value was 0.11, this index of dispersion is appropriate as the median was used as the measure of centrality.
+
+The credible interval quantifies the uncertainty of the *r* value, the interval \[0.21, 0.64\] informs us that, as the Highest Density Interval method was used, 95% of the most probable values of *r* fall between 0.21 and 0.64. A 95% confidence interval was selected as this corresponds to the alpha level of .05.
+
+The Region of Practical Equivalence \[-0.1, 0.1\] was constructed based on Cohen's (1988) guidelines that correlation coefficients less than .1 are very small, and hence practically negligible. The proportion of the 95% credible interval within this ROPE range was 0%, indicating that the effect was meaningful.
+
+```{r}
+data <- mtcars
+
+r_values <- c()
+for(i in 1:5000) {
+  idx <- sample(1:nrow(data), replace = TRUE)
+  subset <- data[idx, ]
+  r <- cor(subset$mpg, subset$qsec)
+  r_values <- c(r_values, r)
+}
+
+describe_posterior(r_values, 
+                   centrality = "median", 
+                   dispersion = TRUE, 
+                   ci = 0.95, 
+                   ci_method = "hdi",
+                   rope_range = c(-0.1, 0.1), 
+                   test = "rope") |> 
+  kable(digits = 2)
+```
+
+```{r}
+#| label: fig-cor_hist
+#| fig-cap: "Histogram showing the distribution of correlation coefficients"
+
+
+data.frame(r = r_values) |> 
+  ggplot(aes(r)) +
+  geom_histogram(binwidth = 0.02, colour = zelda_theme_colors["dark"], fill = zelda_theme_colors["medium"]) +
+  theme_zelda()
+```
+
+```{r}
+#| label: fig-rope
+#| fig-cap: "PLot showing the proportion of the distribution of correlation coefficients within the Region of Practical Equivalence (ROPE)"
+
+rope(r_values, range = c(-0.1, 0.1), ci = .95) |> 
+  plot() +
+  theme_minimal()
+```
