@@ -4,7 +4,7 @@ author: "Sky Taylor"
 format: 
   html:
     self-contained: true
-    mainfont: Times
+    toc: true
 editor: visual
 ---
 
