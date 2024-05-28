@@ -21,9 +21,8 @@ library(semptools)
 library(kableExtra)
 ```
 
-## Generating Data
-
 ```{r}
+#Generating Data
 set.seed(22335)
 X <- rnorm(250) 
 M1 <- 0.60*X + rnorm(250) 
