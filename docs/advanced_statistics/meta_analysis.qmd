@@ -1,0 +1,72 @@
+---
+title: "Meta Analysis"
+author: "Sky Taylor"
+format: 
+  html:
+    self-contained: true
+editor: visual
+---
+
+```{r, message = FALSE}
+#load packages
+library(tidyverse)
+library(metafor)
+library(readr)
+library(kableExtra)
+```
+
+```{r, message=FALSE}
+#read in data
+data <- read_csv("meta_analysis_data.csv")
+
+#add id column
+data <- data |> 
+  mutate(id = row_number())
+```
+
+```{r}
+#inspect summary
+summary(data)
+
+#summary table of studies
+data |> 
+  select(authors, year, ni, ri, type, sa_measure, se_measure) |> 
+  kable()
+```
+
+```{r}
+#apply z-transformation 
+data <- escalc(measure = "ZCOR", 
+               ri=ri, 
+               ni=ni, 
+               data=data, 
+               slab = paste(authors, year, sep=","))
+
+#ordering by effect size
+data <- data[order(data$yi),]
+
+#meta analysis results
+ma_res <- rma(yi, vi, data=data)
+ma_res
+predict(ma_res)
+confint(ma_res)
+```
+
+```{r}
+#forest plot
+forest(ma_res,
+       addpred = TRUE, 
+       header = TRUE)
+```
+
+```{r}
+#influential studies
+ma_inf <- influence(ma_res)
+print(ma_inf)
+plot(ma_inf)
+```
+
+```{r}
+#funnel plot
+funnel(ma_res, las = 1, digits = list(2, 2))
+```
