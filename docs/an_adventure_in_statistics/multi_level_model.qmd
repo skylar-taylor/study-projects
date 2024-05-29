@@ -1,0 +1,332 @@
+---
+title: "Multi Level Model"
+author: "Sky Taylor"
+format: 
+  html:
+    self-contained: true
+editor: visual
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
+
+```{r}
+library(tidyverse)
+library(emmeans)
+library(broom.mixed)
+library(here)
+library(readr)
+library(Hmisc)
+library(knitr)
+library(nlme)
+
+# load the data
+mindful_tib <- here("docs/an_adventure_in_statistics/mindfulness.csv") |> 
+  read_csv()
+```
+
+## **Analysis plan**
+
+This report seeks to investigate the relationship between `stress`, intervention (`trial_arm`), and `burnout` over `time`. The rate of change of `stress` over time is expected to be linear, and hence a linear model will be fit to test the following hypothesis:
+
+> H~1~: The linear rate of change of `stress` over time will be affected by which intervention (`trial_arm`) they received after *adjusting for* their `burnout`.
+
+The data has a hierarchical structure because measures are nested within each individual. Therefore, the model needs to represent the individual differences in stress scores, using a random intercept, and the variance in the change in stress scores over time, using random slopes. A multilevel linear growth model will be fit, predicting `stress` from `time`, `trial_arm` (intervention) and emotional `burnout`. As burnout is measured at each time point, it is a time-varying covariate and hence is added to the level 1 equation, whereas intervention is time invariant and hence is added to the level 2 equations.
+
+The use of a multilevel model allows random effects to be modelled and enables time to be treated as continuous, which is important for interpretation as measures were unevenly spaced in time. Additionally, it is appropriate for large samples such as this one (N = 534).
+
+The model to be fitted is:
+
+$$
+\begin{align}
+\hat{stress}_{ij}&=\hat{\pi}_{0i}+
+\hat{\pi}_{1i}\text{time}_{ij}+
+\hat{\pi}_{2i}\text{burnout}_{ij}+
+e_{ij} \\
+\hat{\pi}_{0i}&=\hat{\gamma}_{00}+
+\hat{\gamma}_{01}\text{intervention}_i+
+\hat{\zeta}_{0i} \\
+\hat{\pi}_{1i}&=\hat{\gamma}_{10}+
+\hat{\gamma}_{11}\text{intervention}_i+
+\hat{\zeta}_{1i} \\
+\hat{\pi}_{2i}&=\hat{\gamma}_{20}
+\end{align}
+$$
+
+This can be re-arranged into composite form to separate the fixed and random effects:
+
+$$
+\begin{align} 
+\hat{\text{stress}}_{ij}=&[\hat{\gamma}_{00}+
+\hat{\gamma}_{10}\text{time}_{ij}+
+\hat{\gamma}_{20}\text{burnout}_{ij}+
+\hat{\gamma}_{01}\text{intervention}_{i}+
+\hat{\gamma}_{11}(\text{intervention}_i\times\text{time}_{ij})] \\
+&[\hat{\zeta}_{0i}+\hat{\zeta}_{1i}\text{time}_{ij}+e_{ij}] 
+\end{align}
+$$
+
+Where *i* represents individuals and *j* represents occasions. The following parameters are estimated:
+
+-   $\hat{\gamma}_{00}$ = average baseline stress when intervention = 0 (Psychosocial information) and burnout = 0
+
+-   $\hat{\gamma}_{10}$ = average rate of change in outcome when intervention = 0 (Psychosocial information) and burnout = 0
+
+-   $\hat{\gamma}_{20}$ = change in stress associated with a unit increase in burnout
+
+-   $\hat{\gamma}_{01}$ = baseline difference in stress between interventions
+
+-   $\hat{\gamma}_{11}$ = difference in rate of change of stress between interventions
+
+-   $\hat{\zeta}_{0i}$ = deviation of individual's baseline stress from group average
+
+-   $\hat{\zeta}_{1i}$ = deviation of individual's baseline rate of change in stress from group average
+
+-   $e_{ij}$ = portion of individual's stress score that is unpredicted at time *j.*
+
+The assumptions of the model, which if violated will introduce bias, are as follows:
+
+-   Linearity and additivity of the relationship between predictors and outcome
+
+-   Level 1 errors are normally distributed, described by the equation $e_{ij}\sim\text{N}(0,\sigma^2)$
+
+-   Random intercepts and slopes are normally distributed, described by the equation $\zeta\sim\text{N}_i(0,\sigma^2)$
+
+-   Errors are independent
+
+Means and ranges for each of the measures will be calculated and will inform decisions to remove erroneous data. Values outside of the scale's range will be removed and unexpected values for `months` will be investigated and removed where necessary.
+
+Summary statistics will include calculating the mean and 95% confidence intervals of stress across each time point within each intervention. The data will be visualised using a plot of stress over time for each intervention, with a linear trend line.
+
+The `lme()` function will be used to fit the linear multilevel model, modelling the dependency between scores within individuals. The model will use the measure of `months` to model time realistically as a continuous measure, rather than using the categorical time points of *baseline*, *post*, and *follow-up* which do not account for the uneven spacing between time points. Individual differences in change over time will be tested for by comparing a random intercept model with a model that also includes a random slope. To adjust for the effects of burnout, a model with the added predictor of burnout will be compared to the random slope model. The final model will add intervention and its interaction with time as predictors and will be compared to the previous model. If at any point the model fails to converge, the model will be re-fit using a greater amount of iterations. If the model still fails to converge, a repeated measures ANOVA will be fit instead, although this will not be able to model individual variability in slopes.
+
+*F*-statistics and model parameters will be calculated to interpret the final model. The interaction effect between intervention and time, which is the effect relevant to the hypothesis, will be broken down to investigate the rate of change of stress scores in each intervention condition. Model parameters for random effects will also be obtained, including the correlation between slopes and intercepts.
+
+```{r}
+#Preparing the data
+mindful_tib <- mindful_tib |> 
+  mutate(
+    trial_arm = recode(trial_arm, 'Mindfullness' = "Mindfulness") |> as_factor(),
+    time = as_factor(time)) |> 
+  select(id, trial_arm, time, months, burnout, stress)
+```
+
+```{r}
+#summary table of mean, min, and max values 
+summary <- mindful_tib |> 
+  select(months, burnout, stress) |> 
+  summary()
+
+mean_values <- summary[4, ] |> str_remove_all("[Mean:]") |> str_remove(".")
+min_values <- summary[1, ] |> str_remove_all("[Min:]") |> str_remove(".")
+max_values <- summary[6, ] |> str_remove_all("[Max:]") |> str_remove(".")
+
+summary_tbl <- data.frame(
+  Measure = c("months", "burnout", "stress"),
+  Mean = as.numeric(mean_values),
+  Min = as.numeric(min_values),
+  Max = as.numeric(max_values)
+)
+
+#histogram of months
+hist <- mindful_tib |> 
+ggplot(aes(months)) +
+  geom_histogram(binwidth=1, colour = "#008A71", fill="#008A71", alpha=0.8)+
+  labs(y="Frequency", x="Months")+
+  scale_x_continuous(breaks = seq(0, 17, 1)) +
+  theme_minimal()
+
+#investigating extreme month values
+wide <- mindful_tib |> 
+  pivot_wider(
+    id_cols = id,
+    names_from = time,
+    values_from = months
+  )
+
+inspect_months <- wide |> 
+  filter(Post > 6 | `Follow-up` > 6)
+
+
+errors <- wide |> 
+  filter(Post>`Follow-up`)
+
+#remove SYIxa
+mindful_tib <- mindful_tib |> 
+  filter(id != "SYIxa")
+```
+
+```{r}
+#Summary statistics
+growth_sum <- mindful_tib |> 
+  group_by(time, trial_arm) |> 
+  summarise(
+    mean = mean(stress),
+    ci_low = mean_cl_normal(stress)$ymin,
+    ci_high = mean_cl_normal(stress)$ymax
+  )
+```
+
+```{r}
+#Visualisation
+plot <- mindful_tib |> 
+ggplot(aes(months, stress, colour = trial_arm, fill = trial_arm)) +
+  geom_point(position = position_jitter(width = 0.3, height = 0.6), alpha = .5) +
+  geom_smooth(method = "lm", alpha = .2) +
+  scale_x_continuous(breaks = seq(0, 20, 2)) +
+  scale_colour_manual(values = c( "#0362CC","#FF8200")) +
+  scale_fill_manual(values = c( "#0362CC","#FF8200")) +
+  labs(x = "Months from baseline", y = "Stress", colour = "Intervention", fill = "Intervention") +
+  theme_minimal()
+```
+
+```{r}
+## Fitting the model
+#random intercept model
+stress_ri <- lme(stress ~ months,
+                random = ~ 1|id,
+                data = mindful_tib,
+                method = "ML")
+
+#update to add random slopes
+stress_rs <- update(stress_ri, random = ~ months|id)
+
+#update to add burnout
+stress_burn <- update(stress_rs, .~. + burnout)
+
+#update to add intervention
+stress_int <- update(stress_burn, .~. + trial_arm + months:trial_arm)
+
+#compare models
+mod_comp <- anova(stress_ri, stress_rs, stress_burn, stress_int)
+```
+
+```{r}
+## Fixed effects
+#f statistics for final model
+f_stat <- anova(stress_int)
+
+#model parameters
+fixed_mp <- tidy(stress_int, conf.int = TRUE, effects = "fixed")
+
+#breaking down interactions
+interaction <- emtrends(stress_int,
+         specs = "trial_arm",
+         var = "months") |>
+  as_tibble()
+```
+
+```{r}
+## Random effects
+#model parameters
+random_mp <- tidy(stress_int, conf.int = TRUE, effects = "ran_pars")
+```
+
+## **Report**
+
+### Data cleaning
+
+@tbl-summary shows that all stress values are within the range of the scale (0-42). Burnout was measured on the emotional exhaustion subscale of the Maslach Burnout Inventory and consists of 9 items measured on a scale of 0-6 and hence has a range of 0 to 54. Therefore, none of the stress or burnout values are of concern.
+
+The maximum of 17 months (@tbl-summary), however, is extreme given that the expected values for months were around 0, 1, and 4. @fig-hist shows that there are very few measures at time points greater than 6 months from baseline. @tbl-months shows the 11 individuals with months values greater than 6. One individual has a post value larger than the follow-up value, indicating that there is an error with this data and hence will be removed. There were no other cases where the month value for a previous measurement was greater than subsequent values. There are no obvious issues with any other values in @tbl-months and hence these will not be removed.
+
+```{r}
+#| label: tbl-summary
+#| tbl-cap: "Mean, minimum, and maximum values for numeric variables"
+summary_tbl |> kable(digits = c(0, 2, 0, 0))
+```
+
+```{r}
+#| label: fig-hist
+#| fig-cap: "Histogram showing the distribution of time points"
+hist
+```
+
+```{r}
+#| label: tbl-months
+#| tbl-cap: "Months values across the 3 measurement points for individuals with a months value greater than 6"
+inspect_months |> kable(digits = 2)
+```
+
+### Summary statistics and data visualisation
+
+@tbl-stats shows that the mean stress scores were higher in the psychosocial information group than in the mindfulness group at the baseline measurement, however they are fairly similar which is to be expected as interventions had not begun and individuals were randomly assigned to each condition. At the second time point, the mean stress scores for both groups had decreased, with the mindfulness group showing a larger decrease. At follow-up, the mean stress scores for both groups had increased compared to the mean at the previous time point but remained lower than the means at baseline, with the mindfulness group continuing to average a lower stress score than the psychosocial information group.
+
+```{r}
+#| label: tbl-stats
+#| tbl-cap: "Summary statistics for stress across interventions at each time point"
+growth_sum |> 
+  rename(Time = time, Intervention = trial_arm, Mean = mean, `CI low` = ci_low, `CI high` = ci_high) |> 
+  kable(digits = 2)
+```
+
+@fig-plot shows that both intervention groups demonstrated a decline in stress scores over time and visualises the conclusion drawn from @tbl-stats that stress scores were lower, and declined more, in the mindfulness condition than in the psychosocial information condition. The plot also highlights the presence of several extreme time values which were unusual as measures were expected to be taken at approximately 0 months (baseline), 1 month (post) and 4 months (follow-up) into the trial, but were retained as there were no clear errors with these data points.
+
+```{r}
+#| label: fig-plot
+#| fig-cap: "Plot of stress scores over time by intervention group with a linear trend line and confidence intervals"
+plot
+```
+
+### The growth model
+
+@tbl-comp shows that allowing the change in stress scores over time to vary across individuals by adding a random slope to the model significantly improved its fit compared to a model which only allowed variation at baseline (random intercept), $\chi^2$(2) = 122.04, *p* \< .001. It also shows that adding burnout significantly improved the fit of the model, $\chi^2$(1) = 96.42, *p* \< .001. After adjusting for burnout, the addition of intervention and its interaction with time as predictors also significantly improved the fit of the model, $\chi^2$(2) = 13.96, *p* = .001. This suggests that, after controlling for emotional burnout, the change in stress scores over time is moderated by the intervention condition.
+
+```{r}
+#| label: tbl-comp
+#| tbl-cap: "Comparisons between models fit hierarchically"
+mod_comp |> 
+  kable(digits = c(0, 0, 0, 2, 2, 2, 0, 2, 3)) |> 
+  kableExtra::remove_column(2)
+```
+
+### Fixed effects
+
+@tbl-f_stat shows significant main effects for time (`months`), *F*(1, 1063) = 65.41, *p* \< .001, `burnout`, *F*(1, 1063) = 104.34, *p* \< .001, and intervention (`trial_arm`), *F*(1, 531) = 6.74, *p* = .010. However, the main effects of time and intervention are not meaningful given their significant interaction effect, *F*(1, 1063) = 7.38, *p* = .007.
+
+```{r}
+#| label: tbl-f_stat
+#| tbl-cap: "Table of fixed effects"
+f_stat |> 
+  kable(digits = c(0, 0, 2, 3))
+```
+
+@tbl-fixed_mp shows the model parameters for the fixed effects. Burnout significantly predicted stress scores, $\hat{\gamma}$ = 0.16 \[0.13, 0.19\], *t*(1063) = 10.10, *p* \< .001, meaning that for a unit increase in burnout, stress increased by 0.16 units. However, assuming that the current sample is one of the 95% producing confidence intervals that contain the population value, the increase in stress could be as small as 0.13 or as large as 0.19 points.
+
+After adjusting for the effect of burnout, the mindfulness intervention, compared to the psychosocial information intervention, did not significantly predict stress scores, $\hat{\gamma}$ = -0.85 \[-1.74, 0.04\], *t*(531) = -1.88, *p* = .061. This shows that stress scores were, overall, 0.85 units lower in the mindfulness group than in the psychosocial information group but, assuming that the current sample is one of the 95% producing confidence intervals that contain the population value, this effect could range from a decrease of 1.74 units, to an increase of 0.04 units.
+
+The main effect of intervention ignores changes over time. Stress scores significantly changed over time, $\hat{\gamma}$ = -0.30 \[-0.50, -0.10\], *t*(1063) = -2.99, *p* = .003. This means that for every month that passed, stress scores changed by -0.30 points on average. Assuming that the current sample is one of the 95% producing confidence intervals that contain the population value, this effect could range from a decrease of 0.10 to 0.50 units.
+
+Change in stress scores over time was significantly affected by intervention. The rate of change of stress scores is 0.39 lower in the mindfulness group than in the psychosocial information group, $\hat{\gamma}$ = -0.39 \[-0.67, -0.11\], *t*(1063) = -2.72, *p* = .007. Assuming that the current sample is one of the 95% producing confidence intervals that contain the population value, the difference in rate of change of stress scores between intervention conditions could range from -0.67 to -0.11. As the slopes are negative, that is that stress scores decrease over time, this means that those in the mindfulness condition have a steeper slope and so their stress scores decrease more rapidly.
+
+```{r}
+#| label: tbl-fixed_mp
+#| tbl-cap: "Model parameters for fixed effects"
+fixed_mp |> 
+  kable(digits = c(0, 0, 2, 2, 0, 2, 3, 2, 2))
+```
+
+@tbl-interaction shows that in the psychosocial information group the parameter for time is -0.30 \[-0.50, -0.10\] which means that for every month that passes stress scores reduce by 0.30. In the mindfulness group the parameter for time is -0.69 \[-0.89, -0.49\] which means that for every month that passes stress scores reduce by 0.69. This suggests that the mindfulness intervention, compared to the psychosocial information control group, was effective at reducing stress.
+
+```{r}
+#| label: tbl-interaction
+#| tbl-cap: "Effect of time in each intervention group"
+interaction |> 
+  kable(digits = 2)
+```
+
+### Random effects
+
+@tbl-random shows that the standard deviation of the intercepts was 3.34 \[2.84, 3.93\] which quantifies the variation of baseline stress across the participants from the average baseline stress score of 16.05 \[14.91, 17.18\] (@tbl-fixed_mp). The standard deviation of the rate of change of stress scores was 0.81 \[0.62, 1.07\], quantifying the individual variation in change in stress over time around the overall average of -0.30 \[-0.50, -0.10\] (@tbl-fixed_mp). @tbl-random also shows that the correlation between slopes and intercepts across participants was 0.78 \[-0.19, 0.98\], which indicates that participants with higher initial stress scores (larger intercepts) had larger slope estimates. In the context of the slopes being negative, this means that those with lower initial stress scores saw a greater decrease in stress over time than those with higher initial stress scores. However, it is important to acknowledge that the confidence interval crosses zero and hence it is plausible that there may be no correlation, or a correlation in the opposite direction, between intercepts and slopes.
+
+```{r}
+#| label: tbl-random
+#| tbl-cap: "Model parameters for random effects"
+random_mp |> 
+  kable(digits = 2)
+```
+
+### Conclusion
+
+In conclusion, after adjusting for the effects of burnout, change in stress over time was significantly moderated by intervention group. The negative rate of change in stress scores was steeper in the group that received the mindfulness intervention than those who received the psychosocial information intervention. This supports the hypothesis that the linear rate of change of stress over time was affected by which intervention was received after adjusting for burnout. The 0.69 decrease in stress scores per month in the mindfulness condition has a meaningful real world impact as it suggests that when engaging in the mindfulness intervention for 6 months, stress scores can be reduced by 4.14 points, which on a scale ranging 0-42 is a material shift. For those in the psychosocial information condition, the 0.30 decrease in stress scores per month equates to a decrease of 1.80, which is a much less meaningful change.

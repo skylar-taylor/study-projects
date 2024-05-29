@@ -1,0 +1,1603 @@
+id,trial_arm,role,time,months,engagement,burnout,anxiety,stress,reliable_change
+KydkG,Psychosocial information,Medical,Baseline,0,NA,17,14,18,NA
+KydkG,Psychosocial information,Medical,Post,1.1903011635865846,4,16,8,14,No reliable decrease
+KydkG,Psychosocial information,Medical,Follow-up,4.6159704160012165,2,25,10,16,No reliable decrease
+FLTyD,Mindfullness,Support workers,Baseline,0,NA,40,2,18,NA
+FLTyD,Mindfullness,Support workers,Post,1.5236922959920907,7,38,6,24,No reliable decrease
+FLTyD,Mindfullness,Support workers,Follow-up,4.514288158795345,3,34,6,16,No reliable decrease
+UiV41,Mindfullness,Medical,Baseline,0,NA,32,8,20,NA
+UiV41,Mindfullness,Medical,Post,1.196876188303293,2,29,6,10,No reliable decrease
+UiV41,Mindfullness,Medical,Follow-up,4.185721347630999,2,23,8,14,No reliable decrease
+Ckdq3,Psychosocial information,Medical,Baseline,0,NA,40,6,26,NA
+Ckdq3,Psychosocial information,Medical,Post,1.350027758764925,5,49,10,24,No reliable decrease
+Ckdq3,Psychosocial information,Medical,Follow-up,4.245545288615104,3,37,10,30,No reliable decrease
+nasw4,Mindfullness,Medical,Baseline,0,NA,23,4,16,NA
+nasw4,Mindfullness,Medical,Post,1.6508989276751083,2,27,0,10,No reliable decrease
+nasw4,Mindfullness,Medical,Follow-up,4.607473191877709,1,21,0,8,No reliable decrease
+pMRx0,Mindfullness,Support workers,Baseline,0,NA,9,0,24,NA
+pMRx0,Mindfullness,Support workers,Post,1.1923773671001596,7,11,2,24,No reliable decrease
+pMRx0,Mindfullness,Support workers,Follow-up,4.165390904251274,7,8,0,20,No reliable decrease
+GppOj,Psychosocial information,Medical,Baseline,0,NA,51,34,28,NA
+GppOj,Psychosocial information,Medical,Post,1.2866172332496768,7,44,16,22,Reliable decrease
+GppOj,Psychosocial information,Medical,Follow-up,4.313914366111491,5,44,20,26,Reliable decrease
+t5MMU,Psychosocial information,Medical,Baseline,0,NA,25,6,16,NA
+t5MMU,Psychosocial information,Medical,Post,1.193094151646513,3,23,6,16,No reliable decrease
+t5MMU,Psychosocial information,Medical,Follow-up,4.179522777397521,3,20,10,18,No reliable decrease
+nZmqB,Psychosocial information,Medical,Baseline,0,NA,43,10,18,NA
+nZmqB,Psychosocial information,Medical,Post,1.7328850102669404,0,44,14,20,No reliable decrease
+nZmqB,Psychosocial information,Medical,Follow-up,4.572973990417522,1,37,18,24,No reliable decrease
+XpkQk,Psychosocial information,Medical,Baseline,0,NA,26,8,18,NA
+XpkQk,Psychosocial information,Medical,Post,1.4847729865389003,3,27,0,6,No reliable decrease
+XpkQk,Psychosocial information,Medical,Follow-up,4.727701726367024,1,31,2,8,Reliable decrease
+Joe9N,Psychosocial information,Support workers,Baseline,0,NA,37,2,18,NA
+Joe9N,Psychosocial information,Support workers,Post,2.2829599209065328,0,26,6,18,No reliable decrease
+Joe9N,Psychosocial information,Support workers,Follow-up,4.610053235987528,1,35,2,18,No reliable decrease
+HqBbe,Psychosocial information,Support workers,Baseline,0,NA,24,22,22,NA
+HqBbe,Psychosocial information,Support workers,Post,1.5303061069282835,3,8,8,10,Reliable decrease
+HqBbe,Psychosocial information,Support workers,Follow-up,4.514263061829797,4,6,10,12,Reliable decrease
+oXp4y,Psychosocial information,Medical,Baseline,0,NA,29,12,18,NA
+oXp4y,Psychosocial information,Medical,Post,3.3030892083048142,1,20,8,12,No reliable decrease
+oXp4y,Psychosocial information,Medical,Follow-up,5.074990493573655,4,15,4,12,No reliable decrease
+n4man,Mindfullness,Medical,Baseline,0,NA,10,14,22,NA
+n4man,Mindfullness,Medical,Post,1.8131363601794814,0,0,6,12,Reliable decrease
+n4man,Mindfullness,Medical,Follow-up,4.378239790098107,0,15,20,16,No reliable decrease
+YpIvh,Psychosocial information,Medical,Baseline,0,NA,21,10,18,NA
+YpIvh,Psychosocial information,Medical,Post,2.524420868507111,4,10,0,10,No reliable decrease
+YpIvh,Psychosocial information,Medical,Follow-up,4.9949650163510535,4,19,10,8,Reliable decrease
+rCGn1,Psychosocial information,Medical,Baseline,0,NA,41,22,24,NA
+rCGn1,Psychosocial information,Medical,Post,1.330155905392045,6,25,20,20,No reliable decrease
+rCGn1,Psychosocial information,Medical,Follow-up,4.187264811012244,2,23,14,20,Reliable decrease
+m7F6O,Mindfullness,Support workers,Baseline,0,NA,22,10,32,NA
+m7F6O,Mindfullness,Support workers,Post,1.3987044642178112,1,22,8,30,No reliable decrease
+m7F6O,Mindfullness,Support workers,Follow-up,12.49754696174614,3,18,2,2,Reliable decrease
+PS0uM,Psychosocial information,Medical,Baseline,0,NA,35,14,20,NA
+PS0uM,Psychosocial information,Medical,Post,1.2900931629781733,0,19,10,24,Reliable decrease
+PS0uM,Psychosocial information,Medical,Follow-up,4.6366910031181074,2,13,8,16,No reliable decrease
+imPDO,Psychosocial information,Support workers,Baseline,0,NA,17,6,30,NA
+imPDO,Psychosocial information,Support workers,Post,1.2220229675260477,3,21,0,12,Reliable decrease
+imPDO,Psychosocial information,Support workers,Follow-up,4.441642710472279,2,17,8,18,Reliable decrease
+aW9DZ,Psychosocial information,Management,Baseline,0,NA,36,18,26,NA
+aW9DZ,Psychosocial information,Management,Post,1.7376089436459046,1,43,16,32,No reliable decrease
+aW9DZ,Psychosocial information,Management,Follow-up,5.165264278652369,0,39,18,18,No reliable decrease
+D3cr2,Mindfullness,Support workers,Baseline,0,NA,43,8,20,NA
+D3cr2,Mindfullness,Support workers,Post,1.3274290820594723,2,33,2,12,No reliable decrease
+D3cr2,Mindfullness,Support workers,Follow-up,4.356271199330748,2,43,8,28,No reliable decrease
+MlxUa,Mindfullness,Medical,Baseline,0,NA,13,22,24,NA
+MlxUa,Mindfullness,Medical,Post,1.2774937257586128,6,9,12,12,Reliable decrease
+MlxUa,Mindfullness,Medical,Follow-up,4.139853601034299,4,6,8,18,No reliable decrease
+fJgX9,Psychosocial information,Medical,Baseline,0,NA,46,6,20,NA
+fJgX9,Psychosocial information,Medical,Post,1.3913651228230284,0,42,14,10,No reliable decrease
+fJgX9,Psychosocial information,Medical,Follow-up,4.374473724237585,3,34,0,20,No reliable decrease
+qIFVf,Psychosocial information,Management,Baseline,0,NA,32,8,24,NA
+qIFVf,Psychosocial information,Management,Post,1.8375979161913454,6,36,6,16,Reliable decrease
+qIFVf,Psychosocial information,Management,Follow-up,4.342430222830633,5,13,14,18,No reliable decrease
+ZyRbs,Psychosocial information,Medical,Baseline,0,NA,20,4,20,NA
+ZyRbs,Psychosocial information,Medical,Post,1.4574268005171496,0,14,6,12,No reliable decrease
+ZyRbs,Psychosocial information,Medical,Follow-up,4.186775800441098,0,8,2,8,No reliable decrease
+NuoBH,Psychosocial information,Management,Baseline,0,NA,39,6,20,NA
+NuoBH,Psychosocial information,Management,Post,1.257879306411134,1,39,2,14,No reliable decrease
+NuoBH,Psychosocial information,Management,Follow-up,4.146452962202449,0,39,6,12,No reliable decrease
+5QABn,Mindfullness,Support workers,Baseline,0,NA,20,2,16,NA
+5QABn,Mindfullness,Support workers,Post,1.154917864476386,7,25,12,20,No reliable decrease
+5QABn,Mindfullness,Support workers,Follow-up,4.119920526275762,7,31,8,16,No reliable decrease
+cX2MC,Mindfullness,Medical,Baseline,0,NA,33,0,16,NA
+cX2MC,Mindfullness,Medical,Post,1.1633371359038711,7,39,8,20,No reliable decrease
+cX2MC,Mindfullness,Medical,Follow-up,4.115436154840673,5,25,2,8,No reliable decrease
+HxwYy,Mindfullness,Management,Baseline,0,NA,37,16,20,NA
+HxwYy,Mindfullness,Management,Post,1.1955536542702867,3,30,16,14,No reliable decrease
+HxwYy,Mindfullness,Management,Follow-up,4.241468552741654,1,24,18,22,No reliable decrease
+iMrE4,Mindfullness,Medical,Baseline,0,NA,28,26,16,NA
+iMrE4,Mindfullness,Medical,Post,1.7901452581945394,7,9,16,24,No reliable decrease
+iMrE4,Mindfullness,Medical,Follow-up,5.174496919917864,0,25,24,36,No reliable decrease
+Ogx1i,Mindfullness,Medical,Baseline,0,NA,34,14,16,NA
+Ogx1i,Mindfullness,Medical,Post,1.7801703551600883,3,25,10,14,No reliable decrease
+Ogx1i,Mindfullness,Medical,Follow-up,5.065606129743707,3,18,8,22,Reliable decrease
+feFOU,Psychosocial information,Medical,Baseline,0,NA,22,14,30,NA
+feFOU,Psychosocial information,Medical,Post,1.460843790402312,1,27,4,24,No reliable decrease
+feFOU,Psychosocial information,Medical,Follow-up,4.1527979314016275,0,12,8,24,No reliable decrease
+ACsTA,Mindfullness,Support workers,Baseline,0,NA,24,8,16,NA
+ACsTA,Mindfullness,Support workers,Post,1.4944421629021218,1,25,4,10,No reliable decrease
+ACsTA,Mindfullness,Support workers,Follow-up,4.312110046391361,1,33,4,14,No reliable decrease
+PA4H4,Psychosocial information,Medical,Baseline,0,NA,42,14,28,NA
+PA4H4,Psychosocial information,Medical,Post,1.457697163282379,5,35,10,12,Reliable decrease
+PA4H4,Psychosocial information,Medical,Follow-up,4.961842345425508,2,29,6,18,Reliable decrease
+wv8gW,Psychosocial information,Support workers,Baseline,0,NA,50,2,20,NA
+wv8gW,Psychosocial information,Support workers,Post,1.3967617309301088,5,32,4,16,No reliable decrease
+wv8gW,Psychosocial information,Support workers,Follow-up,4.3489170279108675,5,39,0,10,Reliable decrease
+L2BNk,Mindfullness,Medical,Baseline,0,NA,35,24,24,NA
+L2BNk,Mindfullness,Medical,Post,1.163125332724922,7,18,10,10,Reliable decrease
+L2BNk,Mindfullness,Medical,Follow-up,4.119920526275762,7,33,12,12,Reliable decrease
+6nBbb,Psychosocial information,Support workers,Baseline,0,NA,28,6,18,NA
+6nBbb,Psychosocial information,Support workers,Post,1.2729428093391133,4,41,4,20,No reliable decrease
+6nBbb,Psychosocial information,Support workers,Follow-up,4.583593048901057,1,31,6,20,No reliable decrease
+2UCKU,Psychosocial information,Support workers,Baseline,0,NA,33,8,20,NA
+2UCKU,Psychosocial information,Support workers,Post,1.7409088143585063,2,37,4,16,No reliable decrease
+2UCKU,Psychosocial information,Support workers,Follow-up,4.50326336603544,3,20,0,14,No reliable decrease
+e8fRe,Mindfullness,Medical,Baseline,0,NA,23,4,16,NA
+e8fRe,Mindfullness,Medical,Post,1.8784755494714427,1,27,6,18,No reliable decrease
+e8fRe,Mindfullness,Medical,Follow-up,4.581412654954749,0,27,8,18,Reliable decrease
+hk332,Mindfullness,Support workers,Baseline,0,NA,14,6,22,NA
+hk332,Mindfullness,Support workers,Post,1.6560316373868735,1,19,6,14,No reliable decrease
+hk332,Mindfullness,Support workers,Follow-up,4.346118716252186,0,19,0,12,Reliable decrease
+q6G9A,Psychosocial information,Support workers,Baseline,0,NA,31,12,20,NA
+q6G9A,Psychosocial information,Support workers,Post,1.3998771769716327,2,24,8,16,No reliable decrease
+q6G9A,Psychosocial information,Support workers,Follow-up,5.067576241539281,0,34,22,20,No reliable decrease
+1R5ta,Psychosocial information,Medical,Baseline,0,NA,32,24,24,NA
+1R5ta,Psychosocial information,Medical,Post,1.530433112784242,1,34,12,32,No reliable decrease
+1R5ta,Psychosocial information,Medical,Follow-up,4.83365997414252,0,45,26,38,Reliable decrease
+uemCZ,Mindfullness,Support workers,Baseline,0,NA,25,8,24,NA
+uemCZ,Mindfullness,Support workers,Post,1.1978177047684235,7,30,4,14,Reliable decrease
+uemCZ,Mindfullness,Support workers,Follow-up,4.21329568788501,1,29,2,12,Reliable decrease
+rVTQ8,Mindfullness,Medical,Baseline,0,NA,33,6,18,NA
+rVTQ8,Mindfullness,Medical,Post,1.1923971404669556,6,31,2,8,Reliable decrease
+rVTQ8,Mindfullness,Medical,Follow-up,4.181811164347098,1,29,2,4,Reliable decrease
+9qrVY,Psychosocial information,Medical,Baseline,0,NA,35,8,16,NA
+9qrVY,Psychosocial information,Medical,Post,1.1870720206859837,2,11,2,6,Reliable decrease
+9qrVY,Psychosocial information,Medical,Follow-up,4.252468628793064,3,24,4,14,No reliable decrease
+NzwyD,Psychosocial information,Medical,Baseline,0,NA,13,26,20,NA
+NzwyD,Psychosocial information,Medical,Post,1.8411274621644231,0,25,14,12,No reliable decrease
+NzwyD,Psychosocial information,Medical,Follow-up,4.513817400562781,0,10,10,24,Reliable decrease
+p8Zci,Mindfullness,Management,Baseline,0,NA,40,12,16,NA
+p8Zci,Mindfullness,Management,Post,1.3286109209825843,5,33,20,18,No reliable decrease
+p8Zci,Mindfullness,Management,Follow-up,4.999969579435699,3,31,2,12,No reliable decrease
+Z23W0,Mindfullness,Medical,Baseline,0,NA,36,24,28,NA
+Z23W0,Mindfullness,Medical,Post,1.5278564909879078,5,42,16,28,Reliable decrease
+Z23W0,Mindfullness,Medical,Follow-up,4.212234770704996,0,47,26,28,No reliable decrease
+yGV79,Mindfullness,Medical,Baseline,0,NA,32,34,24,NA
+yGV79,Mindfullness,Medical,Post,1.4243847440870028,4,29,30,36,No reliable decrease
+yGV79,Mindfullness,Medical,Follow-up,4.205096205034604,3,22,34,40,Reliable decrease
+ojqEh,Psychosocial information,Support workers,Baseline,0,NA,35,2,16,NA
+ojqEh,Psychosocial information,Support workers,Post,1.3969590843410145,0,29,4,14,No reliable decrease
+ojqEh,Psychosocial information,Support workers,Follow-up,4.814717088751997,0,17,2,16,No reliable decrease
+CwKjg,Mindfullness,Medical,Baseline,0,NA,20,16,28,NA
+CwKjg,Mindfullness,Medical,Post,2.3368758080462393,2,29,20,22,No reliable decrease
+CwKjg,Mindfullness,Medical,Follow-up,4.649726595178341,2,33,18,40,No reliable decrease
+DPDUL,Mindfullness,Support workers,Baseline,0,NA,23,8,16,NA
+DPDUL,Mindfullness,Support workers,Post,1.2609502623773672,3,16,2,14,No reliable decrease
+DPDUL,Mindfullness,Support workers,Follow-up,4.194337592212335,0,26,2,8,No reliable decrease
+DNRLZ,Mindfullness,Support workers,Baseline,0,NA,34,4,18,NA
+DNRLZ,Mindfullness,Support workers,Post,1.437127538215834,7,40,0,6,Reliable decrease
+DNRLZ,Mindfullness,Support workers,Follow-up,5.118436382994904,3,25,2,12,No reliable decrease
+wB847,Psychosocial information,Medical,Baseline,0,NA,27,12,20,NA
+wB847,Psychosocial information,Medical,Post,1.6804509848657692,3,30,6,12,No reliable decrease
+wB847,Psychosocial information,Medical,Follow-up,4.382792607802875,1,32,0,6,Reliable decrease
+EKy0U,Psychosocial information,Medical,Baseline,0,NA,28,10,18,NA
+EKy0U,Psychosocial information,Medical,Post,1.4282177351889878,1,16,2,12,No reliable decrease
+EKy0U,Psychosocial information,Medical,Follow-up,4.8708825766217965,3,13,2,4,Reliable decrease
+YXVe8,Mindfullness,Medical,Baseline,0,NA,54,36,34,NA
+YXVe8,Mindfullness,Medical,Post,1.1880553654270287,4,45,28,32,Reliable decrease
+YXVe8,Mindfullness,Medical,Follow-up,5.105803102897559,4,39,34,42,Reliable decrease
+lHGO6,Psychosocial information,Management,Baseline,0,NA,33,8,20,NA
+lHGO6,Psychosocial information,Management,Post,1.2078043957715416,5,36,0,10,Reliable decrease
+lHGO6,Psychosocial information,Management,Follow-up,4.905464293862651,4,26,0,10,Reliable decrease
+0kXbv,Psychosocial information,Support workers,Baseline,0,NA,38,6,20,NA
+0kXbv,Psychosocial information,Support workers,Post,1.254550155905392,4,33,6,20,No reliable decrease
+0kXbv,Psychosocial information,Support workers,Follow-up,4.846225948741349,0,35,0,12,No reliable decrease
+f9vdA,Psychosocial information,Medical,Baseline,0,NA,6,4,20,NA
+f9vdA,Psychosocial information,Medical,Post,1.4198167161000836,0,8,10,32,No reliable decrease
+f9vdA,Psychosocial information,Medical,Follow-up,4.484074834588181,0,7,26,38,No reliable decrease
+VqYbA,Psychosocial information,Medical,Baseline,0,NA,35,12,16,NA
+VqYbA,Psychosocial information,Medical,Post,1.380310289755875,1,27,10,30,Reliable decrease
+VqYbA,Psychosocial information,Medical,Follow-up,4.183037493345502,0,17,10,30,No reliable decrease
+WyP91,Psychosocial information,Medical,Baseline,0,NA,26,4,26,NA
+WyP91,Psychosocial information,Medical,Post,1.3669685907673588,0,27,4,12,Reliable decrease
+WyP91,Psychosocial information,Medical,Follow-up,4.285622100539965,0,29,10,20,No reliable decrease
+tSZqs,Psychosocial information,Medical,Baseline,0,NA,51,16,24,NA
+tSZqs,Psychosocial information,Medical,Post,1.3243064111339264,3,38,6,16,No reliable decrease
+tSZqs,Psychosocial information,Medical,Follow-up,4.249943341698988,2,14,6,12,Reliable decrease
+He4YI,Psychosocial information,Support workers,Baseline,0,NA,18,6,16,NA
+He4YI,Psychosocial information,Support workers,Post,1.3268651608487338,4,14,12,20,No reliable decrease
+He4YI,Psychosocial information,Support workers,Follow-up,6.804618221918017,0,25,4,22,No reliable decrease
+AFrub,Mindfullness,Medical,Baseline,0,NA,15,8,16,NA
+AFrub,Mindfullness,Medical,Post,1.5387531371206935,3,23,10,16,No reliable decrease
+AFrub,Mindfullness,Medical,Follow-up,4.5843592668644,1,33,12,18,No reliable decrease
+4dWCz,Mindfullness,Support workers,Baseline,0,NA,35,12,18,NA
+4dWCz,Mindfullness,Support workers,Post,1.3211510381017568,4,30,16,18,No reliable decrease
+4dWCz,Mindfullness,Support workers,Follow-up,4.37704540269222,2,44,10,22,No reliable decrease
+AkMiH,Mindfullness,Support workers,Baseline,0,NA,35,4,22,NA
+AkMiH,Mindfullness,Support workers,Post,1.395302304357746,3,31,2,14,No reliable decrease
+AkMiH,Mindfullness,Support workers,Follow-up,4.1121123279336835,0,26,0,18,No reliable decrease
+7Os61,Mindfullness,Medical,Baseline,0,NA,46,18,38,NA
+7Os61,Mindfullness,Medical,Post,1.2568374020838087,6,31,20,28,Reliable decrease
+7Os61,Mindfullness,Medical,Follow-up,4.49079321621416,2,28,2,18,Reliable decrease
+e8Ega,Psychosocial information,Medical,Baseline,0,NA,22,4,18,NA
+e8Ega,Psychosocial information,Medical,Post,1.3536516084873373,3,24,4,14,No reliable decrease
+e8Ega,Psychosocial information,Medical,Follow-up,4.814207924557,3,9,6,14,No reliable decrease
+TUclE,Psychosocial information,Support workers,Baseline,0,NA,51,10,16,NA
+TUclE,Psychosocial information,Support workers,Post,1.3218149669176362,0,38,4,12,No reliable decrease
+TUclE,Psychosocial information,Support workers,Follow-up,5.165555175298501,0,39,8,12,Reliable decrease
+GM3ss,Psychosocial information,Support workers,Baseline,0,NA,22,2,24,NA
+GM3ss,Psychosocial information,Support workers,Post,1.8718396836261313,0,12,4,14,Reliable decrease
+GM3ss,Psychosocial information,Support workers,Follow-up,4.181432048064492,0,9,2,16,Reliable decrease
+ryZK1,Mindfullness,Medical,Baseline,0,NA,26,12,16,NA
+ryZK1,Mindfullness,Medical,Post,1.411569320860902,1,20,2,8,No reliable decrease
+ryZK1,Mindfullness,Medical,Follow-up,4.610602707430223,0,31,2,12,No reliable decrease
+2lpd7,Mindfullness,Medical,Baseline,0,NA,27,4,18,NA
+2lpd7,Mindfullness,Medical,Post,1.1928564909879078,7,36,14,34,No reliable decrease
+2lpd7,Mindfullness,Medical,Follow-up,4.152578903338657,1,20,2,26,No reliable decrease
+lB91w,Psychosocial information,Medical,Baseline,0,NA,43,8,16,NA
+lB91w,Psychosocial information,Medical,Post,1.394182447334398,2,45,12,18,No reliable decrease
+lB91w,Psychosocial information,Medical,Follow-up,4.705574568408244,1,25,2,16,No reliable decrease
+lfy98,Mindfullness,Medical,Baseline,0,NA,40,4,26,NA
+lfy98,Mindfullness,Medical,Post,1.9170066164727355,0,31,6,20,No reliable decrease
+lfy98,Mindfullness,Medical,Follow-up,4.843773290744544,0,32,0,14,Reliable decrease
+qjtJo,Psychosocial information,Medical,Baseline,0,NA,33,16,18,NA
+qjtJo,Psychosocial information,Medical,Post,1.5280348315461252,7,21,6,14,No reliable decrease
+qjtJo,Psychosocial information,Medical,Follow-up,4.218958095672675,1,41,16,24,No reliable decrease
+l2g9z,Psychosocial information,Support workers,Baseline,0,NA,18,14,22,NA
+l2g9z,Psychosocial information,Support workers,Post,1.6536713818541333,1,12,26,24,No reliable decrease
+l2g9z,Psychosocial information,Support workers,Follow-up,5.1728317742794125,0,40,12,14,No reliable decrease
+YadX0,Psychosocial information,Medical,Baseline,0,NA,27,40,38,NA
+YadX0,Psychosocial information,Medical,Post,1.8902235911476157,6,27,36,36,No reliable decrease
+YadX0,Psychosocial information,Medical,Follow-up,4.382792607802875,1,25,28,40,No reliable decrease
+gtR6P,Mindfullness,Support workers,Baseline,0,NA,12,12,22,NA
+gtR6P,Mindfullness,Support workers,Post,1.3893851243440565,7,8,2,8,Reliable decrease
+gtR6P,Mindfullness,Support workers,Follow-up,4.258748574036049,2,1,2,12,Reliable decrease
+uIhtY,Psychosocial information,Support workers,Baseline,0,NA,40,10,16,NA
+uIhtY,Psychosocial information,Support workers,Post,1.692427941288311,3,31,18,14,No reliable decrease
+uIhtY,Psychosocial information,Support workers,Follow-up,5.327745455928207,4,46,14,16,No reliable decrease
+aoBXj,Psychosocial information,Medical,Baseline,0,NA,36,16,20,NA
+aoBXj,Psychosocial information,Medical,Post,1.5941641949958172,4,42,10,16,No reliable decrease
+aoBXj,Psychosocial information,Medical,Follow-up,4.362888432580425,2,29,18,18,No reliable decrease
+mwzxj,Mindfullness,Medical,Baseline,0,NA,49,10,16,NA
+mwzxj,Mindfullness,Medical,Post,1.2990999315537304,5,34,2,6,Reliable decrease
+mwzxj,Mindfullness,Medical,Follow-up,4.669423530306487,2,40,4,14,No reliable decrease
+CWuCs,Psychosocial information,Medical,Baseline,0,NA,45,20,18,NA
+CWuCs,Psychosocial information,Medical,Post,1.2360844931173474,3,47,16,24,Reliable decrease
+CWuCs,Psychosocial information,Medical,Follow-up,5.368236367784623,1,33,42,38,No reliable decrease
+YLE7O,Psychosocial information,Medical,Baseline,0,NA,35,22,32,NA
+YLE7O,Psychosocial information,Medical,Post,2.0875553274013234,2,30,12,30,No reliable decrease
+YLE7O,Psychosocial information,Medical,Follow-up,4.114774507567115,1,31,22,28,No reliable decrease
+sGblx,Mindfullness,Support workers,Baseline,0,NA,25,10,22,NA
+sGblx,Mindfullness,Support workers,Post,2.086248764164575,2,30,4,18,Reliable decrease
+sGblx,Mindfullness,Support workers,Follow-up,4.246009582477755,4,18,0,12,Reliable decrease
+ckVvB,Mindfullness,Support workers,Baseline,0,NA,25,12,16,NA
+ckVvB,Mindfullness,Support workers,Post,1.4929078256901664,2,23,14,12,No reliable decrease
+ckVvB,Mindfullness,Support workers,Follow-up,4.435403072476994,0,31,2,14,Reliable decrease
+oE7KA,Psychosocial information,Medical,Baseline,0,NA,20,10,16,NA
+oE7KA,Psychosocial information,Medical,Post,1.4096687961061678,0,18,10,12,No reliable decrease
+oE7KA,Psychosocial information,Medical,Follow-up,5.074886683397977,1,31,2,4,No reliable decrease
+awq7E,Psychosocial information,Medical,Baseline,0,NA,45,10,26,NA
+awq7E,Psychosocial information,Medical,Post,1.8857015742642027,3,42,8,18,No reliable decrease
+awq7E,Psychosocial information,Medical,Follow-up,4.152817704768424,4,43,14,18,No reliable decrease
+JaaXC,Psychosocial information,Support workers,Baseline,0,NA,27,10,16,NA
+JaaXC,Psychosocial information,Support workers,Post,1.4375249068370217,4,41,8,20,No reliable decrease
+JaaXC,Psychosocial information,Support workers,Follow-up,4.7949596927523,2,30,14,24,No reliable decrease
+Xsjly,Mindfullness,Medical,Baseline,0,NA,32,2,18,NA
+Xsjly,Mindfullness,Medical,Post,1.1880675336527493,7,35,16,26,No reliable decrease
+Xsjly,Mindfullness,Medical,Follow-up,4.1354677161761355,3,50,12,30,No reliable decrease
+l9YxD,Mindfullness,Support workers,Baseline,0,NA,16,12,20,NA
+l9YxD,Mindfullness,Support workers,Post,1.18494752452658,6,21,6,14,No reliable decrease
+l9YxD,Mindfullness,Support workers,Follow-up,4.148190356681116,5,20,16,26,No reliable decrease
+afWQk,Psychosocial information,Support workers,Baseline,0,NA,41,20,20,NA
+afWQk,Psychosocial information,Support workers,Post,1.5830884477907066,3,32,14,16,No reliable decrease
+afWQk,Psychosocial information,Support workers,Follow-up,4.147572819225797,3,33,6,12,No reliable decrease
+NQxGe,Mindfullness,Medical,Baseline,0,NA,8,20,30,NA
+NQxGe,Mindfullness,Medical,Post,2.4462137805156288,1,1,0,6,Reliable decrease
+NQxGe,Mindfullness,Medical,Follow-up,5.201885314472584,2,8,2,8,Reliable decrease
+JdB5I,Psychosocial information,Management,Baseline,0,NA,31,14,16,NA
+JdB5I,Psychosocial information,Management,Post,1.4925207240094305,7,28,6,14,No reliable decrease
+JdB5I,Psychosocial information,Management,Follow-up,4.454054300707278,2,39,12,14,Reliable decrease
+0iPBx,Mindfullness,Support workers,Baseline,0,NA,46,16,32,NA
+0iPBx,Mindfullness,Support workers,Post,1.2333884706061298,7,31,12,20,Reliable decrease
+0iPBx,Mindfullness,Support workers,Follow-up,4.128478971784927,6,36,8,14,Reliable decrease
+Ezs6L,Psychosocial information,Medical,Baseline,0,NA,50,38,40,NA
+Ezs6L,Psychosocial information,Medical,Post,1.229261540801582,0,44,34,42,No reliable decrease
+Ezs6L,Psychosocial information,Medical,Follow-up,4.2245083276294775,0,47,34,38,No reliable decrease
+bqJRG,Mindfullness,Medical,Baseline,0,NA,23,8,20,NA
+bqJRG,Mindfullness,Medical,Post,1.162214617081147,7,21,14,26,No reliable decrease
+bqJRG,Mindfullness,Medical,Follow-up,4.416405810327782,2,17,2,4,Reliable decrease
+VUrk7,Psychosocial information,Management,Baseline,0,NA,30,6,16,NA
+VUrk7,Psychosocial information,Management,Post,1.5826450680660127,1,21,2,10,No reliable decrease
+VUrk7,Psychosocial information,Management,Follow-up,4.7126675032321845,0,0,2,4,Reliable decrease
+i8Evd,Mindfullness,Support workers,Baseline,0,NA,53,2,20,NA
+i8Evd,Mindfullness,Support workers,Post,1.651730169594646,3,48,2,20,No reliable decrease
+i8Evd,Mindfullness,Support workers,Follow-up,4.443944406418739,2,51,0,16,No reliable decrease
+kPpCK,Psychosocial information,Medical,Baseline,0,NA,21,0,16,NA
+kPpCK,Psychosocial information,Medical,Post,1.2846170811468554,3,22,0,20,No reliable decrease
+kPpCK,Psychosocial information,Medical,Follow-up,4.37787284204122,0,26,0,16,No reliable decrease
+eNKw4,Psychosocial information,Medical,Baseline,0,NA,26,14,20,NA
+eNKw4,Psychosocial information,Medical,Post,1.1996680355920601,2,34,16,22,No reliable decrease
+eNKw4,Psychosocial information,Medical,Follow-up,4.872276218723857,1,27,12,14,No reliable decrease
+5Ra8B,Mindfullness,Management,Baseline,0,NA,16,2,16,NA
+5Ra8B,Mindfullness,Management,Post,1.3536516084873373,3,13,2,8,No reliable decrease
+5Ra8B,Mindfullness,Management,Follow-up,4.603558445509164,1,4,0,8,No reliable decrease
+B2d41,Psychosocial information,Medical,Baseline,0,NA,40,14,24,NA
+B2d41,Psychosocial information,Medical,Post,1.4211711917256065,0,46,14,16,No reliable decrease
+B2d41,Psychosocial information,Medical,Follow-up,4.1472408548178565,0,37,10,10,No reliable decrease
+p0mFG,Mindfullness,Medical,Baseline,0,NA,22,8,18,NA
+p0mFG,Mindfullness,Medical,Post,1.4361563617005095,3,21,6,14,No reliable decrease
+p0mFG,Mindfullness,Medical,Follow-up,4.770092402464066,1,25,4,14,No reliable decrease
+5EH2o,Mindfullness,Medical,Baseline,0,NA,2,8,16,NA
+5EH2o,Mindfullness,Medical,Post,1.387544299946764,0,10,4,8,No reliable decrease
+5EH2o,Mindfullness,Medical,Follow-up,4.671212639744467,0,6,10,14,No reliable decrease
+9uDjD,Mindfullness,Support workers,Baseline,0,NA,40,10,20,NA
+9uDjD,Mindfullness,Support workers,Post,1.8562468628793065,5,29,10,10,No reliable decrease
+9uDjD,Mindfullness,Support workers,Follow-up,5.237821127081907,3,46,6,24,Reliable decrease
+PUxdE,Mindfullness,Medical,Baseline,0,NA,25,12,20,NA
+PUxdE,Mindfullness,Medical,Post,1.786150657844703,5,20,16,18,No reliable decrease
+PUxdE,Mindfullness,Medical,Follow-up,4.1455730473800285,6,33,26,18,No reliable decrease
+0yv22,Psychosocial information,Medical,Baseline,0,NA,32,10,26,NA
+0yv22,Psychosocial information,Medical,Post,1.5668248536010343,1,24,2,10,Reliable decrease
+0yv22,Psychosocial information,Medical,Follow-up,4.220152102821507,2,26,12,18,No reliable decrease
+lLUZg,Mindfullness,Support workers,Baseline,0,NA,53,18,20,NA
+lLUZg,Mindfullness,Support workers,Post,1.5332877024868812,0,52,10,18,Reliable decrease
+lLUZg,Mindfullness,Support workers,Follow-up,5.051242299794661,0,38,14,26,No reliable decrease
+LSc4H,Mindfullness,Medical,Baseline,0,NA,50,16,26,NA
+LSc4H,Mindfullness,Medical,Post,2.5088763404061147,3,31,16,16,Reliable decrease
+LSc4H,Mindfullness,Medical,Follow-up,5.03149136816488,3,31,12,24,Reliable decrease
+kFMsh,Psychosocial information,Support workers,Baseline,0,NA,19,4,18,NA
+kFMsh,Psychosocial information,Support workers,Post,1.7534337211955282,0,28,0,14,Reliable decrease
+kFMsh,Psychosocial information,Support workers,Follow-up,5.271833599513271,0,27,6,10,Reliable decrease
+Z78xn,Psychosocial information,Medical,Baseline,0,NA,42,10,28,NA
+Z78xn,Psychosocial information,Medical,Post,1.1901859456992927,0,42,20,28,No reliable decrease
+Z78xn,Psychosocial information,Medical,Follow-up,4.151348391512663,0,53,16,28,No reliable decrease
+vdJII,Mindfullness,Medical,Baseline,0,NA,45,10,30,NA
+vdJII,Mindfullness,Medical,Post,1.2041847288767207,6,21,4,10,Reliable decrease
+vdJII,Mindfullness,Medical,Follow-up,4.436448399117803,0,42,4,6,Reliable decrease
+mvzYp,Mindfullness,Support workers,Baseline,0,NA,40,12,22,NA
+mvzYp,Mindfullness,Support workers,Post,1.3530283671762111,4,33,8,14,No reliable decrease
+mvzYp,Mindfullness,Support workers,Follow-up,4.429974903034451,1,23,12,16,Reliable decrease
+kLn3b,Mindfullness,Management,Baseline,0,NA,47,22,30,NA
+kLn3b,Mindfullness,Management,Post,1.2273066392881589,1,49,18,30,No reliable decrease
+kLn3b,Mindfullness,Management,Follow-up,4.15746824853601,0,29,24,28,No reliable decrease
+EWEJ5,Psychosocial information,Support workers,Baseline,0,NA,14,16,26,NA
+EWEJ5,Psychosocial information,Support workers,Post,1.3589238725378356,6,27,24,24,No reliable decrease
+EWEJ5,Psychosocial information,Support workers,Follow-up,4.121263974446726,4,11,8,16,Reliable decrease
+iodCN,Mindfullness,Support workers,Baseline,0,NA,20,10,16,NA
+iodCN,Mindfullness,Support workers,Post,1.8815347174690091,3,31,6,10,Reliable decrease
+iodCN,Mindfullness,Support workers,Follow-up,4.352203969883641,1,16,0,8,Reliable decrease
+XieVv,Mindfullness,Support workers,Baseline,0,NA,33,6,18,NA
+XieVv,Mindfullness,Support workers,Post,1.434013613202525,0,38,10,22,No reliable decrease
+XieVv,Mindfullness,Support workers,Follow-up,4.252103201764393,0,28,6,14,No reliable decrease
+6JTGB,Mindfullness,Support workers,Baseline,0,NA,26,12,20,NA
+6JTGB,Mindfullness,Support workers,Post,1.415290516389079,5,27,12,12,No reliable decrease
+6JTGB,Mindfullness,Support workers,Follow-up,4.478814358506351,0,24,2,18,No reliable decrease
+kzS7R,Mindfullness,Medical,Baseline,0,NA,8,4,20,NA
+kzS7R,Mindfullness,Medical,Post,1.3106707734428473,5,17,4,10,Reliable decrease
+kzS7R,Mindfullness,Medical,Follow-up,4.381864020077573,3,7,10,14,No reliable decrease
+tVWSC,Psychosocial information,Support workers,Baseline,0,NA,15,0,20,NA
+tVWSC,Psychosocial information,Support workers,Post,1.7762156818008974,3,15,0,10,No reliable decrease
+tVWSC,Psychosocial information,Support workers,Follow-up,4.1455730473800285,0,25,2,6,No reliable decrease
+YTQzn,Psychosocial information,Medical,Baseline,0,NA,33,18,24,NA
+YTQzn,Psychosocial information,Medical,Post,1.5074074074074073,2,34,2,20,No reliable decrease
+YTQzn,Psychosocial information,Medical,Follow-up,4.911269298045479,3,28,10,16,No reliable decrease
+6Rksa,Mindfullness,Medical,Baseline,0,NA,8,0,16,NA
+6Rksa,Mindfullness,Medical,Post,1.2923009354323522,3,6,4,8,No reliable decrease
+6Rksa,Mindfullness,Medical,Follow-up,4.193220396988364,2,7,0,12,No reliable decrease
+iY1yc,Mindfullness,Medical,Baseline,0,NA,20,14,20,NA
+iY1yc,Mindfullness,Medical,Post,1.5181458666058256,2,21,0,12,No reliable decrease
+iY1yc,Mindfullness,Medical,Follow-up,4.644423530306487,0,25,8,2,No reliable decrease
+SFNVE,Mindfullness,Support workers,Baseline,0,NA,43,14,20,NA
+SFNVE,Mindfullness,Support workers,Post,1.228451973534109,5,37,10,10,Reliable decrease
+SFNVE,Mindfullness,Support workers,Follow-up,4.372746976956423,4,28,4,24,No reliable decrease
+xT0NJ,Mindfullness,Medical,Baseline,0,NA,37,18,18,NA
+xT0NJ,Mindfullness,Medical,Post,1.8404517453798768,7,33,14,10,No reliable decrease
+xT0NJ,Mindfullness,Medical,Follow-up,4.530193931097422,3,33,16,24,No reliable decrease
+Geajy,Psychosocial information,Medical,Baseline,0,NA,35,12,22,NA
+Geajy,Psychosocial information,Medical,Post,1.3943315080994751,0,35,30,36,No reliable decrease
+Geajy,Psychosocial information,Medical,Follow-up,4.158196060536923,0,37,22,30,No reliable decrease
+FmTwK,Psychosocial information,Medical,Baseline,0,NA,29,4,22,NA
+FmTwK,Psychosocial information,Medical,Post,1.9500159707962583,5,26,8,14,No reliable decrease
+FmTwK,Psychosocial information,Medical,Follow-up,5.280618678226481,4,26,4,24,Reliable decrease
+NYAsH,Mindfullness,Medical,Baseline,0,NA,39,10,22,NA
+NYAsH,Mindfullness,Medical,Post,1.545055897786904,3,28,2,14,No reliable decrease
+NYAsH,Mindfullness,Medical,Follow-up,4.958157274317439,4,31,4,10,Reliable decrease
+VeLin,Mindfullness,Medical,Baseline,0,NA,14,10,24,NA
+VeLin,Mindfullness,Medical,Post,1.2955179101072325,7,6,0,8,Reliable decrease
+VeLin,Mindfullness,Medical,Follow-up,4.486820670773443,5,8,0,4,Reliable decrease
+XXjZ7,Psychosocial information,Medical,Baseline,0,NA,37,20,26,NA
+XXjZ7,Psychosocial information,Medical,Post,1.3507624153928055,3,28,18,22,No reliable decrease
+XXjZ7,Psychosocial information,Medical,Follow-up,4.661008821963647,1,32,16,22,No reliable decrease
+c1IEL,Mindfullness,Medical,Baseline,0,NA,28,16,24,NA
+c1IEL,Mindfullness,Medical,Post,1.7830606890257814,2,24,12,20,Reliable decrease
+c1IEL,Mindfullness,Medical,Follow-up,4.185214845235379,3,23,14,16,No reliable decrease
+5ncgj,Psychosocial information,Support workers,Baseline,0,NA,49,12,20,NA
+5ncgj,Psychosocial information,Support workers,Post,1.6641295916039243,0,51,12,12,No reliable decrease
+5ncgj,Psychosocial information,Support workers,Follow-up,4.359567267472811,0,41,24,18,No reliable decrease
+SYIxa,Psychosocial information,Medical,Baseline,0,NA,30,8,20,NA
+SYIxa,Psychosocial information,Medical,Post,17.23013308996882,1,49,0,10,Reliable decrease
+SYIxa,Psychosocial information,Medical,Follow-up,5.308425735797399,5,46,16,28,Reliable decrease
+ooMiE,Mindfullness,Medical,Baseline,0,NA,13,8,22,NA
+ooMiE,Mindfullness,Medical,Post,1.1597672826830938,7,18,8,10,Reliable decrease
+ooMiE,Mindfullness,Medical,Follow-up,4.118094912160621,5,14,0,4,Reliable decrease
+0HVUT,Mindfullness,Support workers,Baseline,0,NA,41,20,20,NA
+0HVUT,Mindfullness,Support workers,Post,1.302887291809263,1,40,12,18,No reliable decrease
+0HVUT,Mindfullness,Support workers,Follow-up,5.204691611529394,4,25,18,14,Reliable decrease
+aa7Rl,Psychosocial information,Medical,Baseline,0,NA,25,24,26,NA
+aa7Rl,Psychosocial information,Medical,Post,2.11238345121302,3,35,28,32,No reliable decrease
+aa7Rl,Psychosocial information,Medical,Follow-up,5.280618678226481,1,39,42,38,No reliable decrease
+Hgkyq,Psychosocial information,Medical,Baseline,0,NA,27,18,20,NA
+Hgkyq,Psychosocial information,Medical,Post,1.1903996501635106,3,26,10,16,No reliable decrease
+Hgkyq,Psychosocial information,Medical,Follow-up,5.044482470149822,0,32,10,18,No reliable decrease
+H7V4F,Mindfullness,Medical,Baseline,0,NA,26,6,20,NA
+H7V4F,Mindfullness,Medical,Post,1.1928355768499506,6,10,6,14,No reliable decrease
+H7V4F,Mindfullness,Medical,Follow-up,4.1739660810708035,4,37,0,18,No reliable decrease
+8DXNT,Mindfullness,Support workers,Baseline,0,NA,42,16,22,NA
+8DXNT,Mindfullness,Support workers,Post,1.7305194311354475,4,33,10,14,No reliable decrease
+8DXNT,Mindfullness,Support workers,Follow-up,5.362378507871321,2,34,20,18,Reliable decrease
+XgmhC,Mindfullness,Support workers,Baseline,0,NA,14,8,26,NA
+XgmhC,Mindfullness,Support workers,Post,1.2774937257586128,4,17,2,16,No reliable decrease
+XgmhC,Mindfullness,Support workers,Follow-up,4.146496311506579,0,10,4,20,Reliable decrease
+iXTRE,Psychosocial information,Medical,Baseline,0,NA,26,14,16,NA
+iXTRE,Psychosocial information,Medical,Post,1.1815879534565366,0,23,12,10,No reliable decrease
+iXTRE,Psychosocial information,Medical,Follow-up,4.495494714426953,0,21,4,4,Reliable decrease
+qJfbS,Psychosocial information,Medical,Baseline,0,NA,34,12,24,NA
+qJfbS,Psychosocial information,Medical,Post,1.4245052855730473,2,10,2,12,Reliable decrease
+qJfbS,Psychosocial information,Medical,Follow-up,4.748247395239182,0,22,8,20,No reliable decrease
+nMJqc,Mindfullness,Support workers,Baseline,0,NA,46,18,20,NA
+nMJqc,Mindfullness,Support workers,Post,1.4189291961365884,6,44,4,6,Reliable decrease
+nMJqc,Mindfullness,Support workers,Follow-up,4.497248079701879,5,38,6,10,Reliable decrease
+yJ9eq,Psychosocial information,Support workers,Baseline,0,NA,34,4,20,NA
+yJ9eq,Psychosocial information,Support workers,Post,2.116073845919842,4,15,4,8,Reliable decrease
+yJ9eq,Psychosocial information,Support workers,Follow-up,4.599996577686516,2,34,10,16,No reliable decrease
+byTFN,Mindfullness,Support workers,Baseline,0,NA,53,16,24,NA
+byTFN,Mindfullness,Support workers,Post,1.1622073921971252,6,32,20,22,No reliable decrease
+byTFN,Mindfullness,Support workers,Follow-up,4.1822610084417065,4,28,10,20,Reliable decrease
+SZSJ2,Psychosocial information,Medical,Baseline,0,NA,35,18,30,NA
+SZSJ2,Psychosocial information,Medical,Post,1.2602030572667122,0,25,12,22,No reliable decrease
+SZSJ2,Psychosocial information,Medical,Follow-up,4.273792303597232,1,20,14,24,No reliable decrease
+iSknn,Psychosocial information,Medical,Baseline,0,NA,16,20,20,NA
+iSknn,Psychosocial information,Medical,Post,2.348696859076736,3,29,8,12,No reliable decrease
+iSknn,Psychosocial information,Medical,Follow-up,4.11904441402388,3,24,4,18,No reliable decrease
+U1wPT,Psychosocial information,Medical,Baseline,0,NA,41,14,24,NA
+U1wPT,Psychosocial information,Medical,Post,1.5918263746292494,1,29,12,22,No reliable decrease
+U1wPT,Psychosocial information,Medical,Follow-up,4.1816761730930105,1,24,10,20,No reliable decrease
+iEMcT,Psychosocial information,Medical,Baseline,0,NA,49,12,18,NA
+iEMcT,Psychosocial information,Medical,Post,1.451314548634877,6,44,10,18,No reliable decrease
+iEMcT,Psychosocial information,Medical,Follow-up,4.252468628793064,1,49,14,18,No reliable decrease
+Y3CUm,Mindfullness,Medical,Baseline,0,NA,24,18,16,NA
+Y3CUm,Mindfullness,Medical,Post,1.2310221309605294,4,30,14,12,No reliable decrease
+Y3CUm,Mindfullness,Medical,Follow-up,4.639085101528633,1,26,10,24,No reliable decrease
+krdyK,Mindfullness,Medical,Baseline,0,NA,32,26,22,NA
+krdyK,Mindfullness,Medical,Post,1.8806909270666972,0,37,24,22,No reliable decrease
+krdyK,Mindfullness,Medical,Follow-up,5.201778462240474,0,32,18,20,Reliable decrease
+CH0Di,Psychosocial information,Medical,Baseline,0,NA,37,8,30,NA
+CH0Di,Psychosocial information,Medical,Post,1.3968503308236369,3,30,6,14,Reliable decrease
+CH0Di,Psychosocial information,Medical,Follow-up,4.121494790478363,1,18,4,10,Reliable decrease
+YkgbQ,Psychosocial information,Support workers,Baseline,0,NA,20,8,16,NA
+YkgbQ,Psychosocial information,Support workers,Post,1.4167256065100007,2,19,6,16,No reliable decrease
+YkgbQ,Psychosocial information,Support workers,Follow-up,5.062644687808959,0,26,10,16,No reliable decrease
+OY0hI,Mindfullness,Medical,Baseline,0,NA,17,18,20,NA
+OY0hI,Mindfullness,Medical,Post,1.3208380865465055,6,15,18,16,No reliable decrease
+OY0hI,Mindfullness,Medical,Follow-up,4.209995817172408,7,15,26,26,Reliable decrease
+IQeMl,Psychosocial information,Medical,Baseline,0,NA,0,6,22,NA
+IQeMl,Psychosocial information,Medical,Post,1.4258943645904631,5,0,10,30,No reliable decrease
+IQeMl,Psychosocial information,Medical,Follow-up,4.650451365122823,0,0,4,16,No reliable decrease
+m5tiF,Psychosocial information,Medical,Baseline,0,NA,34,20,28,NA
+m5tiF,Psychosocial information,Medical,Post,1.6896277283443608,0,35,18,28,No reliable decrease
+m5tiF,Psychosocial information,Medical,Follow-up,4.441971252566735,0,28,14,26,No reliable decrease
+gkyvc,Psychosocial information,Management,Baseline,0,NA,32,16,24,NA
+gkyvc,Psychosocial information,Management,Post,1.3605821735493193,4,38,10,10,No reliable decrease
+gkyvc,Psychosocial information,Management,Follow-up,4.86309985550232,3,39,16,12,Reliable decrease
+emXUR,Mindfullness,Medical,Baseline,0,NA,25,16,18,NA
+emXUR,Mindfullness,Medical,Post,1.231101604684767,5,20,16,14,No reliable decrease
+emXUR,Mindfullness,Medical,Follow-up,4.724913681648794,4,9,12,14,No reliable decrease
+sPLgr,Mindfullness,Medical,Baseline,0,NA,10,8,16,NA
+sPLgr,Mindfullness,Medical,Post,1.2969279032626055,3,8,4,12,No reliable decrease
+sPLgr,Mindfullness,Medical,Follow-up,4.254837630238041,1,10,6,12,No reliable decrease
+Dswvr,Psychosocial information,Medical,Baseline,0,NA,20,10,28,NA
+Dswvr,Psychosocial information,Medical,Post,1.1609320100387863,3,24,10,28,No reliable decrease
+Dswvr,Psychosocial information,Medical,Follow-up,4.27735417141988,1,28,18,40,No reliable decrease
+pVYkW,Mindfullness,Management,Baseline,0,NA,31,16,22,NA
+pVYkW,Mindfullness,Management,Post,2.237589930793216,1,34,16,20,No reliable decrease
+pVYkW,Mindfullness,Management,Follow-up,4.345906913073238,0,30,12,18,No reliable decrease
+hQSKP,Mindfullness,Support workers,Baseline,0,NA,38,2,16,NA
+hQSKP,Mindfullness,Support workers,Post,1.9486002737850787,3,21,0,6,Reliable decrease
+hQSKP,Mindfullness,Support workers,Follow-up,5.064646360939996,0,22,4,12,No reliable decrease
+SoVKh,Mindfullness,Medical,Baseline,0,NA,11,12,24,NA
+SoVKh,Mindfullness,Medical,Post,1.882683854285497,2,4,0,8,Reliable decrease
+SoVKh,Mindfullness,Medical,Follow-up,6.252773214693133,0,2,4,14,Reliable decrease
+ctyDd,Psychosocial information,Medical,Baseline,0,NA,36,12,28,NA
+ctyDd,Psychosocial information,Medical,Post,1.1601832838999164,4,33,8,26,No reliable decrease
+ctyDd,Psychosocial information,Medical,Follow-up,4.347547342003194,5,29,8,20,No reliable decrease
+kZFsV,Mindfullness,Medical,Baseline,0,NA,22,12,22,NA
+kZFsV,Mindfullness,Medical,Post,2.2126602783481633,0,41,14,22,No reliable decrease
+kZFsV,Mindfullness,Medical,Follow-up,4.7388748193779,1,50,14,20,No reliable decrease
+dkd7c,Mindfullness,Support workers,Baseline,0,NA,20,10,24,NA
+dkd7c,Mindfullness,Support workers,Post,1.1996395163130276,3,15,8,18,No reliable decrease
+dkd7c,Mindfullness,Support workers,Follow-up,4.569124648262226,2,17,0,8,Reliable decrease
+JdHpy,Mindfullness,Support workers,Baseline,0,NA,17,6,16,NA
+JdHpy,Mindfullness,Support workers,Post,1.4302635181382615,4,12,0,0,No reliable decrease
+JdHpy,Mindfullness,Support workers,Follow-up,4.51713324207164,0,9,0,4,No reliable decrease
+BYvKN,Mindfullness,Support workers,Baseline,0,NA,49,4,18,NA
+BYvKN,Mindfullness,Support workers,Post,1.1593277055289375,6,45,8,18,No reliable decrease
+BYvKN,Mindfullness,Support workers,Follow-up,4.165752148452354,7,47,6,12,No reliable decrease
+hrk5N,Mindfullness,Medical,Baseline,0,NA,40,6,16,NA
+hrk5N,Mindfullness,Medical,Post,1.156442695261997,6,31,12,10,No reliable decrease
+hrk5N,Mindfullness,Medical,Follow-up,4.261498212791848,2,29,8,10,No reliable decrease
+ulzDu,Psychosocial information,Medical,Baseline,0,NA,28,24,20,NA
+ulzDu,Psychosocial information,Medical,Post,1.6873629173321165,6,13,18,16,No reliable decrease
+ulzDu,Psychosocial information,Medical,Follow-up,4.234807970187847,5,25,24,18,No reliable decrease
+opheq,Psychosocial information,Medical,Baseline,0,NA,24,12,18,NA
+opheq,Psychosocial information,Medical,Post,1.517214236824093,3,23,0,8,No reliable decrease
+opheq,Psychosocial information,Medical,Follow-up,5.1909187010419044,1,31,12,8,Reliable decrease
+UFd4n,Mindfullness,Support workers,Baseline,0,NA,35,6,22,NA
+UFd4n,Mindfullness,Support workers,Post,1.4247098638679747,4,30,0,24,No reliable decrease
+UFd4n,Mindfullness,Support workers,Follow-up,4.343817780819834,4,27,6,18,No reliable decrease
+XlFqy,Psychosocial information,Medical,Baseline,0,NA,47,14,24,NA
+XlFqy,Psychosocial information,Medical,Post,1.2966894820898929,1,41,10,12,No reliable decrease
+XlFqy,Psychosocial information,Medical,Follow-up,4.443944406418739,0,25,14,14,No reliable decrease
+BsGph,Mindfullness,Medical,Baseline,0,NA,21,12,22,NA
+BsGph,Mindfullness,Medical,Post,1.250185565442239,3,24,16,26,No reliable decrease
+BsGph,Mindfullness,Medical,Follow-up,4.7403437523766065,1,18,14,22,Reliable decrease
+DtGCm,Mindfullness,Support workers,Baseline,0,NA,16,12,28,NA
+DtGCm,Mindfullness,Support workers,Post,1.214673359190813,4,30,12,26,No reliable decrease
+DtGCm,Mindfullness,Support workers,Follow-up,4.835430831241919,3,39,16,24,No reliable decrease
+tRwa9,Psychosocial information,Medical,Baseline,0,NA,19,8,20,NA
+tRwa9,Psychosocial information,Medical,Post,1.7594520495855197,0,23,26,24,No reliable decrease
+tRwa9,Psychosocial information,Medical,Follow-up,5.125577990721728,1,26,14,24,No reliable decrease
+IQec0,Psychosocial information,Medical,Baseline,0,NA,26,24,16,NA
+IQec0,Psychosocial information,Medical,Post,4.87236329758917,0,16,18,14,No reliable decrease
+IQec0,Psychosocial information,Medical,Follow-up,5.308425735797399,1,13,10,12,No reliable decrease
+xI5Zj,Mindfullness,Medical,Baseline,0,NA,27,24,16,NA
+xI5Zj,Mindfullness,Medical,Post,1.979234922807818,3,25,14,14,No reliable decrease
+xI5Zj,Mindfullness,Medical,Follow-up,4.228654270286714,1,25,22,22,No reliable decrease
+SS1XV,Mindfullness,Medical,Baseline,0,NA,36,18,28,NA
+SS1XV,Mindfullness,Medical,Post,1.6526553350064643,4,37,12,18,Reliable decrease
+SS1XV,Mindfullness,Medical,Follow-up,4.471746520647958,3,47,12,16,No reliable decrease
+wWUAA,Mindfullness,Support workers,Baseline,0,NA,21,6,20,NA
+wWUAA,Mindfullness,Support workers,Post,1.7826595178340559,1,27,6,8,No reliable decrease
+wWUAA,Mindfullness,Support workers,Follow-up,5.125577990721728,2,19,2,18,Reliable decrease
+1vMQZ,Mindfullness,Medical,Baseline,0,NA,14,12,24,NA
+1vMQZ,Mindfullness,Medical,Post,2.1101011483763026,4,16,8,22,No reliable decrease
+1vMQZ,Mindfullness,Medical,Follow-up,6.178723857327554,4,28,2,18,No reliable decrease
+tilhB,Mindfullness,Support workers,Baseline,0,NA,19,4,16,NA
+tilhB,Mindfullness,Support workers,Post,1.2919666894820898,5,31,0,10,No reliable decrease
+tilhB,Mindfullness,Support workers,Follow-up,4.144375617917713,0,16,4,16,No reliable decrease
+9zEFz,Psychosocial information,Support workers,Baseline,0,NA,34,12,20,NA
+9zEFz,Psychosocial information,Support workers,Post,1.3913651228230284,4,33,6,14,No reliable decrease
+9zEFz,Psychosocial information,Support workers,Follow-up,4.577543539432656,0,23,12,24,No reliable decrease
+x7EaW,Psychosocial information,Medical,Baseline,0,NA,32,22,32,NA
+x7EaW,Psychosocial information,Medical,Post,1.4143212411590236,2,30,16,24,No reliable decrease
+x7EaW,Psychosocial information,Medical,Follow-up,4.748216974674881,0,22,14,28,No reliable decrease
+fsBcV,Mindfullness,Support workers,Baseline,0,NA,40,8,16,NA
+fsBcV,Mindfullness,Support workers,Post,1.2866172332496768,5,31,8,16,No reliable decrease
+fsBcV,Mindfullness,Support workers,Follow-up,4.44479618221918,1,33,14,22,Reliable decrease
+DdtKH,Psychosocial information,Support workers,Baseline,0,NA,29,8,16,NA
+DdtKH,Psychosocial information,Support workers,Post,1.2866172332496768,4,23,8,14,No reliable decrease
+DdtKH,Psychosocial information,Support workers,Follow-up,4.121167389155069,4,23,6,14,No reliable decrease
+fD1KO,Psychosocial information,Support workers,Baseline,0,NA,27,12,30,NA
+fD1KO,Psychosocial information,Support workers,Post,1.5119723933378963,0,33,2,18,Reliable decrease
+fD1KO,Psychosocial information,Support workers,Follow-up,4.406819530002282,2,34,8,18,Reliable decrease
+tmJyZ,Mindfullness,Medical,Baseline,0,NA,22,8,16,NA
+tmJyZ,Mindfullness,Medical,Post,1.3316522168986236,4,21,10,16,No reliable decrease
+tmJyZ,Mindfullness,Medical,Follow-up,4.676774659669936,0,17,10,16,No reliable decrease
+6j8LP,Mindfullness,Medical,Baseline,0,NA,37,22,24,NA
+6j8LP,Mindfullness,Medical,Post,1.196876188303293,3,29,14,32,No reliable decrease
+6j8LP,Mindfullness,Medical,Follow-up,5.055533120389383,0,19,18,30,Reliable decrease
+AGbxc,Psychosocial information,Support workers,Baseline,0,NA,33,18,16,NA
+AGbxc,Psychosocial information,Support workers,Post,1.6465343372119552,2,19,28,28,No reliable decrease
+AGbxc,Psychosocial information,Support workers,Follow-up,4.505656703931858,3,12,18,38,No reliable decrease
+SdDfq,Psychosocial information,Medical,Baseline,0,NA,18,16,24,NA
+SdDfq,Psychosocial information,Medical,Post,1.1879428093391133,5,28,14,18,Reliable decrease
+SdDfq,Psychosocial information,Medical,Follow-up,4.958157274317439,2,22,8,24,No reliable decrease
+eDv34,Psychosocial information,Medical,Baseline,0,NA,27,14,32,NA
+eDv34,Psychosocial information,Medical,Post,1.3857563312799452,0,10,10,40,No reliable decrease
+eDv34,Psychosocial information,Medical,Follow-up,4.115816792151494,0,26,22,38,No reliable decrease
+tND2i,Psychosocial information,Support workers,Baseline,0,NA,38,6,18,NA
+tND2i,Psychosocial information,Support workers,Post,1.1638215833903718,0,32,4,20,No reliable decrease
+tND2i,Psychosocial information,Support workers,Follow-up,4.64895961670089,0,31,4,24,No reliable decrease
+7NMaA,Psychosocial information,Medical,Baseline,0,NA,36,22,30,NA
+7NMaA,Psychosocial information,Medical,Post,1.424182447334398,1,45,24,28,No reliable decrease
+7NMaA,Psychosocial information,Medical,Follow-up,7.945963571374249,1,40,28,42,No reliable decrease
+JntY2,Psychosocial information,Medical,Baseline,0,NA,37,16,16,NA
+JntY2,Psychosocial information,Medical,Post,1.232498669100312,0,36,26,22,No reliable decrease
+JntY2,Psychosocial information,Medical,Follow-up,4.878465662788044,4,40,12,20,No reliable decrease
+kyysf,Mindfullness,Support workers,Baseline,0,NA,19,8,16,NA
+kyysf,Mindfullness,Support workers,Post,1.2041847288767207,7,13,6,16,Reliable decrease
+kyysf,Mindfullness,Support workers,Follow-up,4.208343980530839,7,19,0,4,Reliable decrease
+gnf4u,Mindfullness,Medical,Baseline,0,NA,40,6,20,NA
+gnf4u,Mindfullness,Medical,Post,1.2645281009962734,4,39,2,18,No reliable decrease
+gnf4u,Mindfullness,Medical,Follow-up,4.254469161152939,1,34,2,14,No reliable decrease
+ssQ42,Psychosocial information,Medical,Baseline,0,NA,42,12,20,NA
+ssQ42,Psychosocial information,Medical,Post,1.3182550003802571,2,31,8,22,No reliable decrease
+ssQ42,Psychosocial information,Medical,Follow-up,4.147055289375618,3,32,8,22,No reliable decrease
+Su4Jm,Psychosocial information,Medical,Baseline,0,NA,24,8,28,NA
+Su4Jm,Psychosocial information,Medical,Post,1.183616244581337,1,29,4,30,Reliable decrease
+Su4Jm,Psychosocial information,Medical,Follow-up,4.530193931097422,0,12,4,26,Reliable decrease
+bWiB8,Mindfullness,Medical,Baseline,0,NA,15,16,18,NA
+bWiB8,Mindfullness,Medical,Post,2.0416073465662787,3,12,6,16,No reliable decrease
+bWiB8,Mindfullness,Medical,Follow-up,4.349734200319416,4,15,2,16,No reliable decrease
+nyK47,Mindfullness,Management,Baseline,0,NA,53,24,34,NA
+nyK47,Mindfullness,Management,Post,2.3345064263442086,3,54,26,34,No reliable decrease
+nyK47,Mindfullness,Management,Follow-up,4.440253631454864,4,54,26,40,No reliable decrease
+FZP0w,Mindfullness,Medical,Baseline,0,NA,9,6,16,NA
+FZP0w,Mindfullness,Medical,Post,1.1601779603011635,5,16,6,16,No reliable decrease
+FZP0w,Mindfullness,Medical,Follow-up,4.1203448931477675,1,8,14,22,No reliable decrease
+OALxi,Psychosocial information,Medical,Baseline,0,NA,31,4,20,NA
+OALxi,Psychosocial information,Medical,Post,1.5509871473115826,5,25,6,22,No reliable decrease
+OALxi,Psychosocial information,Medical,Follow-up,4.375903490759754,5,25,14,20,Reliable decrease
+8CBuL,Mindfullness,Medical,Baseline,0,NA,25,14,16,NA
+8CBuL,Mindfullness,Medical,Post,1.2926617993763785,4,13,8,14,No reliable decrease
+8CBuL,Mindfullness,Medical,Follow-up,4.834340634268766,3,12,8,12,No reliable decrease
+BOCyp,Mindfullness,Medical,Baseline,0,NA,20,6,16,NA
+BOCyp,Mindfullness,Medical,Post,1.4217872081527112,3,27,14,14,No reliable decrease
+BOCyp,Mindfullness,Medical,Follow-up,5.105336527492585,1,27,14,14,No reliable decrease
+Nk3lf,Psychosocial information,Medical,Baseline,0,NA,32,16,20,NA
+Nk3lf,Psychosocial information,Medical,Post,3.0008890409917104,0,37,22,30,No reliable decrease
+Nk3lf,Psychosocial information,Medical,Follow-up,5.631117575481025,0,31,26,28,No reliable decrease
+veKCo,Mindfullness,Medical,Baseline,0,NA,27,12,18,NA
+veKCo,Mindfullness,Medical,Post,1.3028062970568104,7,31,14,14,No reliable decrease
+veKCo,Mindfullness,Medical,Follow-up,4.312565214084722,5,36,10,14,No reliable decrease
+y9aCM,Psychosocial information,Support workers,Baseline,0,NA,25,6,16,NA
+y9aCM,Psychosocial information,Support workers,Post,1.2923811696706975,5,27,10,14,No reliable decrease
+y9aCM,Psychosocial information,Support workers,Follow-up,4.185721347630999,1,22,10,26,No reliable decrease
+y2un6,Psychosocial information,Support workers,Baseline,0,NA,38,26,36,NA
+y2un6,Psychosocial information,Support workers,Post,1.283760742261769,1,38,12,20,Reliable decrease
+y2un6,Psychosocial information,Support workers,Follow-up,4.276836261312647,1,38,20,28,No reliable decrease
+WznRs,Psychosocial information,Support workers,Baseline,0,NA,14,16,26,NA
+WznRs,Psychosocial information,Support workers,Post,1.4163354627728344,5,23,16,28,Reliable decrease
+WznRs,Psychosocial information,Support workers,Follow-up,4.15144193474789,2,38,10,16,Reliable decrease
+v8HKT,Psychosocial information,Support workers,Baseline,0,NA,9,6,16,NA
+v8HKT,Psychosocial information,Support workers,Post,2.2370571906608867,0,22,2,12,No reliable decrease
+v8HKT,Psychosocial information,Support workers,Follow-up,4.674521636626359,1,25,0,2,No reliable decrease
+zj4QB,Psychosocial information,Support workers,Baseline,0,NA,34,4,16,NA
+zj4QB,Psychosocial information,Support workers,Post,1.8827435546429385,1,24,2,10,No reliable decrease
+zj4QB,Psychosocial information,Support workers,Follow-up,5.229357365579132,0,28,6,8,No reliable decrease
+WGpX7,Psychosocial information,Medical,Baseline,0,NA,37,30,26,NA
+WGpX7,Psychosocial information,Medical,Post,1.156606966309225,4,29,20,34,No reliable decrease
+WGpX7,Psychosocial information,Medical,Follow-up,4.416759449387786,3,47,32,34,Reliable decrease
+B7scA,Mindfullness,Medical,Baseline,0,NA,24,14,18,NA
+B7scA,Mindfullness,Medical,Post,1.3154684766902427,7,20,4,12,No reliable decrease
+B7scA,Mindfullness,Medical,Follow-up,4.134066088675945,1,51,2,14,Reliable decrease
+0vndD,Psychosocial information,Medical,Baseline,0,NA,42,10,22,NA
+0vndD,Psychosocial information,Medical,Post,1.250185565442239,5,45,16,20,No reliable decrease
+0vndD,Psychosocial information,Medical,Follow-up,4.243188075138794,2,39,10,26,No reliable decrease
+WF5ja,Psychosocial information,Support workers,Baseline,0,NA,44,10,22,NA
+WF5ja,Psychosocial information,Support workers,Post,1.3934105255152482,5,41,18,18,No reliable decrease
+WF5ja,Psychosocial information,Support workers,Follow-up,4.366646893299871,2,50,22,30,No reliable decrease
+jhW2W,Psychosocial information,Medical,Baseline,0,NA,31,30,26,NA
+jhW2W,Psychosocial information,Medical,Post,1.4467396760209903,0,24,16,28,No reliable decrease
+jhW2W,Psychosocial information,Medical,Follow-up,4.220152102821507,0,29,30,40,No reliable decrease
+ildlY,Mindfullness,Medical,Baseline,0,NA,14,14,18,NA
+ildlY,Mindfullness,Medical,Post,2.1448254620123204,0,13,12,24,No reliable decrease
+ildlY,Mindfullness,Medical,Follow-up,5.3673796486424825,0,27,14,18,No reliable decrease
+Jnw3m,Psychosocial information,Medical,Baseline,0,NA,42,4,22,NA
+Jnw3m,Psychosocial information,Medical,Post,1.4305570765837707,1,44,10,14,No reliable decrease
+Jnw3m,Psychosocial information,Medical,Follow-up,5.520917940527797,2,43,4,14,No reliable decrease
+RFVmD,Mindfullness,Support workers,Baseline,0,NA,48,28,30,NA
+RFVmD,Mindfullness,Support workers,Post,1.7801703551600883,3,31,16,12,Reliable decrease
+RFVmD,Mindfullness,Support workers,Follow-up,4.294893528024945,4,29,4,8,Reliable decrease
+8c4DT,Mindfullness,Support workers,Baseline,0,NA,35,4,18,NA
+8c4DT,Mindfullness,Support workers,Post,1.843896874287018,0,38,0,14,No reliable decrease
+8c4DT,Mindfullness,Support workers,Follow-up,4.243500646436991,0,35,2,8,No reliable decrease
+usKgU,Mindfullness,Medical,Baseline,0,NA,27,6,18,NA
+usKgU,Mindfullness,Medical,Post,1.7511061677694122,3,36,4,10,No reliable decrease
+usKgU,Mindfullness,Medical,Follow-up,4.4031017567875885,3,31,2,8,No reliable decrease
+t2St3,Mindfullness,Support workers,Baseline,0,NA,44,14,26,NA
+t2St3,Mindfullness,Support workers,Post,1.2209327705528938,5,26,8,14,Reliable decrease
+t2St3,Mindfullness,Support workers,Follow-up,4.284455471899004,3,29,12,12,Reliable decrease
+VRvwQ,Psychosocial information,Medical,Baseline,0,NA,40,10,20,NA
+VRvwQ,Psychosocial information,Medical,Post,1.6208890409917105,0,38,2,14,No reliable decrease
+VRvwQ,Psychosocial information,Medical,Follow-up,4.814453570613735,0,34,4,14,No reliable decrease
+r1ymV,Psychosocial information,Medical,Baseline,0,NA,20,22,16,NA
+r1ymV,Psychosocial information,Medical,Post,1.3257327553426117,0,40,22,26,No reliable decrease
+r1ymV,Psychosocial information,Medical,Follow-up,5.130248688113165,0,32,28,28,No reliable decrease
+5dBG5,Psychosocial information,Medical,Baseline,0,NA,33,20,26,NA
+5dBG5,Psychosocial information,Medical,Post,1.8569229599209065,0,17,18,28,No reliable decrease
+5dBG5,Psychosocial information,Medical,Follow-up,4.513817400562781,1,13,26,30,No reliable decrease
+ayPUC,Psychosocial information,Medical,Baseline,0,NA,22,14,30,NA
+ayPUC,Psychosocial information,Medical,Post,2.1489075214845235,0,36,20,28,No reliable decrease
+ayPUC,Psychosocial information,Medical,Follow-up,4.674521636626359,1,37,10,22,No reliable decrease
+jWRJf,Mindfullness,Support workers,Baseline,0,NA,52,2,26,NA
+jWRJf,Mindfullness,Support workers,Post,1.3908958856186782,5,39,0,10,Reliable decrease
+jWRJf,Mindfullness,Support workers,Follow-up,5.051440033462621,1,50,0,14,Reliable decrease
+LGVu2,Mindfullness,Medical,Baseline,0,NA,29,28,26,NA
+LGVu2,Mindfullness,Medical,Post,1.4336941972773596,3,20,16,24,No reliable decrease
+LGVu2,Mindfullness,Medical,Follow-up,4.1589014373716635,2,22,20,20,No reliable decrease
+3GidQ,Mindfullness,Medical,Baseline,0,NA,32,20,20,NA
+3GidQ,Mindfullness,Medical,Post,1.2239877557228687,7,35,16,16,No reliable decrease
+3GidQ,Mindfullness,Medical,Follow-up,4.4390181762871705,5,23,16,14,No reliable decrease
+sf3Ao,Mindfullness,Medical,Baseline,0,NA,41,4,20,NA
+sf3Ao,Mindfullness,Medical,Post,1.3556924480949122,7,25,0,2,Reliable decrease
+sf3Ao,Mindfullness,Medical,Follow-up,4.1822610084417065,3,26,0,4,Reliable decrease
+CfyXv,Psychosocial information,Medical,Baseline,0,NA,38,10,18,NA
+CfyXv,Psychosocial information,Medical,Post,1.4285938094151647,2,43,6,10,No reliable decrease
+CfyXv,Psychosocial information,Medical,Follow-up,4.189935356300859,1,43,14,20,No reliable decrease
+7TlD3,Mindfullness,Medical,Baseline,0,NA,20,4,16,NA
+7TlD3,Mindfullness,Medical,Post,1.4749961974294623,0,16,6,18,No reliable decrease
+7TlD3,Mindfullness,Medical,Follow-up,7.945963571374249,0,25,0,6,Reliable decrease
+T3kvd,Mindfullness,Support workers,Baseline,0,NA,6,16,24,NA
+T3kvd,Mindfullness,Support workers,Post,2.530982964483991,0,6,26,30,No reliable decrease
+T3kvd,Mindfullness,Support workers,Follow-up,5.446205034603392,0,6,24,38,Reliable decrease
+WRlIB,Mindfullness,Medical,Baseline,0,NA,32,12,20,NA
+WRlIB,Mindfullness,Medical,Post,1.780201916495551,2,23,14,22,No reliable decrease
+WRlIB,Mindfullness,Medical,Follow-up,5.065606129743707,2,28,20,24,No reliable decrease
+RrPDH,Psychosocial information,Medical,Baseline,0,NA,39,4,16,NA
+RrPDH,Psychosocial information,Medical,Post,2.2376891778842496,1,13,0,12,No reliable decrease
+RrPDH,Psychosocial information,Medical,Follow-up,4.727934823940984,0,35,8,20,No reliable decrease
+RVWNn,Mindfullness,Support workers,Baseline,0,NA,26,12,16,NA
+RVWNn,Mindfullness,Support workers,Post,1.3591109590082897,7,16,8,8,No reliable decrease
+RVWNn,Mindfullness,Support workers,Follow-up,4.537617309301088,7,18,2,28,No reliable decrease
+RRXD9,Psychosocial information,Support workers,Baseline,0,NA,37,38,34,NA
+RRXD9,Psychosocial information,Support workers,Post,1.5281690622861055,5,30,10,10,Reliable decrease
+RRXD9,Psychosocial information,Support workers,Follow-up,5.00564985930489,7,41,32,28,No reliable decrease
+HM0mp,Mindfullness,Management,Baseline,0,NA,26,12,16,NA
+HM0mp,Mindfullness,Management,Post,1.3246467411970493,5,26,4,6,No reliable decrease
+HM0mp,Mindfullness,Management,Follow-up,4.405664689329987,7,9,8,8,No reliable decrease
+1I6iM,Mindfullness,Medical,Baseline,0,NA,36,10,20,NA
+1I6iM,Mindfullness,Medical,Post,1.817299794661191,1,32,2,14,No reliable decrease
+1I6iM,Mindfullness,Medical,Follow-up,4.611974294623165,0,36,10,14,No reliable decrease
+xPTdy,Mindfullness,Medical,Baseline,0,NA,46,14,26,NA
+xPTdy,Mindfullness,Medical,Post,1.2921629021218344,6,33,14,14,Reliable decrease
+xPTdy,Mindfullness,Medical,Follow-up,4.4088938322305875,7,41,10,16,Reliable decrease
+CBdAp,Mindfullness,Medical,Baseline,0,NA,41,16,24,NA
+CBdAp,Mindfullness,Medical,Post,1.7803015438436383,4,42,16,24,No reliable decrease
+CBdAp,Mindfullness,Medical,Follow-up,4.872796410373413,5,46,6,16,Reliable decrease
+AyXAf,Mindfullness,Support workers,Baseline,0,NA,20,16,18,NA
+AyXAf,Mindfullness,Support workers,Post,1.3005426268157274,7,13,20,18,No reliable decrease
+AyXAf,Mindfullness,Support workers,Follow-up,4.4056688721575785,7,17,16,16,Reliable decrease
+0legE,Mindfullness,Support workers,Baseline,0,NA,35,10,26,NA
+0legE,Mindfullness,Support workers,Post,1.6591128602935585,3,36,14,28,No reliable decrease
+0legE,Mindfullness,Support workers,Follow-up,5.492954217050726,5,31,22,28,Reliable decrease
+qq9ET,Psychosocial information,Support workers,Baseline,0,NA,17,6,20,NA
+qq9ET,Psychosocial information,Support workers,Post,1.411186782264811,5,21,2,18,No reliable decrease
+qq9ET,Psychosocial information,Support workers,Follow-up,4.615399650163511,2,24,0,10,Reliable decrease
+EIhNN,Psychosocial information,Medical,Baseline,0,NA,15,2,18,NA
+EIhNN,Psychosocial information,Medical,Post,1.7502338580880676,5,6,0,8,Reliable decrease
+EIhNN,Psychosocial information,Medical,Follow-up,5.064700737698685,1,7,0,8,Reliable decrease
+XYwpB,Psychosocial information,Support workers,Baseline,0,NA,31,14,20,NA
+XYwpB,Psychosocial information,Support workers,Post,1.220274165335767,2,26,10,16,No reliable decrease
+XYwpB,Psychosocial information,Support workers,Follow-up,4.373276294775268,1,31,8,20,No reliable decrease
+87IUo,Mindfullness,Support workers,Baseline,0,NA,52,14,22,NA
+87IUo,Mindfullness,Support workers,Post,1.188468324587421,0,44,10,24,No reliable decrease
+87IUo,Mindfullness,Support workers,Follow-up,4.905744543311278,0,49,4,14,No reliable decrease
+eq8G7,Mindfullness,Medical,Baseline,0,NA,41,4,16,NA
+eq8G7,Mindfullness,Medical,Post,1.7472081527112329,4,45,0,12,No reliable decrease
+eq8G7,Mindfullness,Medical,Follow-up,5.130248688113165,0,41,4,16,No reliable decrease
+WAolB,Mindfullness,Medical,Baseline,0,NA,48,20,18,NA
+WAolB,Mindfullness,Medical,Post,1.3061647273556924,4,54,20,22,No reliable decrease
+WAolB,Mindfullness,Medical,Follow-up,4.368098334474104,3,47,18,40,Reliable decrease
+71aT5,Mindfullness,Medical,Baseline,0,NA,49,12,30,NA
+71aT5,Mindfullness,Medical,Post,1.2172591071564378,7,42,8,10,Reliable decrease
+71aT5,Mindfullness,Medical,Follow-up,4.411307323750855,5,34,10,16,Reliable decrease
+yYKBo,Psychosocial information,Support workers,Baseline,0,NA,32,20,26,NA
+yYKBo,Psychosocial information,Support workers,Post,1.1817978553502166,7,26,8,8,Reliable decrease
+yYKBo,Psychosocial information,Support workers,Follow-up,4.377836337364058,7,27,12,16,Reliable decrease
+uJAzC,Psychosocial information,Support workers,Baseline,0,NA,5,18,24,NA
+uJAzC,Psychosocial information,Support workers,Post,1.2119229599209065,0,7,6,14,Reliable decrease
+uJAzC,Psychosocial information,Support workers,Follow-up,4.124760057799072,0,9,8,18,No reliable decrease
+DP1KG,Mindfullness,Medical,Baseline,0,NA,30,14,18,NA
+DP1KG,Mindfullness,Medical,Post,1.1595064263442088,5,22,8,14,No reliable decrease
+DP1KG,Mindfullness,Medical,Follow-up,4.14879116282607,7,16,10,18,No reliable decrease
+vwmnb,Mindfullness,Medical,Baseline,0,NA,42,16,16,NA
+vwmnb,Mindfullness,Medical,Post,1.8150878393794205,2,17,10,24,Reliable decrease
+vwmnb,Mindfullness,Medical,Follow-up,5.064700737698685,0,31,14,24,No reliable decrease
+6SAso,Mindfullness,Medical,Baseline,0,NA,36,20,20,NA
+6SAso,Mindfullness,Medical,Post,1.4608293406342687,7,27,10,10,No reliable decrease
+6SAso,Mindfullness,Medical,Follow-up,4.419034907597536,2,24,2,30,No reliable decrease
+FfZXX,Mindfullness,Medical,Baseline,0,NA,14,4,20,NA
+FfZXX,Mindfullness,Medical,Post,1.2263244353182752,3,9,4,16,No reliable decrease
+FfZXX,Mindfullness,Medical,Follow-up,4.736894820898928,0,20,0,10,Reliable decrease
+6ku8M,Psychosocial information,Medical,Baseline,0,NA,22,20,18,NA
+6ku8M,Psychosocial information,Medical,Post,1.42416951859457,0,20,10,14,No reliable decrease
+6ku8M,Psychosocial information,Medical,Follow-up,4.745952924176743,0,35,12,14,No reliable decrease
+fOVbp,Mindfullness,Support workers,Baseline,0,NA,31,26,22,NA
+fOVbp,Mindfullness,Support workers,Post,1.6538037113088448,4,27,20,22,No reliable decrease
+fOVbp,Mindfullness,Support workers,Follow-up,4.147691839683626,3,37,18,28,No reliable decrease
+XATM1,Psychosocial information,Support workers,Baseline,0,NA,26,16,20,NA
+XATM1,Psychosocial information,Support workers,Post,1.2919883641341547,4,23,8,12,No reliable decrease
+XATM1,Psychosocial information,Support workers,Follow-up,4.480518290364286,0,14,4,12,No reliable decrease
+Rc8LE,Mindfullness,Support workers,Baseline,0,NA,40,18,30,NA
+Rc8LE,Mindfullness,Support workers,Post,1.6220792455700053,4,22,2,12,Reliable decrease
+Rc8LE,Mindfullness,Support workers,Follow-up,5.621123659593885,1,20,6,10,Reliable decrease
+PFWPJ,Psychosocial information,Medical,Baseline,0,NA,35,26,24,NA
+PFWPJ,Psychosocial information,Medical,Post,1.9114396532055669,4,33,14,18,No reliable decrease
+PFWPJ,Psychosocial information,Medical,Follow-up,5.997136664385124,3,40,12,20,No reliable decrease
+NWYCh,Mindfullness,Medical,Baseline,0,NA,47,8,20,NA
+NWYCh,Mindfullness,Medical,Post,1.7904475625522853,3,38,0,8,Reliable decrease
+NWYCh,Mindfullness,Medical,Follow-up,4.406819530002282,4,38,12,20,No reliable decrease
+IkFko,Mindfullness,Support workers,Baseline,0,NA,30,16,20,NA
+IkFko,Mindfullness,Support workers,Post,1.276403528785459,1,29,4,12,No reliable decrease
+IkFko,Mindfullness,Support workers,Follow-up,4.3911213780515626,1,36,12,18,No reliable decrease
+kHY4H,Mindfullness,Support workers,Baseline,0,NA,27,4,16,NA
+kHY4H,Mindfullness,Support workers,Post,1.1884839151266255,7,26,10,14,No reliable decrease
+kHY4H,Mindfullness,Support workers,Follow-up,4.608169442543159,3,9,2,8,No reliable decrease
+EQuP8,Psychosocial information,Support workers,Baseline,0,NA,29,10,18,NA
+EQuP8,Psychosocial information,Support workers,Post,1.1669195376074226,2,32,8,14,No reliable decrease
+EQuP8,Psychosocial information,Support workers,Follow-up,4.578017719978706,1,31,12,14,No reliable decrease
+RyrCX,Psychosocial information,Support workers,Baseline,0,NA,50,28,34,NA
+RyrCX,Psychosocial information,Support workers,Post,1.206937029431896,1,43,20,24,Reliable decrease
+RyrCX,Psychosocial information,Support workers,Follow-up,4.394788196821051,0,45,14,34,No reliable decrease
+vw5j6,Mindfullness,Medical,Baseline,0,NA,25,28,26,NA
+vw5j6,Mindfullness,Medical,Post,1.3038546657540497,7,23,22,26,No reliable decrease
+vw5j6,Mindfullness,Medical,Follow-up,4.543716252186478,0,27,12,18,No reliable decrease
+3XnPK,Mindfullness,Support workers,Baseline,0,NA,31,8,20,NA
+3XnPK,Mindfullness,Support workers,Post,1.3411019849418206,1,21,0,12,No reliable decrease
+3XnPK,Mindfullness,Support workers,Follow-up,4.633235607270515,1,13,0,14,No reliable decrease
+jgZbc,Mindfullness,Support workers,Baseline,0,NA,17,16,28,NA
+jgZbc,Mindfullness,Support workers,Post,1.167375465814891,7,17,10,14,Reliable decrease
+jgZbc,Mindfullness,Support workers,Follow-up,4.614477907065176,2,19,6,10,Reliable decrease
+qb3OU,Psychosocial information,Support workers,Baseline,0,NA,37,12,16,NA
+qb3OU,Psychosocial information,Support workers,Post,1.2181717240854817,4,31,6,18,No reliable decrease
+qb3OU,Psychosocial information,Support workers,Follow-up,5.821231272340102,2,41,10,16,No reliable decrease
+dtRbV,Mindfullness,Medical,Baseline,0,NA,33,2,20,NA
+dtRbV,Mindfullness,Medical,Post,1.2020165031561336,6,37,6,18,No reliable decrease
+dtRbV,Mindfullness,Medical,Follow-up,4.3854665754049735,1,39,10,18,No reliable decrease
+Ql5Ek,Mindfullness,Support workers,Baseline,0,NA,33,10,18,NA
+Ql5Ek,Mindfullness,Support workers,Post,1.8828720815271123,3,42,10,12,No reliable decrease
+Ql5Ek,Mindfullness,Support workers,Follow-up,4.382792607802875,2,24,8,10,Reliable decrease
+aIeXN,Psychosocial information,Medical,Baseline,0,NA,33,14,16,NA
+aIeXN,Psychosocial information,Medical,Post,1.2276454483230663,3,34,16,20,No reliable decrease
+aIeXN,Psychosocial information,Medical,Follow-up,4.142617689558142,2,31,14,14,No reliable decrease
+Xia4C,Psychosocial information,Support workers,Baseline,0,NA,49,16,24,NA
+Xia4C,Psychosocial information,Support workers,Post,2.077683854285497,3,30,18,14,Reliable decrease
+Xia4C,Psychosocial information,Support workers,Follow-up,4.843773290744544,2,29,12,18,Reliable decrease
+oH9gd,Mindfullness,Medical,Baseline,0,NA,43,20,28,NA
+oH9gd,Mindfullness,Medical,Post,1.885661647273557,2,45,26,30,No reliable decrease
+oH9gd,Mindfullness,Medical,Follow-up,4.349734200319416,4,39,28,32,Reliable decrease
+FEkZm,Psychosocial information,Medical,Baseline,0,NA,15,14,18,NA
+FEkZm,Psychosocial information,Medical,Post,1.1961867822648111,5,22,14,26,No reliable decrease
+FEkZm,Psychosocial information,Medical,Follow-up,4.151652216898624,1,22,14,18,No reliable decrease
+vAwbH,Psychosocial information,Support workers,Baseline,0,NA,27,18,30,NA
+vAwbH,Psychosocial information,Support workers,Post,1.4674572210814512,2,28,22,26,No reliable decrease
+vAwbH,Psychosocial information,Support workers,Follow-up,4.422465586736634,1,27,24,34,No reliable decrease
+uPbNm,Mindfullness,Support workers,Baseline,0,NA,36,20,38,NA
+uPbNm,Mindfullness,Support workers,Post,1.3776914594265723,5,36,10,26,Reliable decrease
+uPbNm,Mindfullness,Support workers,Follow-up,4.172148072096737,0,40,14,30,No reliable decrease
+AGq0W,Psychosocial information,Medical,Baseline,0,NA,49,26,28,NA
+AGq0W,Psychosocial information,Medical,Post,2.1806460567343526,5,51,26,28,No reliable decrease
+AGq0W,Psychosocial information,Medical,Follow-up,4.644221233553883,5,53,28,28,No reliable decrease
+XwejF,Mindfullness,Management,Baseline,0,NA,30,16,18,NA
+XwejF,Mindfullness,Management,Post,1.3668955814130352,6,39,8,8,Reliable decrease
+XwejF,Mindfullness,Management,Follow-up,4.3073640581032775,5,28,18,24,No reliable decrease
+bITDo,Psychosocial information,Support workers,Baseline,0,NA,24,8,16,NA
+bITDo,Psychosocial information,Support workers,Post,1.1809228838694958,1,22,12,16,No reliable decrease
+bITDo,Psychosocial information,Support workers,Follow-up,4.236008821963647,2,33,16,14,No reliable decrease
+OFqE8,Mindfullness,Medical,Baseline,0,NA,32,6,18,NA
+OFqE8,Mindfullness,Medical,Post,1.3218149669176362,2,27,6,10,No reliable decrease
+OFqE8,Mindfullness,Medical,Follow-up,4.918710928587726,3,31,12,14,No reliable decrease
+0iwjv,Psychosocial information,Medical,Baseline,0,NA,25,2,16,NA
+0iwjv,Psychosocial information,Medical,Post,1.1836481861738535,7,20,0,8,No reliable decrease
+0iwjv,Psychosocial information,Medical,Follow-up,4.138750095064263,5,23,0,2,Reliable decrease
+DL4Ow,Mindfullness,Medical,Baseline,0,NA,39,18,30,NA
+DL4Ow,Mindfullness,Medical,Post,1.2263244353182752,4,32,16,30,No reliable decrease
+DL4Ow,Mindfullness,Medical,Follow-up,4.15078104798844,0,26,26,38,No reliable decrease
+GexLz,Mindfullness,Support workers,Baseline,0,NA,45,2,24,NA
+GexLz,Mindfullness,Support workers,Post,1.183616244581337,0,50,10,24,No reliable decrease
+GexLz,Mindfullness,Support workers,Follow-up,4.8400349836489465,2,43,8,34,Reliable decrease
+crcEY,Mindfullness,Medical,Baseline,0,NA,42,2,26,NA
+crcEY,Mindfullness,Medical,Post,1.3273990417522246,6,38,6,24,No reliable decrease
+crcEY,Mindfullness,Medical,Follow-up,4.374761959084341,3,42,6,26,No reliable decrease
+ytgdg,Psychosocial information,Medical,Baseline,0,NA,22,10,16,NA
+ytgdg,Psychosocial information,Medical,Post,1.1730492813141684,4,12,10,12,No reliable decrease
+ytgdg,Psychosocial information,Medical,Follow-up,4.111617993763784,1,8,8,14,No reliable decrease
+dlLQ0,Mindfullness,Medical,Baseline,0,NA,31,22,24,NA
+dlLQ0,Mindfullness,Medical,Post,1.8379051638907902,0,38,26,26,No reliable decrease
+dlLQ0,Mindfullness,Medical,Follow-up,5.0730116358658455,0,38,26,26,No reliable decrease
+g4obW,Psychosocial information,Support workers,Baseline,0,NA,25,16,16,NA
+g4obW,Psychosocial information,Support workers,Post,1.2228686592136284,5,31,6,12,No reliable decrease
+g4obW,Psychosocial information,Support workers,Follow-up,4.34912921134687,1,36,18,22,No reliable decrease
+rXcBd,Psychosocial information,Medical,Baseline,0,NA,13,4,20,NA
+rXcBd,Psychosocial information,Medical,Post,1.4211711917256065,3,18,10,34,No reliable decrease
+rXcBd,Psychosocial information,Medical,Follow-up,4.137867518442467,1,22,4,20,No reliable decrease
+rhZg2,Mindfullness,Support workers,Baseline,0,NA,31,4,22,NA
+rhZg2,Mindfullness,Support workers,Post,3.589031105026998,1,39,2,18,No reliable decrease
+rhZg2,Mindfullness,Support workers,Follow-up,5.042156057494867,0,36,6,22,No reliable decrease
+FQ5vx,Psychosocial information,Medical,Baseline,0,NA,10,10,24,NA
+FQ5vx,Psychosocial information,Medical,Post,1.6274461936268918,3,20,12,26,No reliable decrease
+FQ5vx,Psychosocial information,Medical,Follow-up,4.406610768879763,2,28,16,20,No reliable decrease
+69QAr,Psychosocial information,Support workers,Baseline,0,NA,15,4,28,NA
+69QAr,Psychosocial information,Support workers,Post,1.6524712905924406,1,12,12,20,No reliable decrease
+69QAr,Psychosocial information,Support workers,Follow-up,5.1728317742794125,0,9,2,16,Reliable decrease
+TbtIy,Mindfullness,Support workers,Baseline,0,NA,30,16,16,NA
+TbtIy,Mindfullness,Support workers,Post,1.5924830785611073,2,31,14,8,No reliable decrease
+TbtIy,Mindfullness,Support workers,Follow-up,4.1749889725454405,2,27,14,10,Reliable decrease
+kucHf,Psychosocial information,Medical,Baseline,0,NA,38,12,18,NA
+kucHf,Psychosocial information,Medical,Post,1.2923811696706975,2,27,4,12,No reliable decrease
+kucHf,Psychosocial information,Medical,Follow-up,4.41858126093239,2,36,10,18,No reliable decrease
+nxzhO,Psychosocial information,Medical,Baseline,0,NA,34,20,26,NA
+nxzhO,Psychosocial information,Medical,Post,1.21689101832839,7,47,20,26,No reliable decrease
+nxzhO,Psychosocial information,Medical,Follow-up,4.208343980530839,3,33,20,22,No reliable decrease
+qu6ul,Psychosocial information,Support workers,Baseline,0,NA,19,2,18,NA
+qu6ul,Psychosocial information,Support workers,Post,1.192905544147844,2,13,2,14,No reliable decrease
+qu6ul,Psychosocial information,Support workers,Follow-up,4.216273100616016,0,28,0,18,No reliable decrease
+7IKNn,Mindfullness,Support workers,Baseline,0,NA,26,8,20,NA
+7IKNn,Mindfullness,Support workers,Post,1.774591223667199,4,19,8,12,No reliable decrease
+7IKNn,Mindfullness,Support workers,Follow-up,4.1144668796106165,3,25,4,12,No reliable decrease
+oBk4q,Mindfullness,Medical,Baseline,0,NA,31,10,20,NA
+oBk4q,Mindfullness,Medical,Post,1.232498669100312,6,23,4,16,No reliable decrease
+oBk4q,Mindfullness,Medical,Follow-up,4.4056688721575785,5,12,2,8,Reliable decrease
+E0B05,Mindfullness,Medical,Baseline,0,NA,31,10,18,NA
+E0B05,Mindfullness,Medical,Post,1.669299186249905,4,30,12,12,No reliable decrease
+E0B05,Mindfullness,Medical,Follow-up,4.855579892006997,3,12,2,4,Reliable decrease
+W0icl,Psychosocial information,Support workers,Baseline,0,NA,45,4,20,NA
+W0icl,Psychosocial information,Support workers,Post,1.4861438132177351,3,52,20,28,No reliable decrease
+W0icl,Psychosocial information,Support workers,Follow-up,4.358191117195224,3,47,22,28,No reliable decrease
+AZDo7,Mindfullness,Medical,Baseline,0,NA,22,14,16,NA
+AZDo7,Mindfullness,Medical,Post,2.1134033006312265,1,17,14,14,No reliable decrease
+AZDo7,Mindfullness,Medical,Follow-up,5.159047075823256,0,33,12,16,No reliable decrease
+WwUyF,Psychosocial information,Medical,Baseline,0,NA,14,2,18,NA
+WwUyF,Psychosocial information,Medical,Post,1.4408628032550004,2,24,4,10,No reliable decrease
+WwUyF,Psychosocial information,Medical,Follow-up,4.152226785306867,0,29,2,12,No reliable decrease
+uKXw8,Mindfullness,Support workers,Baseline,0,NA,41,10,24,NA
+uKXw8,Mindfullness,Support workers,Post,2.2895786751844245,0,33,8,18,No reliable decrease
+uKXw8,Mindfullness,Support workers,Follow-up,4.610053235987528,0,31,4,16,Reliable decrease
+ikdOF,Mindfullness,Support workers,Baseline,0,NA,28,16,16,NA
+ikdOF,Mindfullness,Support workers,Post,1.7830606890257814,5,14,6,16,No reliable decrease
+ikdOF,Mindfullness,Support workers,Follow-up,4.183037493345502,1,21,2,10,No reliable decrease
+BXlsP,Mindfullness,Medical,Baseline,0,NA,42,20,18,NA
+BXlsP,Mindfullness,Medical,Post,1.2982451136968591,1,30,18,14,No reliable decrease
+BXlsP,Mindfullness,Medical,Follow-up,4.584182067077344,1,28,8,14,No reliable decrease
+q6Dq7,Psychosocial information,Medical,Baseline,0,NA,31,10,16,NA
+q6Dq7,Psychosocial information,Medical,Post,1.414449768043197,0,29,14,20,No reliable decrease
+q6Dq7,Psychosocial information,Medical,Follow-up,4.206390219788577,1,38,6,16,No reliable decrease
+T47ba,Psychosocial information,Support workers,Baseline,0,NA,33,4,18,NA
+T47ba,Psychosocial information,Support workers,Post,1.8550650239561943,0,40,14,24,No reliable decrease
+T47ba,Psychosocial information,Support workers,Follow-up,5.237658757319949,0,32,16,20,No reliable decrease
+EpLmA,Psychosocial information,Support workers,Baseline,0,NA,53,32,42,NA
+EpLmA,Psychosocial information,Support workers,Post,1.2919666894820898,5,53,28,36,No reliable decrease
+EpLmA,Psychosocial information,Support workers,Follow-up,4.486820670773443,4,43,26,40,Reliable decrease
+cVCs9,Mindfullness,Support workers,Baseline,0,NA,39,10,18,NA
+cVCs9,Mindfullness,Support workers,Post,1.8422374325043729,2,34,8,12,No reliable decrease
+cVCs9,Mindfullness,Support workers,Follow-up,5.271833599513271,0,37,18,16,No reliable decrease
+WSCLD,Psychosocial information,Support workers,Baseline,0,NA,21,8,18,NA
+WSCLD,Psychosocial information,Support workers,Post,2.4419628869115524,0,12,4,10,No reliable decrease
+WSCLD,Psychosocial information,Support workers,Follow-up,4.637507795269602,1,4,0,14,No reliable decrease
+8xAm7,Psychosocial information,Medical,Baseline,0,NA,49,16,36,NA
+8xAm7,Psychosocial information,Medical,Post,1.380310289755875,1,43,14,20,Reliable decrease
+8xAm7,Psychosocial information,Medical,Follow-up,4.411217202829112,1,37,20,36,No reliable decrease
+wcIf3,Psychosocial information,Medical,Baseline,0,NA,54,16,22,NA
+wcIf3,Psychosocial information,Medical,Post,1.4480321697467489,1,50,26,34,No reliable decrease
+wcIf3,Psychosocial information,Medical,Follow-up,4.393788881283748,3,54,24,30,No reliable decrease
+PHxGH,Mindfullness,Management,Baseline,0,NA,43,10,22,NA
+PHxGH,Mindfullness,Management,Post,1.1644307551905089,5,45,2,14,No reliable decrease
+PHxGH,Mindfullness,Management,Follow-up,4.548080462392577,4,28,2,12,Reliable decrease
+Bx9oU,Mindfullness,Support workers,Baseline,0,NA,51,16,24,NA
+Bx9oU,Mindfullness,Support workers,Post,1.2246984561563616,1,51,12,20,No reliable decrease
+Bx9oU,Mindfullness,Support workers,Follow-up,5.299816716100084,0,54,22,30,No reliable decrease
+1gonN,Psychosocial information,Medical,Baseline,0,NA,24,4,24,NA
+1gonN,Psychosocial information,Medical,Post,1.3868221918016579,0,17,4,18,No reliable decrease
+1gonN,Psychosocial information,Medical,Follow-up,4.434678302532512,0,18,2,22,No reliable decrease
+VJJV0,Psychosocial information,Support workers,Baseline,0,NA,17,10,24,NA
+VJJV0,Psychosocial information,Support workers,Post,1.3512365959388546,6,34,8,20,No reliable decrease
+VJJV0,Psychosocial information,Support workers,Follow-up,4.1528580120161225,2,24,6,2,No reliable decrease
+UiNJt,Psychosocial information,Support workers,Baseline,0,NA,26,2,18,NA
+UiNJt,Psychosocial information,Support workers,Post,1.21963571374249,5,23,2,14,No reliable decrease
+UiNJt,Psychosocial information,Support workers,Follow-up,4.401205034603392,3,24,4,14,No reliable decrease
+jNXpW,Mindfullness,Support workers,Baseline,0,NA,13,32,24,NA
+jNXpW,Mindfullness,Support workers,Post,1.6609491216062058,1,10,16,20,No reliable decrease
+jNXpW,Mindfullness,Support workers,Follow-up,5.271833599513271,0,6,40,34,No reliable decrease
+3TeZM,Mindfullness,Medical,Baseline,0,NA,30,18,18,NA
+3TeZM,Mindfullness,Medical,Post,1.2612445813369837,5,4,0,4,Reliable decrease
+3TeZM,Mindfullness,Medical,Follow-up,5.240545288615103,1,6,4,2,Reliable decrease
+kLpbU,Psychosocial information,Medical,Baseline,0,NA,24,12,20,NA
+kLpbU,Psychosocial information,Medical,Post,1.2238238649326945,1,39,14,22,No reliable decrease
+kLpbU,Psychosocial information,Medical,Follow-up,4.576082211575025,0,34,16,30,No reliable decrease
+1Tq5c,Mindfullness,Medical,Baseline,0,NA,39,10,20,NA
+1Tq5c,Mindfullness,Medical,Post,1.6193132557608945,0,22,6,8,No reliable decrease
+1Tq5c,Mindfullness,Medical,Follow-up,4.811115674195756,0,29,8,12,No reliable decrease
+N67bp,Psychosocial information,Support workers,Baseline,0,NA,32,4,18,NA
+N67bp,Psychosocial information,Support workers,Post,1.2395250589398434,0,26,2,8,No reliable decrease
+N67bp,Psychosocial information,Support workers,Follow-up,4.115816792151494,2,21,0,4,No reliable decrease
+42sHJ,Psychosocial information,Support workers,Baseline,0,NA,34,4,16,NA
+42sHJ,Psychosocial information,Support workers,Post,1.3602787284204123,1,26,4,16,No reliable decrease
+42sHJ,Psychosocial information,Support workers,Follow-up,4.1472408548178565,1,22,4,10,No reliable decrease
+1aqmY,Mindfullness,Medical,Baseline,0,NA,38,8,18,NA
+1aqmY,Mindfullness,Medical,Post,1.4211711917256065,5,40,8,12,No reliable decrease
+1aqmY,Mindfullness,Medical,Follow-up,5.948787360255532,1,24,10,10,No reliable decrease
+ShJpF,Psychosocial information,Medical,Baseline,0,NA,11,20,36,NA
+ShJpF,Psychosocial information,Medical,Post,1.638553882424519,0,24,18,26,Reliable decrease
+ShJpF,Psychosocial information,Medical,Follow-up,4.856026313788121,0,3,8,16,Reliable decrease
+3pXHT,Psychosocial information,Management,Baseline,0,NA,48,16,16,NA
+3pXHT,Psychosocial information,Management,Post,1.6462753821583391,1,38,16,20,No reliable decrease
+3pXHT,Psychosocial information,Management,Follow-up,4.5761217583086164,0,29,20,24,No reliable decrease
+SRKje,Mindfullness,Medical,Baseline,0,NA,10,12,16,NA
+SRKje,Mindfullness,Medical,Post,2.307244277131341,0,6,14,16,No reliable decrease
+SRKje,Mindfullness,Medical,Follow-up,4.674179785535022,0,7,14,26,No reliable decrease
+nfrwz,Mindfullness,Support workers,Baseline,0,NA,46,4,32,NA
+nfrwz,Mindfullness,Support workers,Post,1.2492292189520116,0,51,10,34,No reliable decrease
+nfrwz,Mindfullness,Support workers,Follow-up,4.503542474712906,0,49,4,28,No reliable decrease
+EZgtL,Mindfullness,Support workers,Baseline,0,NA,30,0,16,NA
+EZgtL,Mindfullness,Support workers,Post,1.1932158339037189,6,28,0,16,No reliable decrease
+EZgtL,Mindfullness,Support workers,Follow-up,4.176401247243136,4,11,0,14,No reliable decrease
+eL2Oh,Psychosocial information,Support workers,Baseline,0,NA,42,4,22,NA
+eL2Oh,Psychosocial information,Support workers,Post,1.6269035668111644,0,42,0,14,No reliable decrease
+eL2Oh,Psychosocial information,Support workers,Follow-up,4.811115674195756,0,42,6,16,Reliable decrease
+3UayP,Mindfullness,Support workers,Baseline,0,NA,40,12,26,NA
+3UayP,Mindfullness,Support workers,Post,1.1885219408320025,3,14,8,26,Reliable decrease
+3UayP,Mindfullness,Support workers,Follow-up,5.621123659593885,1,12,6,12,Reliable decrease
+TyIRo,Psychosocial information,Support workers,Baseline,0,NA,15,6,30,NA
+TyIRo,Psychosocial information,Support workers,Post,1.676703931857936,5,19,2,22,No reliable decrease
+TyIRo,Psychosocial information,Support workers,Follow-up,4.144796562476234,0,31,4,12,No reliable decrease
+WBTv1,Mindfullness,Medical,Baseline,0,NA,29,30,22,NA
+WBTv1,Mindfullness,Medical,Post,1.3202604760818313,0,29,18,16,No reliable decrease
+WBTv1,Mindfullness,Medical,Follow-up,4.610602707430223,0,25,20,14,No reliable decrease
+bbH4R,Mindfullness,Medical,Baseline,0,NA,33,22,16,NA
+bbH4R,Mindfullness,Medical,Post,1.2232261008441707,6,34,26,18,No reliable decrease
+bbH4R,Mindfullness,Medical,Follow-up,4.172749638755799,1,37,22,14,No reliable decrease
+epAtj,Mindfullness,Medical,Baseline,0,NA,23,12,20,NA
+epAtj,Mindfullness,Medical,Post,1.6095893223819302,1,38,6,12,No reliable decrease
+epAtj,Mindfullness,Medical,Follow-up,4.9427732146931325,0,32,0,12,No reliable decrease
+C2nQN,Psychosocial information,Support workers,Baseline,0,NA,26,6,18,NA
+C2nQN,Psychosocial information,Support workers,Post,1.4166210358202145,0,29,10,18,No reliable decrease
+C2nQN,Psychosocial information,Support workers,Follow-up,4.111619134534946,0,32,10,10,No reliable decrease
+GIsdu,Psychosocial information,Medical,Baseline,0,NA,35,24,30,NA
+GIsdu,Psychosocial information,Medical,Post,2.603693817020306,7,33,22,28,Reliable decrease
+GIsdu,Psychosocial information,Medical,Follow-up,4.810776484903795,4,46,18,36,No reliable decrease
+MnoMh,Psychosocial information,Support workers,Baseline,0,NA,41,12,24,NA
+MnoMh,Psychosocial information,Support workers,Post,2.3150783329530764,3,31,10,20,No reliable decrease
+MnoMh,Psychosocial information,Support workers,Follow-up,10.361733972165183,0,36,14,20,No reliable decrease
+zmxHX,Mindfullness,Medical,Baseline,0,NA,49,8,18,NA
+zmxHX,Mindfullness,Medical,Post,1.6467883489238726,1,43,14,18,No reliable decrease
+zmxHX,Mindfullness,Medical,Follow-up,5.1728317742794125,0,33,8,10,No reliable decrease
+NheST,Mindfullness,Support workers,Baseline,0,NA,34,30,40,NA
+NheST,Mindfullness,Support workers,Post,1.4528732222982736,7,31,8,16,Reliable decrease
+NheST,Mindfullness,Support workers,Follow-up,4.3867480416761735,4,42,18,28,Reliable decrease
+r8wkv,Psychosocial information,Medical,Baseline,0,NA,39,8,20,NA
+r8wkv,Psychosocial information,Medical,Post,1.7594520495855197,3,35,2,14,No reliable decrease
+r8wkv,Psychosocial information,Medical,Follow-up,4.806945014830025,0,41,8,22,No reliable decrease
+yNLaK,Psychosocial information,Support workers,Baseline,0,NA,35,8,20,NA
+yNLaK,Psychosocial information,Support workers,Post,1.5094052779679064,1,39,16,16,No reliable decrease
+yNLaK,Psychosocial information,Support workers,Follow-up,5.074886683397977,2,41,4,16,No reliable decrease
+A2VWm,Psychosocial information,Medical,Baseline,0,NA,13,16,16,NA
+A2VWm,Psychosocial information,Medical,Post,1.4978146627119933,0,21,10,18,No reliable decrease
+A2VWm,Psychosocial information,Medical,Follow-up,4.856026313788121,0,24,12,24,No reliable decrease
+x9ft5,Psychosocial information,Support workers,Baseline,0,NA,26,10,16,NA
+x9ft5,Psychosocial information,Support workers,Post,1.2610400030420563,3,28,2,12,No reliable decrease
+x9ft5,Psychosocial information,Support workers,Follow-up,4.149249752832915,2,16,2,6,Reliable decrease
+jS8iC,Mindfullness,Support workers,Baseline,0,NA,23,2,18,NA
+jS8iC,Mindfullness,Support workers,Post,1.2926617993763785,3,24,2,14,Reliable decrease
+jS8iC,Mindfullness,Support workers,Follow-up,4.119703779755114,4,22,0,10,No reliable decrease
+d9xRG,Psychosocial information,Medical,Baseline,0,NA,6,20,18,NA
+d9xRG,Psychosocial information,Medical,Post,1.4235983724998098,0,15,16,32,No reliable decrease
+d9xRG,Psychosocial information,Medical,Follow-up,4.615333105179101,0,24,18,22,NA
+fdgiS,Mindfullness,Support workers,Baseline,0,NA,41,20,22,NA
+fdgiS,Mindfullness,Support workers,Post,1.6587504753213171,2,33,14,16,No reliable decrease
+fdgiS,Mindfullness,Support workers,Follow-up,4.679512130200015,2,46,18,20,Reliable decrease
+ODhG0,Mindfullness,Medical,Baseline,0,NA,42,10,20,NA
+ODhG0,Mindfullness,Medical,Post,1.2277861434329607,0,46,20,24,No reliable decrease
+ODhG0,Mindfullness,Medical,Follow-up,4.154272187999087,0,48,14,24,No reliable decrease
+c1Wyy,Mindfullness,Support workers,Baseline,0,NA,40,12,24,NA
+c1Wyy,Mindfullness,Support workers,Post,1.186185261236596,4,28,14,30,No reliable decrease
+c1Wyy,Mindfullness,Support workers,Follow-up,4.500545288615104,2,23,12,28,Reliable decrease
+oa4xe,Mindfullness,Medical,Baseline,0,NA,44,8,22,NA
+oa4xe,Mindfullness,Medical,Post,1.2599760438056127,7,33,12,14,No reliable decrease
+oa4xe,Mindfullness,Medical,Follow-up,5.1934922807818085,5,31,8,20,No reliable decrease
+qm90O,Mindfullness,Medical,Baseline,0,NA,28,8,18,NA
+qm90O,Mindfullness,Medical,Post,1.5221777321469314,4,25,8,18,No reliable decrease
+qm90O,Mindfullness,Medical,Follow-up,4.51713324207164,2,19,8,14,No reliable decrease
+3ikRI,Psychosocial information,Medical,Baseline,0,NA,22,32,32,NA
+3ikRI,Psychosocial information,Medical,Post,1.15751159784014,1,19,24,20,Reliable decrease
+3ikRI,Psychosocial information,Medical,Follow-up,4.6007951174994295,0,21,16,16,Reliable decrease
+xcsEX,Psychosocial information,Support workers,Baseline,0,NA,38,26,22,NA
+xcsEX,Psychosocial information,Support workers,Post,1.2094820898927676,0,42,24,20,No reliable decrease
+xcsEX,Psychosocial information,Support workers,Follow-up,4.145735797399042,0,51,28,28,No reliable decrease
+xtHu4,Psychosocial information,Medical,Baseline,0,NA,22,16,18,NA
+xtHu4,Psychosocial information,Medical,Post,1.19911704312115,2,40,16,22,No reliable decrease
+xtHu4,Psychosocial information,Medical,Follow-up,4.8775720587116895,1,35,12,24,No reliable decrease
+Wku6S,Psychosocial information,Support workers,Baseline,0,NA,22,8,16,NA
+Wku6S,Psychosocial information,Support workers,Post,1.588138641721804,0,19,6,14,No reliable decrease
+Wku6S,Psychosocial information,Support workers,Follow-up,4.195105711460948,0,19,2,16,No reliable decrease
+aKmqe,Psychosocial information,Support workers,Baseline,0,NA,23,16,16,NA
+aKmqe,Psychosocial information,Support workers,Post,1.4496665145638452,0,16,4,14,No reliable decrease
+aKmqe,Psychosocial information,Support workers,Follow-up,4.380437675868888,0,10,10,14,No reliable decrease
+eYMHU,Psychosocial information,Medical,Baseline,0,NA,38,14,18,NA
+eYMHU,Psychosocial information,Medical,Post,1.324779831165868,5,35,24,14,No reliable decrease
+eYMHU,Psychosocial information,Medical,Follow-up,4.370210662407787,1,22,12,20,No reliable decrease
+TB25W,Psychosocial information,Medical,Baseline,0,NA,43,30,32,NA
+TB25W,Psychosocial information,Medical,Post,1.1904395771541563,7,39,30,30,No reliable decrease
+TB25W,Psychosocial information,Medical,Follow-up,4.411386036960986,5,47,28,38,No reliable decrease
+T9sCn,Mindfullness,Medical,Baseline,0,NA,38,22,18,NA
+T9sCn,Mindfullness,Medical,Post,1.2729428093391133,7,30,24,18,No reliable decrease
+T9sCn,Mindfullness,Medical,Follow-up,4.270306487185337,5,39,14,12,No reliable decrease
+bnRhy,Psychosocial information,Support workers,Baseline,0,NA,28,4,16,NA
+bnRhy,Psychosocial information,Support workers,Post,1.1903798767967146,2,32,0,10,No reliable decrease
+bnRhy,Psychosocial information,Support workers,Follow-up,4.185832002433645,0,12,2,2,Reliable decrease
+eK2NL,Mindfullness,Medical,Baseline,0,NA,31,10,20,NA
+eK2NL,Mindfullness,Medical,Post,1.206937029431896,4,16,2,10,No reliable decrease
+eK2NL,Mindfullness,Medical,Follow-up,4.8913198722336295,5,17,2,12,No reliable decrease
+jO5g4,Mindfullness,Support workers,Baseline,0,NA,16,28,30,NA
+jO5g4,Mindfullness,Support workers,Post,1.1989124648262226,3,4,18,16,Reliable decrease
+jO5g4,Mindfullness,Support workers,Follow-up,4.150468856947296,3,12,6,12,Reliable decrease
+2FcZP,Psychosocial information,Support workers,Baseline,0,NA,7,8,22,NA
+2FcZP,Psychosocial information,Support workers,Post,1.7328850102669404,1,9,8,10,Reliable decrease
+2FcZP,Psychosocial information,Support workers,Follow-up,4.804141759829645,0,4,8,14,No reliable decrease
+nr6sp,Mindfullness,Support workers,Baseline,0,NA,16,12,18,NA
+nr6sp,Mindfullness,Support workers,Post,1.6456783785839226,0,6,6,16,No reliable decrease
+nr6sp,Mindfullness,Support workers,Follow-up,5.067668644003346,0,12,6,16,No reliable decrease
+oaO4z,Psychosocial information,Medical,Baseline,0,NA,28,22,24,NA
+oaO4z,Psychosocial information,Medical,Post,1.3005426268157274,0,30,24,24,No reliable decrease
+oaO4z,Psychosocial information,Medical,Follow-up,4.815639592364438,0,17,26,24,No reliable decrease
+N72EJ,Psychosocial information,Medical,Baseline,0,NA,22,14,16,NA
+N72EJ,Psychosocial information,Medical,Post,1.4787820366567799,5,23,14,16,No reliable decrease
+N72EJ,Psychosocial information,Medical,Follow-up,4.382007757243897,4,29,4,14,No reliable decrease
+Xiwo6,Psychosocial information,Medical,Baseline,0,NA,20,20,26,NA
+Xiwo6,Psychosocial information,Medical,Post,1.5267065936573123,1,25,14,20,No reliable decrease
+Xiwo6,Psychosocial information,Medical,Follow-up,4.572973990417522,0,11,22,32,No reliable decrease
+QwVG2,Psychosocial information,Medical,Baseline,0,NA,53,8,24,NA
+QwVG2,Psychosocial information,Medical,Post,1.952153775952544,1,43,10,28,No reliable decrease
+QwVG2,Psychosocial information,Medical,Follow-up,4.581412654954749,2,53,22,32,Reliable decrease
+XllNh,Mindfullness,Medical,Baseline,0,NA,22,10,18,NA
+XllNh,Mindfullness,Medical,Post,1.4389310974218572,7,24,0,8,No reliable decrease
+XllNh,Mindfullness,Medical,Follow-up,4.6627188379344435,1,18,2,12,No reliable decrease
+hWoQw,Psychosocial information,Support workers,Baseline,0,NA,30,2,16,NA
+hWoQw,Psychosocial information,Support workers,Post,1.3005426268157274,2,28,0,0,No reliable decrease
+hWoQw,Psychosocial information,Support workers,Follow-up,4.694759297284965,3,45,0,2,No reliable decrease
+gtTGI,Mindfullness,Medical,Baseline,0,NA,38,18,20,NA
+gtTGI,Mindfullness,Medical,Post,1.4211286029355845,0,39,14,20,No reliable decrease
+gtTGI,Mindfullness,Medical,Follow-up,4.571028215073389,2,20,12,14,No reliable decrease
+Wkun9,Psychosocial information,Support workers,Baseline,0,NA,49,12,36,NA
+Wkun9,Psychosocial information,Support workers,Post,1.8600912616929044,0,51,14,38,No reliable decrease
+Wkun9,Psychosocial information,Support workers,Follow-up,5.093217735188988,0,45,30,40,No reliable decrease
+ELJvm,Psychosocial information,Support workers,Baseline,0,NA,26,8,16,NA
+ELJvm,Psychosocial information,Support workers,Post,1.6495615636170051,2,26,0,12,No reliable decrease
+ELJvm,Psychosocial information,Support workers,Follow-up,5.165264278652369,1,17,4,6,No reliable decrease
+IebMf,Psychosocial information,Support workers,Baseline,0,NA,26,12,30,NA
+IebMf,Psychosocial information,Support workers,Post,1.158128755038406,7,20,2,16,Reliable decrease
+IebMf,Psychosocial information,Support workers,Follow-up,4.114484751692144,3,13,2,8,Reliable decrease
+prwoi,Mindfullness,Support workers,Baseline,0,NA,28,0,20,NA
+prwoi,Mindfullness,Support workers,Post,1.858374781352194,5,19,0,10,No reliable decrease
+prwoi,Mindfullness,Support workers,Follow-up,4.935320176439273,3,20,2,12,Reliable decrease
+Dw87g,Mindfullness,Support workers,Baseline,0,NA,28,12,24,NA
+Dw87g,Mindfullness,Support workers,Post,1.8880123963799529,2,36,12,12,Reliable decrease
+Dw87g,Mindfullness,Support workers,Follow-up,4.843773290744544,1,27,6,12,Reliable decrease
+3GPCz,Mindfullness,Support workers,Baseline,0,NA,43,2,16,NA
+3GPCz,Mindfullness,Support workers,Post,1.4884637615027758,4,40,2,16,No reliable decrease
+3GPCz,Mindfullness,Support workers,Follow-up,4.358191117195224,1,29,0,16,Reliable decrease
+T4CGJ,Psychosocial information,Medical,Baseline,0,NA,40,10,30,NA
+T4CGJ,Psychosocial information,Medical,Post,2.0699220473039777,0,46,18,30,No reliable decrease
+T4CGJ,Psychosocial information,Medical,Follow-up,4.281206555631607,0,45,12,28,No reliable decrease
+oH05H,Psychosocial information,Medical,Baseline,0,NA,21,18,18,NA
+oH05H,Psychosocial information,Medical,Post,1.1839375617917713,0,24,10,16,No reliable decrease
+oH05H,Psychosocial information,Medical,Follow-up,5.12040763556164,0,23,16,10,No reliable decrease
+lAO7J,Psychosocial information,Medical,Baseline,0,NA,53,12,26,NA
+lAO7J,Psychosocial information,Medical,Post,2.4745950262377368,1,54,16,24,No reliable decrease
+lAO7J,Psychosocial information,Medical,Follow-up,4.413118488097954,0,51,14,20,No reliable decrease
+VMtiU,Mindfullness,Medical,Baseline,0,NA,33,26,32,NA
+VMtiU,Mindfullness,Medical,Post,1.2865229295003422,6,26,24,26,No reliable decrease
+VMtiU,Mindfullness,Medical,Follow-up,4.440481785687124,5,24,12,12,Reliable decrease
+BPnfX,Psychosocial information,Support workers,Baseline,0,NA,25,14,16,NA
+BPnfX,Psychosocial information,Support workers,Post,1.723883565290136,0,18,14,14,No reliable decrease
+BPnfX,Psychosocial information,Support workers,Follow-up,4.937509696554871,0,9,10,18,No reliable decrease
+lqCuF,Mindfullness,Support workers,Baseline,0,NA,30,6,32,NA
+lqCuF,Mindfullness,Support workers,Post,2.2078652369001444,1,38,2,30,No reliable decrease
+lqCuF,Mindfullness,Support workers,Follow-up,4.674179785535022,1,23,4,14,No reliable decrease
+ohXXg,Psychosocial information,Support workers,Baseline,0,NA,35,0,26,NA
+ohXXg,Psychosocial information,Support workers,Post,1.1970077572438969,4,30,0,12,Reliable decrease
+ohXXg,Psychosocial information,Support workers,Follow-up,4.424599209065328,1,22,2,12,Reliable decrease
+lB53L,Psychosocial information,Support workers,Baseline,0,NA,27,20,18,NA
+lB53L,Psychosocial information,Support workers,Post,1.632710092022207,3,31,14,18,No reliable decrease
+lB53L,Psychosocial information,Support workers,Follow-up,4.852985017872082,2,31,12,16,No reliable decrease
+o1c9W,Psychosocial information,Management,Baseline,0,NA,50,40,36,NA
+o1c9W,Psychosocial information,Management,Post,1.3574252794889345,5,39,22,14,Reliable decrease
+o1c9W,Psychosocial information,Management,Follow-up,4.116889497300175,4,41,26,26,Reliable decrease
+0g8es,Psychosocial information,Medical,Baseline,0,NA,14,24,22,NA
+0g8es,Psychosocial information,Medical,Post,1.1867408167921516,3,9,18,16,No reliable decrease
+0g8es,Psychosocial information,Medical,Follow-up,4.797530990949882,4,11,26,18,No reliable decrease
+nQiaM,Psychosocial information,Support workers,Baseline,0,NA,24,14,16,NA
+nQiaM,Psychosocial information,Support workers,Post,1.4165077192181914,1,37,20,18,No reliable decrease
+nQiaM,Psychosocial information,Support workers,Follow-up,4.382792607802875,0,24,10,16,No reliable decrease
+vekky,Psychosocial information,Support workers,Baseline,0,NA,18,12,20,NA
+vekky,Psychosocial information,Support workers,Post,1.2232261008441707,2,16,8,14,No reliable decrease
+vekky,Psychosocial information,Support workers,Follow-up,4.261498212791848,3,17,16,16,No reliable decrease
+yjYxr,Mindfullness,Medical,Baseline,0,NA,33,16,16,NA
+yjYxr,Mindfullness,Medical,Post,1.160264278652369,0,27,10,20,No reliable decrease
+yjYxr,Mindfullness,Medical,Follow-up,4.3066043045098485,0,26,16,26,No reliable decrease
+SCt1Q,Mindfullness,Support workers,Baseline,0,NA,41,18,20,NA
+SCt1Q,Mindfullness,Support workers,Post,1.2199353563008595,5,41,6,8,Reliable decrease
+SCt1Q,Mindfullness,Support workers,Follow-up,4.288337516160925,1,39,2,14,No reliable decrease
+b1WAE,Mindfullness,Support workers,Baseline,0,NA,29,8,24,NA
+b1WAE,Mindfullness,Support workers,Post,2.3039946003498364,0,22,12,22,No reliable decrease
+b1WAE,Mindfullness,Support workers,Follow-up,5.03149136816488,2,51,22,36,No reliable decrease
+eqB7t,Mindfullness,Medical,Baseline,0,NA,39,20,38,NA
+eqB7t,Mindfullness,Medical,Post,1.255750247167085,6,36,2,20,Reliable decrease
+eqB7t,Mindfullness,Medical,Follow-up,5.0955631606966305,0,39,10,14,Reliable decrease
+rVjLn,Mindfullness,Medical,Baseline,0,NA,36,16,16,NA
+rVjLn,Mindfullness,Medical,Post,1.1894752452657997,2,41,14,18,No reliable decrease
+rVjLn,Mindfullness,Medical,Follow-up,4.812951935508404,1,39,12,20,No reliable decrease
+gkiJK,Mindfullness,Support workers,Baseline,0,NA,27,2,16,NA
+gkiJK,Mindfullness,Support workers,Post,1.4399722412350748,5,23,8,22,No reliable decrease
+gkiJK,Mindfullness,Support workers,Follow-up,4.4041813065632365,1,20,0,8,No reliable decrease
+V3oZa,Psychosocial information,Medical,Baseline,0,NA,36,12,24,NA
+V3oZa,Psychosocial information,Medical,Post,1.9421153699901132,0,33,8,18,No reliable decrease
+V3oZa,Psychosocial information,Medical,Follow-up,5.353750095064264,1,34,6,14,Reliable decrease
+Vb5jQ,Psychosocial information,Support workers,Baseline,0,NA,26,4,18,NA
+Vb5jQ,Psychosocial information,Support workers,Post,1.6095893223819302,0,33,4,8,Reliable decrease
+Vb5jQ,Psychosocial information,Support workers,Follow-up,6.252773214693133,0,23,4,10,No reliable decrease
+78Dve,Mindfullness,Medical,Baseline,0,NA,45,12,16,NA
+78Dve,Mindfullness,Medical,Post,1.189689710244125,7,31,0,12,No reliable decrease
+78Dve,Mindfullness,Medical,Follow-up,4.2962594113620804,0,18,0,4,Reliable decrease
+cxZNT,Psychosocial information,Support workers,Baseline,0,NA,44,26,30,NA
+cxZNT,Psychosocial information,Support workers,Post,1.6436960985626283,0,54,28,36,No reliable decrease
+cxZNT,Psychosocial information,Support workers,Follow-up,4.505656703931858,0,51,30,38,No reliable decrease
+L4IhA,Mindfullness,Support workers,Baseline,0,NA,27,2,24,NA
+L4IhA,Mindfullness,Support workers,Post,1.2174363069434937,0,39,12,18,Reliable decrease
+L4IhA,Mindfullness,Support workers,Follow-up,4.3085436154840675,0,35,18,24,No reliable decrease
+0Xq8T,Psychosocial information,Support workers,Baseline,0,NA,49,4,18,NA
+0Xq8T,Psychosocial information,Support workers,Post,1.4750882196364743,0,54,6,14,No reliable decrease
+0Xq8T,Psychosocial information,Support workers,Follow-up,4.8708825766217965,0,47,6,24,No reliable decrease
+nFKWl,Mindfullness,Medical,Baseline,0,NA,23,12,24,NA
+nFKWl,Mindfullness,Medical,Post,2.348696859076736,6,26,6,14,No reliable decrease
+nFKWl,Mindfullness,Medical,Follow-up,4.345906913073238,7,18,4,10,Reliable decrease
+R0kr1,Mindfullness,Medical,Baseline,0,NA,16,12,16,NA
+R0kr1,Mindfullness,Medical,Post,1.3547372423758461,0,17,8,12,No reliable decrease
+R0kr1,Mindfullness,Medical,Follow-up,4.7040581032778155,0,18,2,10,No reliable decrease
+M7ie7,Psychosocial information,Medical,Baseline,0,NA,26,8,18,NA
+M7ie7,Psychosocial information,Medical,Post,1.29666096281086,6,39,4,6,Reliable decrease
+M7ie7,Psychosocial information,Medical,Follow-up,4.2122146170811465,5,25,2,12,No reliable decrease
+J2g4P,Mindfullness,Medical,Baseline,0,NA,40,10,28,NA
+J2g4P,Mindfullness,Medical,Post,1.62795459730778,1,45,14,24,No reliable decrease
+J2g4P,Mindfullness,Medical,Follow-up,4.484074834588181,1,39,20,28,No reliable decrease
+SkyeM,Psychosocial information,Support workers,Baseline,0,NA,28,6,22,NA
+SkyeM,Psychosocial information,Support workers,Post,1.9940048672902881,0,45,6,26,No reliable decrease
+SkyeM,Psychosocial information,Support workers,Follow-up,4.962655335006464,0,35,10,18,No reliable decrease
+YgWzj,Psychosocial information,Medical,Baseline,0,NA,40,6,16,NA
+YgWzj,Psychosocial information,Medical,Post,1.6838866073465664,0,40,8,22,No reliable decrease
+YgWzj,Psychosocial information,Medical,Follow-up,4.212018784698456,0,42,10,24,No reliable decrease
+7Cdok,Psychosocial information,Support workers,Baseline,0,NA,44,14,28,NA
+7Cdok,Psychosocial information,Support workers,Post,1.6483827667503232,0,36,10,24,No reliable decrease
+7Cdok,Psychosocial information,Support workers,Follow-up,4.870833143204806,0,31,10,22,No reliable decrease
+SVjmL,Psychosocial information,Medical,Baseline,0,NA,39,8,20,NA
+SVjmL,Psychosocial information,Medical,Post,1.6495965472659517,0,43,16,18,No reliable decrease
+SVjmL,Psychosocial information,Medical,Follow-up,4.805490911856415,0,50,6,16,No reliable decrease
+ElmY1,Mindfullness,Support workers,Baseline,0,NA,22,2,18,NA
+ElmY1,Mindfullness,Support workers,Post,1.852908586204274,1,21,2,12,No reliable decrease
+ElmY1,Mindfullness,Support workers,Follow-up,5.237821127081907,1,32,4,10,No reliable decrease
+x3e20,Psychosocial information,Medical,Baseline,0,NA,8,14,16,NA
+x3e20,Psychosocial information,Medical,Post,1.4217898699520877,3,21,6,14,No reliable decrease
+x3e20,Psychosocial information,Medical,Follow-up,4.506253327249221,0,25,14,24,No reliable decrease
+25V11,Psychosocial information,Medical,Baseline,0,NA,38,18,24,NA
+25V11,Psychosocial information,Medical,Post,1.3869872233629934,2,30,24,22,No reliable decrease
+25V11,Psychosocial information,Medical,Follow-up,4.57000608411286,2,44,14,24,No reliable decrease
+GdLrr,Mindfullness,Support workers,Baseline,0,NA,24,20,34,NA
+GdLrr,Mindfullness,Support workers,Post,1.4382462544680203,1,27,18,32,Reliable decrease
+GdLrr,Mindfullness,Support workers,Follow-up,4.155653281618374,0,28,24,32,No reliable decrease
+t7pF2,Psychosocial information,Support workers,Baseline,0,NA,16,12,20,NA
+t7pF2,Psychosocial information,Support workers,Post,1.4513856567039318,2,14,8,12,No reliable decrease
+t7pF2,Psychosocial information,Support workers,Follow-up,4.3066043045098485,0,14,8,24,No reliable decrease
+FRNAc,Psychosocial information,Support workers,Baseline,0,NA,37,4,16,NA
+FRNAc,Psychosocial information,Support workers,Post,1.7243147767891094,1,33,4,10,No reliable decrease
+FRNAc,Psychosocial information,Support workers,Follow-up,4.774778310137653,0,12,8,10,No reliable decrease
+pt5xf,Mindfullness,Management,Baseline,0,NA,49,4,18,NA
+pt5xf,Mindfullness,Management,Post,1.1956232413111263,3,53,14,22,No reliable decrease
+pt5xf,Mindfullness,Management,Follow-up,4.153712069358886,1,50,12,18,No reliable decrease
+Es8gC,Mindfullness,Support workers,Baseline,0,NA,31,14,20,NA
+Es8gC,Mindfullness,Support workers,Post,1.4485109133774432,5,29,0,12,No reliable decrease
+Es8gC,Mindfullness,Support workers,Follow-up,4.362973610160468,0,37,4,16,No reliable decrease
+8g57w,Mindfullness,Support workers,Baseline,0,NA,15,2,18,NA
+8g57w,Mindfullness,Support workers,Post,1.2574412502851928,4,1,8,22,Reliable decrease
+8g57w,Mindfullness,Support workers,Follow-up,4.226284128070576,2,2,8,14,No reliable decrease
+h2cIB,Psychosocial information,Support workers,Baseline,0,NA,34,10,20,NA
+h2cIB,Psychosocial information,Support workers,Post,1.8000334626207317,3,23,8,22,Reliable decrease
+h2cIB,Psychosocial information,Support workers,Follow-up,5.520917940527797,1,28,6,26,Reliable decrease
+T0Eve,Psychosocial information,Medical,Baseline,0,NA,39,22,22,NA
+T0Eve,Psychosocial information,Medical,Post,2.25038748193779,3,20,16,18,No reliable decrease
+T0Eve,Psychosocial information,Medical,Follow-up,4.840646436991406,0,27,10,16,No reliable decrease
+lTX6H,Mindfullness,Support workers,Baseline,0,NA,14,18,18,NA
+lTX6H,Mindfullness,Support workers,Post,1.2379911019849419,6,8,4,14,No reliable decrease
+lTX6H,Mindfullness,Support workers,Follow-up,4.214710624382082,5,6,4,12,No reliable decrease
+0ftIU,Psychosocial information,Medical,Baseline,0,NA,45,8,28,NA
+0ftIU,Psychosocial information,Medical,Post,1.6523024564605673,2,41,10,18,Reliable decrease
+0ftIU,Psychosocial information,Medical,Follow-up,4.5761217583086164,5,28,6,12,Reliable decrease
+8VS7j,Mindfullness,Medical,Baseline,0,NA,32,10,24,NA
+8VS7j,Mindfullness,Medical,Post,1.269942581184881,6,9,0,0,Reliable decrease
+8VS7j,Mindfullness,Medical,Follow-up,4.379691991786448,4,3,0,2,Reliable decrease
+G4tnp,Psychosocial information,Medical,Baseline,0,NA,12,12,24,NA
+G4tnp,Psychosocial information,Medical,Post,1.1803255000380257,0,31,14,30,No reliable decrease
+G4tnp,Psychosocial information,Medical,Follow-up,4.117242375846072,0,25,22,40,Reliable decrease
+qu0yx,Psychosocial information,Support workers,Baseline,0,NA,26,18,24,NA
+qu0yx,Psychosocial information,Support workers,Post,3.3030892083048142,2,13,8,24,No reliable decrease
+qu0yx,Psychosocial information,Support workers,Follow-up,4.253203285420945,1,15,14,22,No reliable decrease
+eggWP,Mindfullness,Support workers,Baseline,0,NA,27,16,18,NA
+eggWP,Mindfullness,Support workers,Post,1.8690003042056431,2,23,10,18,No reliable decrease
+eggWP,Mindfullness,Support workers,Follow-up,5.131422921895201,0,22,10,14,Reliable decrease
+D24P4,Psychosocial information,Support workers,Baseline,0,NA,35,2,18,NA
+D24P4,Psychosocial information,Support workers,Post,1.1931721043425356,4,43,6,22,No reliable decrease
+D24P4,Psychosocial information,Support workers,Follow-up,4.381864020077573,2,39,0,24,No reliable decrease
+TOsAd,Psychosocial information,Support workers,Baseline,0,NA,34,2,18,NA
+TOsAd,Psychosocial information,Support workers,Post,1.1812597916191345,4,28,0,4,Reliable decrease
+TOsAd,Psychosocial information,Support workers,Follow-up,4.5072769792379646,4,22,0,6,Reliable decrease
+BwOx7,Psychosocial information,Medical,Baseline,0,NA,19,12,36,NA
+BwOx7,Psychosocial information,Medical,Post,1.7308772530230436,0,18,14,28,No reliable decrease
+BwOx7,Psychosocial information,Medical,Follow-up,4.201168910183284,0,13,14,28,No reliable decrease
+Xh7vJ,Mindfullness,Medical,Baseline,0,NA,22,16,26,NA
+Xh7vJ,Mindfullness,Medical,Post,1.1898189976424063,7,15,8,10,Reliable decrease
+Xh7vJ,Mindfullness,Medical,Follow-up,4.49464483991178,3,15,4,10,Reliable decrease
+xOV9Q,Mindfullness,Support workers,Baseline,0,NA,20,4,18,NA
+xOV9Q,Mindfullness,Support workers,Post,1.9134903794965397,3,23,6,12,No reliable decrease
+xOV9Q,Mindfullness,Support workers,Follow-up,4.190560498897255,3,29,6,14,No reliable decrease
+Hkbmv,Psychosocial information,Support workers,Baseline,0,NA,35,12,18,NA
+Hkbmv,Psychosocial information,Support workers,Post,1.9161042664841432,0,40,20,20,No reliable decrease
+Hkbmv,Psychosocial information,Support workers,Follow-up,4.8741216062057955,0,38,18,22,No reliable decrease
+xCPh8,Mindfullness,Support workers,Baseline,0,NA,16,20,34,NA
+xCPh8,Mindfullness,Support workers,Post,1.1904361548406723,3,26,22,36,No reliable decrease
+xCPh8,Mindfullness,Support workers,Follow-up,4.144992014601871,1,43,16,32,No reliable decrease
+ONuoe,Mindfullness,Medical,Baseline,0,NA,44,18,32,NA
+ONuoe,Mindfullness,Medical,Post,1.1603574416305422,0,46,14,28,No reliable decrease
+ONuoe,Mindfullness,Medical,Follow-up,11.262139326184501,0,46,12,16,Reliable decrease
+sGQwp,Mindfullness,Medical,Baseline,0,NA,22,8,16,NA
+sGQwp,Mindfullness,Medical,Post,1.8784755494714427,0,30,4,12,No reliable decrease
+sGQwp,Mindfullness,Medical,Follow-up,4.415579892006996,0,16,0,8,No reliable decrease
+jDidU,Psychosocial information,Support workers,Baseline,0,NA,11,4,20,NA
+jDidU,Psychosocial information,Support workers,Post,1.1591691383375162,2,12,0,10,Reliable decrease
+jDidU,Psychosocial information,Support workers,Follow-up,4.211668948208989,2,23,0,6,Reliable decrease
+aoHaG,Psychosocial information,Support workers,Baseline,0,NA,36,6,20,NA
+aoHaG,Psychosocial information,Support workers,Post,1.7227618069815196,0,46,14,14,No reliable decrease
+aoHaG,Psychosocial information,Support workers,Follow-up,5.131422921895201,0,40,6,18,No reliable decrease
+v4Gyz,Mindfullness,Support workers,Baseline,0,NA,29,6,16,NA
+v4Gyz,Mindfullness,Support workers,Post,1.216237736710016,6,35,10,16,No reliable decrease
+v4Gyz,Mindfullness,Support workers,Follow-up,4.569780211422922,4,27,6,14,No reliable decrease
+XDIu1,Mindfullness,Medical,Baseline,0,NA,53,12,30,NA
+XDIu1,Mindfullness,Medical,Post,1.3889767282683094,5,40,16,28,Reliable decrease
+XDIu1,Mindfullness,Medical,Follow-up,5.29506464369914,7,46,22,32,No reliable decrease
+C2FuA,Mindfullness,Support workers,Baseline,0,NA,48,24,28,NA
+C2FuA,Mindfullness,Support workers,Post,1.6576549547494106,6,39,30,26,No reliable decrease
+C2FuA,Mindfullness,Support workers,Follow-up,4.1816761730930105,5,43,26,32,Reliable decrease
+7gVDE,Psychosocial information,Medical,Baseline,0,NA,20,20,24,NA
+7gVDE,Psychosocial information,Medical,Post,1.692427941288311,5,14,24,28,No reliable decrease
+7gVDE,Psychosocial information,Medical,Follow-up,5.065606129743707,2,18,18,28,Reliable decrease
+uOjZ9,Psychosocial information,Support workers,Baseline,0,NA,39,2,20,NA
+uOjZ9,Psychosocial information,Support workers,Post,1.2270511065480265,2,38,0,14,Reliable decrease
+uOjZ9,Psychosocial information,Support workers,Follow-up,5.174496919917864,1,34,12,20,No reliable decrease
+d5ScY,Psychosocial information,Support workers,Baseline,0,NA,30,12,20,NA
+d5ScY,Psychosocial information,Support workers,Post,1.3316522168986236,3,16,16,18,No reliable decrease
+d5ScY,Psychosocial information,Support workers,Follow-up,4.405394326564758,0,20,4,16,No reliable decrease
+IeHt9,Mindfullness,Medical,Baseline,0,NA,25,22,18,NA
+IeHt9,Mindfullness,Medical,Post,1.270618678226481,3,22,14,16,No reliable decrease
+IeHt9,Mindfullness,Medical,Follow-up,4.206390219788577,0,24,10,22,No reliable decrease
+wHAar,Psychosocial information,Medical,Baseline,0,NA,20,16,16,NA
+wHAar,Psychosocial information,Medical,Post,1.352197885770781,2,9,14,16,No reliable decrease
+wHAar,Psychosocial information,Medical,Follow-up,4.219454331127842,1,20,16,20,No reliable decrease
+vImRI,Psychosocial information,Medical,Baseline,0,NA,8,22,28,NA
+vImRI,Psychosocial information,Medical,Post,1.5215537303216975,0,8,16,16,Reliable decrease
+vImRI,Psychosocial information,Medical,Follow-up,4.577428321545365,0,4,16,18,Reliable decrease
+Msukp,Mindfullness,Support workers,Baseline,0,NA,31,8,18,NA
+Msukp,Mindfullness,Support workers,Post,1.775457829492737,5,36,12,12,No reliable decrease
+Msukp,Mindfullness,Support workers,Follow-up,5.005009886683398,3,40,4,10,No reliable decrease
+xrqs9,Mindfullness,Support workers,Baseline,0,NA,44,22,22,NA
+xrqs9,Mindfullness,Support workers,Post,1.2508821963647425,2,47,12,28,Reliable decrease
+xrqs9,Mindfullness,Support workers,Follow-up,4.566627500190129,0,53,12,28,Reliable decrease
+r1cRe,Mindfullness,Medical,Baseline,0,NA,33,22,28,NA
+r1cRe,Mindfullness,Medical,Post,1.3961670088980151,2,30,16,28,No reliable decrease
+r1cRe,Mindfullness,Medical,Follow-up,4.860659365731235,1,46,18,28,No reliable decrease
+iFFLv,Mindfullness,Medical,Baseline,0,NA,16,6,18,NA
+iFFLv,Mindfullness,Medical,Post,1.4170834283975968,2,12,0,10,No reliable decrease
+iFFLv,Mindfullness,Medical,Follow-up,4.414150885998935,0,11,2,10,No reliable decrease
+YRdxA,Psychosocial information,Medical,Baseline,0,NA,23,8,22,NA
+YRdxA,Psychosocial information,Medical,Post,1.3466685679519355,1,23,10,22,No reliable decrease
+YRdxA,Psychosocial information,Medical,Follow-up,4.874740284432276,0,19,4,14,No reliable decrease
+INusY,Psychosocial information,Medical,Baseline,0,NA,20,12,16,NA
+INusY,Psychosocial information,Medical,Post,1.3605821735493193,1,20,10,18,No reliable decrease
+INusY,Psychosocial information,Medical,Follow-up,4.152566735112936,0,13,8,14,No reliable decrease
+ZRu4h,Psychosocial information,Support workers,Baseline,0,NA,33,14,20,NA
+ZRu4h,Psychosocial information,Support workers,Post,2.0854684766902425,0,23,16,20,No reliable decrease
+ZRu4h,Psychosocial information,Support workers,Follow-up,5.10205452886151,0,26,12,14,No reliable decrease
+i5UAE,Psychosocial information,Support workers,Baseline,0,NA,18,6,16,NA
+i5UAE,Psychosocial information,Support workers,Post,1.6592584987451517,0,31,4,18,No reliable decrease
+i5UAE,Psychosocial information,Support workers,Follow-up,4.652306259031105,0,25,2,14,No reliable decrease
+aBIfl,Mindfullness,Medical,Baseline,0,NA,23,20,22,NA
+aBIfl,Mindfullness,Medical,Post,1.1565138033310518,4,41,34,32,No reliable decrease
+aBIfl,Mindfullness,Medical,Follow-up,4.106414936497072,4,23,26,30,No reliable decrease
+xnR3N,Mindfullness,Support workers,Baseline,0,NA,20,2,18,NA
+xnR3N,Mindfullness,Support workers,Post,1.1650695870408396,2,12,6,8,Reliable decrease
+xnR3N,Mindfullness,Support workers,Follow-up,4.192004715187466,1,36,4,16,No reliable decrease
+tdjH9,Psychosocial information,Medical,Baseline,0,NA,24,22,26,NA
+tdjH9,Psychosocial information,Medical,Post,1.2602030572667122,1,21,14,24,No reliable decrease
+tdjH9,Psychosocial information,Medical,Follow-up,4.3782888432580425,0,9,18,20,Reliable decrease
+xWP0e,Mindfullness,Support workers,Baseline,0,NA,43,18,24,NA
+xWP0e,Mindfullness,Support workers,Post,1.3900954445204958,2,44,12,18,No reliable decrease
+xWP0e,Mindfullness,Support workers,Follow-up,4.152219180165792,0,48,16,30,No reliable decrease
+1z9Fy,Mindfullness,Support workers,Baseline,0,NA,10,6,16,NA
+1z9Fy,Mindfullness,Support workers,Post,1.1909069130732375,6,22,2,6,Reliable decrease
+1z9Fy,Mindfullness,Support workers,Follow-up,4.49079321621416,0,22,4,10,No reliable decrease
+yqo5V,Psychosocial information,Medical,Baseline,0,NA,42,8,24,NA
+yqo5V,Psychosocial information,Medical,Post,1.4193512814662712,6,31,6,10,Reliable decrease
+yqo5V,Psychosocial information,Medical,Follow-up,4.11876492508936,0,32,8,18,No reliable decrease
+VvQSV,Mindfullness,Support workers,Baseline,0,NA,49,34,36,NA
+VvQSV,Mindfullness,Support workers,Post,2.1134033006312265,7,37,10,14,Reliable decrease
+VvQSV,Mindfullness,Support workers,Follow-up,4.236191345349456,2,39,42,38,No reliable decrease
+LwEJE,Mindfullness,Support workers,Baseline,0,NA,25,16,20,NA
+LwEJE,Mindfullness,Support workers,Post,1.1903011635865846,5,16,2,12,No reliable decrease
+LwEJE,Mindfullness,Support workers,Follow-up,4.1162677770172635,1,19,6,16,Reliable decrease
+pB9iY,Mindfullness,Support workers,Baseline,0,NA,24,4,24,NA
+pB9iY,Mindfullness,Support workers,Post,2.134940679899612,2,22,2,18,No reliable decrease
+pB9iY,Mindfullness,Support workers,Follow-up,4.7374750931629785,1,18,6,14,Reliable decrease
+SQfmk,Mindfullness,Management,Baseline,0,NA,34,26,24,NA
+SQfmk,Mindfullness,Management,Post,1.6250665449844095,0,35,26,24,No reliable decrease
+SQfmk,Mindfullness,Management,Follow-up,4.4871282987299415,0,52,22,30,No reliable decrease
+kR1fB,Mindfullness,Support workers,Baseline,0,NA,32,18,20,NA
+kR1fB,Mindfullness,Support workers,Post,2.1101011483763026,3,31,6,12,No reliable decrease
+kR1fB,Mindfullness,Support workers,Follow-up,6.178723857327554,3,36,8,16,Reliable decrease
+ywVUc,Psychosocial information,Support workers,Baseline,0,NA,20,0,24,NA
+ywVUc,Psychosocial information,Support workers,Post,1.1904361548406723,4,31,8,22,Reliable decrease
+ywVUc,Psychosocial information,Support workers,Follow-up,4.812951935508404,2,29,6,28,No reliable decrease
+etuk6,Psychosocial information,Medical,Baseline,0,NA,31,14,20,NA
+etuk6,Psychosocial information,Medical,Post,1.4235690927066698,4,29,10,28,No reliable decrease
+etuk6,Psychosocial information,Medical,Follow-up,4.481958323826907,1,41,16,28,No reliable decrease
+ophqj,Mindfullness,Support workers,Baseline,0,NA,36,22,24,NA
+ophqj,Mindfullness,Support workers,Post,1.648243592668644,3,44,16,20,No reliable decrease
+ophqj,Mindfullness,Support workers,Follow-up,4.607473191877709,1,50,24,14,No reliable decrease
+qV3Kq,Psychosocial information,Support workers,Baseline,0,NA,19,12,18,NA
+qV3Kq,Psychosocial information,Support workers,Post,1.394182447334398,0,18,10,14,Reliable decrease
+qV3Kq,Psychosocial information,Support workers,Follow-up,4.615241463229143,0,21,4,18,No reliable decrease
+U6ocP,Psychosocial information,Medical,Baseline,0,NA,2,18,16,NA
+U6ocP,Psychosocial information,Medical,Post,1.38868012776637,0,8,8,8,No reliable decrease
+U6ocP,Psychosocial information,Medical,Follow-up,4.109109057723021,0,5,22,18,No reliable decrease
+snURw,Mindfullness,Support workers,Baseline,0,NA,14,6,18,NA
+snURw,Mindfullness,Support workers,Post,2.1057658377062896,7,14,6,12,No reliable decrease
+snURw,Mindfullness,Support workers,Follow-up,4.4031017567875885,3,17,6,14,No reliable decrease
+H47Np,Psychosocial information,Medical,Baseline,0,NA,34,18,32,NA
+H47Np,Psychosocial information,Medical,Post,1.380781428245494,0,33,14,18,Reliable decrease
+H47Np,Psychosocial information,Medical,Follow-up,4.1816761730930105,3,45,18,18,Reliable decrease
+oqYZD,Mindfullness,Medical,Baseline,0,NA,28,4,18,NA
+oqYZD,Mindfullness,Medical,Post,1.5515533500646437,4,33,6,4,No reliable decrease
+oqYZD,Mindfullness,Medical,Follow-up,4.831470834283976,0,44,2,10,No reliable decrease
+0YOSt,Mindfullness,Support workers,Baseline,0,NA,19,8,22,NA
+0YOSt,Mindfullness,Support workers,Post,1.3083679367252263,5,12,10,18,Reliable decrease
+0YOSt,Mindfullness,Support workers,Follow-up,4.245545288615104,7,27,0,12,No reliable decrease
+bMx1U,Mindfullness,Medical,Baseline,0,NA,32,18,30,NA
+bMx1U,Mindfullness,Medical,Post,1.3083679367252263,5,34,12,18,Reliable decrease
+bMx1U,Mindfullness,Medical,Follow-up,4.245545288615104,2,27,22,30,No reliable decrease
+Nx8JF,Psychosocial information,Medical,Baseline,0,NA,40,24,30,NA
+Nx8JF,Psychosocial information,Medical,Post,1.185427028671382,1,50,24,28,No reliable decrease
+Nx8JF,Psychosocial information,Medical,Follow-up,4.604553197961822,0,47,18,32,No reliable decrease
+Z6S6P,Psychosocial information,Medical,Baseline,0,NA,32,8,18,NA
+Z6S6P,Psychosocial information,Medical,Post,1.6480869267624914,1,37,10,14,No reliable decrease
+Z6S6P,Psychosocial information,Medical,Follow-up,4.14912616929044,2,41,6,28,No reliable decrease
+Dmiid,Mindfullness,Support workers,Baseline,0,NA,44,16,22,NA
+Dmiid,Mindfullness,Support workers,Post,1.156764772986539,2,51,18,20,No reliable decrease
+Dmiid,Mindfullness,Support workers,Follow-up,4.119424290820595,0,25,14,18,No reliable decrease
+N6E8M,Mindfullness,Support workers,Baseline,0,NA,41,2,18,NA
+N6E8M,Mindfullness,Support workers,Post,1.457697163282379,3,43,4,14,No reliable decrease
+N6E8M,Mindfullness,Support workers,Follow-up,4.381318731462469,1,48,4,18,No reliable decrease
+zAg4y,Psychosocial information,Medical,Baseline,0,NA,41,4,22,NA
+zAg4y,Psychosocial information,Medical,Post,1.1945349456232413,0,46,12,22,No reliable decrease
+zAg4y,Psychosocial information,Medical,Follow-up,4.409968818921591,0,48,12,26,No reliable decrease
+y9DtA,Mindfullness,Medical,Baseline,0,NA,23,22,26,NA
+y9DtA,Mindfullness,Medical,Post,1.514371435090121,5,12,10,18,No reliable decrease
+y9DtA,Mindfullness,Medical,Follow-up,4.209747129059244,1,13,8,20,No reliable decrease
+iGU4c,Mindfullness,Support workers,Baseline,0,NA,25,10,20,NA
+iGU4c,Mindfullness,Support workers,Post,1.4499517073541714,0,15,6,18,No reliable decrease
+iGU4c,Mindfullness,Support workers,Follow-up,4.3548475169214385,0,31,0,0,Reliable decrease
+i99BK,Mindfullness,Support workers,Baseline,0,NA,39,10,20,NA
+i99BK,Mindfullness,Support workers,Post,1.166242299794661,3,34,2,12,No reliable decrease
+i99BK,Mindfullness,Support workers,Follow-up,4.1159886683397975,1,31,10,18,No reliable decrease
+l6KUz,Mindfullness,Medical,Baseline,0,NA,35,20,34,NA
+l6KUz,Mindfullness,Medical,Post,1.5121803939463077,7,35,14,24,Reliable decrease
+l6KUz,Mindfullness,Medical,Follow-up,4.79929462316526,1,26,8,22,Reliable decrease
+7RW2Q,Mindfullness,Medical,Baseline,0,NA,33,4,18,NA
+7RW2Q,Mindfullness,Medical,Post,1.3548516997490303,4,31,2,14,No reliable decrease
+7RW2Q,Mindfullness,Medical,Follow-up,4.225544528100996,3,29,4,14,No reliable decrease
+iODKW,Psychosocial information,Medical,Baseline,0,NA,28,8,22,NA
+iODKW,Psychosocial information,Medical,Post,1.645817552665602,5,17,16,18,No reliable decrease
+iODKW,Psychosocial information,Medical,Follow-up,4.7040581032778155,1,11,12,26,No reliable decrease
+bNaRv,Psychosocial information,Management,Baseline,0,NA,50,20,38,NA
+bNaRv,Psychosocial information,Management,Post,1.7237504753213173,1,36,24,28,Reliable decrease
+bNaRv,Psychosocial information,Management,Follow-up,4.774778310137653,3,29,12,28,No reliable decrease
+mwkSI,Psychosocial information,Medical,Baseline,0,NA,15,20,32,NA
+mwkSI,Psychosocial information,Medical,Post,1.4176918396836262,0,28,12,14,Reliable decrease
+mwkSI,Psychosocial information,Medical,Follow-up,4.440684462696783,2,17,26,36,No reliable decrease
+x3x3H,Psychosocial information,Support workers,Baseline,0,NA,30,14,16,NA
+x3x3H,Psychosocial information,Support workers,Post,1.4350711080690546,1,39,12,16,No reliable decrease
+x3x3H,Psychosocial information,Support workers,Follow-up,4.145516389079018,2,27,12,12,No reliable decrease
+b88pw,Psychosocial information,Support workers,Baseline,0,NA,43,2,18,NA
+b88pw,Psychosocial information,Support workers,Post,1.4125192029812152,0,44,2,28,No reliable decrease
+b88pw,Psychosocial information,Support workers,Follow-up,5.074886683397977,0,40,8,24,No reliable decrease
+zK81G,Psychosocial information,Support workers,Baseline,0,NA,40,18,18,NA
+zK81G,Psychosocial information,Support workers,Post,1.2572362917332116,3,52,10,14,No reliable decrease
+zK81G,Psychosocial information,Support workers,Follow-up,4.274323522701346,3,46,16,20,Reliable decrease
+CaDtf,Mindfullness,Support workers,Baseline,0,NA,33,4,24,NA
+CaDtf,Mindfullness,Support workers,Post,1.485860141455624,7,34,0,10,Reliable decrease
+CaDtf,Mindfullness,Support workers,Follow-up,4.366646893299871,7,29,10,22,No reliable decrease
+c9Eqw,Psychosocial information,Medical,Baseline,0,NA,21,10,18,NA
+c9Eqw,Psychosocial information,Medical,Post,1.2994345577610464,2,12,12,14,No reliable decrease
+c9Eqw,Psychosocial information,Medical,Follow-up,4.234807970187847,0,15,18,20,No reliable decrease
+uxVgd,Psychosocial information,Support workers,Baseline,0,NA,35,10,28,NA
+uxVgd,Psychosocial information,Support workers,Post,1.3019328466043045,1,36,2,14,Reliable decrease
+uxVgd,Psychosocial information,Support workers,Follow-up,4.542349988592289,0,38,8,26,No reliable decrease
+P5ZWp,Psychosocial information,Medical,Baseline,0,NA,28,14,16,NA
+P5ZWp,Psychosocial information,Medical,Post,1.164729256977717,0,13,8,16,No reliable decrease
+P5ZWp,Psychosocial information,Medical,Follow-up,4.399995056658301,1,17,4,14,No reliable decrease
+WOEpy,Psychosocial information,Support workers,Baseline,0,NA,35,12,26,NA
+WOEpy,Psychosocial information,Support workers,Post,1.4479819758156514,1,23,10,16,Reliable decrease
+WOEpy,Psychosocial information,Support workers,Follow-up,4.275627424138718,0,33,10,12,No reliable decrease
+9F8Sf,Mindfullness,Support workers,Baseline,0,NA,44,2,28,NA
+9F8Sf,Mindfullness,Support workers,Post,1.7034074834588182,6,48,12,32,No reliable decrease
+9F8Sf,Mindfullness,Support workers,Follow-up,5.299816716100084,5,37,2,14,Reliable decrease
+FjYny,Psychosocial information,Medical,Baseline,0,NA,40,10,34,NA
+FjYny,Psychosocial information,Medical,Post,1.2591953760742263,4,42,10,18,Reliable decrease
+FjYny,Psychosocial information,Medical,Follow-up,4.97527948893452,0,47,12,26,Reliable decrease
+7QTVu,Psychosocial information,Management,Baseline,0,NA,42,14,28,NA
+7QTVu,Psychosocial information,Management,Post,1.5639215909955129,1,48,16,28,No reliable decrease
+7QTVu,Psychosocial information,Management,Follow-up,4.679512130200015,0,40,12,28,No reliable decrease
+rJKIo,Mindfullness,Medical,Baseline,0,NA,28,16,16,NA
+rJKIo,Mindfullness,Medical,Post,1.4295828580120162,5,25,10,18,No reliable decrease
+rJKIo,Mindfullness,Medical,Follow-up,4.119703779755114,3,26,10,14,No reliable decrease
+GXw7C,Psychosocial information,Support workers,Baseline,0,NA,22,6,26,NA
+GXw7C,Psychosocial information,Support workers,Post,1.7376089436459046,0,33,14,22,No reliable decrease
+GXw7C,Psychosocial information,Support workers,Follow-up,4.14228458437904,0,39,8,24,No reliable decrease
+zpTjw,Mindfullness,Support workers,Baseline,0,NA,54,24,36,NA
+zpTjw,Mindfullness,Support workers,Post,3.360850254772226,0,49,24,36,No reliable decrease
+zpTjw,Mindfullness,Support workers,Follow-up,5.0207426420260095,0,47,16,34,Reliable decrease
+URVwd,Psychosocial information,Medical,Baseline,0,NA,27,22,26,NA
+URVwd,Psychosocial information,Medical,Post,1.258259943721956,3,26,8,10,Reliable decrease
+URVwd,Psychosocial information,Medical,Follow-up,5.400394326564758,3,26,16,16,Reliable decrease
+4aVmI,Mindfullness,Medical,Baseline,0,NA,46,22,28,NA
+4aVmI,Mindfullness,Medical,Post,1.1342421476918396,5,42,18,16,No reliable decrease
+4aVmI,Mindfullness,Medical,Follow-up,4.372746976956423,4,39,14,16,Reliable decrease
+plVrv,Psychosocial information,Support workers,Baseline,0,NA,15,0,18,NA
+plVrv,Psychosocial information,Support workers,Post,1.6477804395771543,4,21,16,24,No reliable decrease
+plVrv,Psychosocial information,Support workers,Follow-up,4.83365997414252,0,22,30,42,No reliable decrease
+CK6yX,Mindfullness,Medical,Baseline,0,NA,44,16,30,NA
+CK6yX,Mindfullness,Medical,Post,1.2276454483230663,4,39,26,26,Reliable decrease
+CK6yX,Mindfullness,Medical,Follow-up,4.153756939691231,1,24,28,38,No reliable decrease
+9pYNM,Psychosocial information,Medical,Baseline,0,NA,33,6,18,NA
+9pYNM,Psychosocial information,Medical,Post,1.6508365655182904,0,36,16,18,No reliable decrease
+9pYNM,Psychosocial information,Medical,Follow-up,5.165264278652369,0,41,14,20,No reliable decrease
+WUy0e,Mindfullness,Medical,Baseline,0,NA,49,10,24,NA
+WUy0e,Mindfullness,Medical,Post,1.4523518898775571,4,38,6,18,No reliable decrease
+WUy0e,Mindfullness,Medical,Follow-up,4.6716468932998705,2,29,8,26,No reliable decrease
+GWIuN,Mindfullness,Support workers,Baseline,0,NA,26,22,28,NA
+GWIuN,Mindfullness,Support workers,Post,1.575917560270743,2,40,14,28,No reliable decrease
+GWIuN,Mindfullness,Support workers,Follow-up,4.609708723096813,0,41,12,14,Reliable decrease
+jEeQI,Mindfullness,Medical,Baseline,0,NA,27,12,20,NA
+jEeQI,Mindfullness,Medical,Post,2.3104160012168227,2,15,6,10,Reliable decrease
+jEeQI,Mindfullness,Medical,Follow-up,4.6108137500950646,2,13,8,6,Reliable decrease
+g2w0M,Psychosocial information,Support workers,Baseline,0,NA,32,4,20,NA
+g2w0M,Psychosocial information,Support workers,Post,2.229304129591604,2,25,2,18,No reliable decrease
+g2w0M,Psychosocial information,Support workers,Follow-up,4.768562628336755,3,18,6,12,Reliable decrease
+hNs5u,Psychosocial information,Medical,Baseline,0,NA,39,4,26,NA
+hNs5u,Psychosocial information,Medical,Post,1.2898429538367937,3,50,10,28,No reliable decrease
+hNs5u,Psychosocial information,Medical,Follow-up,4.278822724161533,3,50,10,30,No reliable decrease
+nzD2d,Mindfullness,Support workers,Baseline,0,NA,17,0,18,NA
+nzD2d,Mindfullness,Support workers,Post,1.5479557380789413,5,20,2,14,Reliable decrease
+nzD2d,Mindfullness,Support workers,Follow-up,4.542349988592289,2,17,4,10,No reliable decrease
+0ukzE,Mindfullness,Medical,Baseline,0,NA,21,2,18,NA
+0ukzE,Mindfullness,Medical,Post,1.189272948513195,5,11,0,10,No reliable decrease
+0ukzE,Mindfullness,Medical,Follow-up,4.6159704160012165,6,6,6,14,No reliable decrease
+3Dokh,Mindfullness,Medical,Baseline,0,NA,40,14,22,NA
+3Dokh,Mindfullness,Medical,Post,1.5668248536010343,0,41,12,18,No reliable decrease
+3Dokh,Mindfullness,Medical,Follow-up,4.147003954673359,0,30,12,14,No reliable decrease
+bhRsl,Psychosocial information,Support workers,Baseline,0,NA,50,18,22,NA
+bhRsl,Psychosocial information,Support workers,Post,1.223847821127082,3,42,10,18,No reliable decrease
+bhRsl,Psychosocial information,Support workers,Follow-up,4.625296980758993,1,42,12,18,No reliable decrease
+hrkUQ,Mindfullness,Medical,Baseline,0,NA,31,22,20,NA
+hrkUQ,Mindfullness,Medical,Post,1.3900509544452049,7,19,18,10,No reliable decrease
+hrkUQ,Mindfullness,Medical,Follow-up,4.278822724161533,5,20,20,20,No reliable decrease
+IGIRH,Psychosocial information,Medical,Baseline,0,NA,40,16,20,NA
+IGIRH,Psychosocial information,Medical,Post,1.2887824169138338,2,43,14,20,No reliable decrease
+IGIRH,Psychosocial information,Medical,Follow-up,4.213472507415013,0,33,14,18,No reliable decrease
+EjSkU,Psychosocial information,Medical,Baseline,0,NA,32,22,32,NA
+EjSkU,Psychosocial information,Medical,Post,1.1600973458057646,1,25,20,22,No reliable decrease
+EjSkU,Psychosocial information,Medical,Follow-up,4.173225720587117,2,28,26,30,No reliable decrease
+EEDHF,Psychosocial information,Support workers,Baseline,0,NA,53,24,30,NA
+EEDHF,Psychosocial information,Support workers,Post,1.2349372575861282,3,48,16,26,No reliable decrease
+EEDHF,Psychosocial information,Support workers,Follow-up,4.187264811012244,2,47,22,30,Reliable decrease
+CKKrU,Psychosocial information,Medical,Baseline,0,NA,38,16,28,NA
+CKKrU,Psychosocial information,Medical,Post,1.4127857631759069,1,45,26,22,No reliable decrease
+CKKrU,Psychosocial information,Medical,Follow-up,4.610602707430223,0,26,22,26,Reliable decrease
+6d3zR,Mindfullness,Support workers,Baseline,0,NA,32,4,20,NA
+6d3zR,Mindfullness,Support workers,Post,1.2315963191117196,6,31,0,14,No reliable decrease
+6d3zR,Mindfullness,Support workers,Follow-up,4.2125655943417755,4,28,2,14,No reliable decrease
+vTRQ3,Psychosocial information,Medical,Baseline,0,NA,26,12,18,NA
+vTRQ3,Psychosocial information,Medical,Post,1.1911806981519508,4,23,14,14,No reliable decrease
+vTRQ3,Psychosocial information,Medical,Follow-up,4.114184728876721,4,22,6,10,No reliable decrease
+HxBJV,Psychosocial information,Support workers,Baseline,0,NA,39,16,30,NA
+HxBJV,Psychosocial information,Support workers,Post,1.3900954445204958,0,38,14,20,Reliable decrease
+HxBJV,Psychosocial information,Support workers,Follow-up,4.841179177123736,3,49,8,14,Reliable decrease
+Y8un3,Mindfullness,Medical,Baseline,0,NA,27,4,16,NA
+Y8un3,Mindfullness,Medical,Post,1.645817552665602,1,12,4,14,No reliable decrease
+Y8un3,Mindfullness,Medical,Follow-up,5.057610084417066,0,11,8,12,No reliable decrease
+MATia,Psychosocial information,Medical,Baseline,0,NA,42,6,30,NA
+MATia,Psychosocial information,Medical,Post,2.141397064415545,7,31,0,14,Reliable decrease
+MATia,Psychosocial information,Medical,Follow-up,4.387708190736938,5,17,2,22,Reliable decrease
+B4ENh,Psychosocial information,Support workers,Baseline,0,NA,24,4,16,NA
+B4ENh,Psychosocial information,Support workers,Post,1.1930390143737166,0,16,2,12,No reliable decrease
+B4ENh,Psychosocial information,Support workers,Follow-up,5.527280021294395,5,24,10,20,No reliable decrease
+2kHGw,Psychosocial information,Medical,Baseline,0,NA,32,24,26,NA
+2kHGw,Psychosocial information,Medical,Post,3.0420655563160697,3,37,16,18,No reliable decrease
+2kHGw,Psychosocial information,Medical,Follow-up,5.631117575481025,1,43,16,28,No reliable decrease
+YTab1,Psychosocial information,Support workers,Baseline,0,NA,31,20,22,NA
+YTab1,Psychosocial information,Support workers,Post,1.4106061297437067,2,18,8,22,No reliable decrease
+YTab1,Psychosocial information,Support workers,Follow-up,4.368098334474104,3,21,4,16,No reliable decrease
+o6y7X,Mindfullness,Medical,Baseline,0,NA,22,6,18,NA
+o6y7X,Mindfullness,Medical,Post,1.4143212411590236,6,21,2,14,No reliable decrease
+o6y7X,Mindfullness,Medical,Follow-up,4.126027074302228,5,15,4,2,No reliable decrease
+XwCg4,Mindfullness,Support workers,Baseline,0,NA,37,4,18,NA
+XwCg4,Mindfullness,Support workers,Post,1.2149075975359342,5,28,4,10,No reliable decrease
+XwCg4,Mindfullness,Support workers,Follow-up,4.146452962202449,2,16,2,12,No reliable decrease
+nf0Cn,Psychosocial information,Support workers,Baseline,0,NA,30,14,16,NA
+nf0Cn,Psychosocial information,Support workers,Post,1.3605821735493193,1,33,12,24,No reliable decrease
+nf0Cn,Psychosocial information,Support workers,Follow-up,5.099734200319416,1,27,6,12,Reliable decrease

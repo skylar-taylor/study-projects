@@ -1,0 +1,451 @@
+---
+title: "The Linear Model"
+author: "Sky Taylor"
+format: 
+  html:
+    self-contained: true
+editor: visual
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+```{r}
+library(tidyverse)
+library(datawizard)
+library(here)
+library(knitr)
+library(qqplotr)
+library(BayesFactor)
+library(broom)
+library(GGally)
+library(ggfortify)
+library(parameters)
+library(robust)
+
+# load the data
+mindful_tib <- here("docs/an_adventure_in_statistics/mindfulness.csv") |> readr::read_csv()
+
+mindful_tib <- mindful_tib |> 
+  filter(time == "Follow-up")
+```
+
+## **Analysis plan**
+
+As the objective is to determine whether the outcome of `stress` is predicted by `engagement` and `anxiety`, a linear model is appropriate. Due to the expectation that the relationship between the predictors and outcome is linear, a linear model with multiple predictors will be fitted using ordinary least squares (OLS) estimation to obtain unbiased estimates. The hypothesis being tested is:
+
+> H~1~: At follow-up participants' `stress` will be predicted by both their `engagement` with the programme to which they were assigned and their `anxiety` levels.
+
+The model to be fitted is:
+
+$$
+\text{Stress}_i=\hat{b}_0+\hat{b}_1\text{Anxiety}_i+\hat{b}_2\text{Engagement}_i
+$$
+
+Summary statistics will include calculating the mean, median, standard deviation (SD), minimum, maximum, inter-quartile range (IQR), and variance for the predictor and outcome variables to explore their distributions. Data will be visualised using histograms to further inspect the distribution of the variables and scatter plots to assess linearity and outliers.
+
+A linear model will be fit with `anxiety` and `engagement` predicting `stress`. Model fit statistics will be evaluated, with the R^2^ value giving a measure of variance explained by the model and a significant *F*-statistic indicating that the addition of predictors improved the model fit compared to a model with no predictors. Parameter estimates will be calculated and *t*-tests will be used to evaluate whether the *b*-values are significantly different from zero. Standard error and 95% confidence intervals will be checked to evaluate what the model tells us about the population value of *b*. Standardised *b*s will be calculated to investigate the effect size of each of the predictors.
+
+The assumptions of the linear model and the presence of unusual cases will be checked as follows:
+
+-   Linearity will be checked using the Residual vs Fitted plot in which an approximately straight line at y=0 indicates linearity.
+
+-   Homoscedasticity will be checked using Residual vs Fitted and Scale-Location plots in which a random scatter of dots indicates homoscedasticity.
+
+-   Normality of the residuals will be checked using a Q-Q plot of standardised residuals where points lying across the diagonal indicates normality. However, as the sample size (n=534) is large, the Central Limit Theorem suggests that normality should not be an issue.
+
+-   The Residuals vs Leverage plot will be checked in which an approximately straight line at y=0 suggests none of the assumptions have been violated.
+
+-   The presence of outliers will be assessed by checking whether an appropriate proportion of standardised residuals fall within the expected ranges, with 95% within ±1.96, 99% within ±2.58, and cases grossly exceeding ±3 being considered outliers.
+
+-   Influential cases will be determined by checking whether the Cook's Distance for any case exceeds the threshold of 1.
+
+If the assumption of linearity is not met, the analysis will be abandoned as a linear model is not appropriate. The violation of other assumptions or the introduction of bias due to unusual cases will be addressed through the use of robust models.
+
+Robust parameter estimates will be calculated to determine if bias is a problem in the original model, if the estimates are grossly different then bias is an issue and the robust model will be reported. Estimating the model with standard errors designed for heteroscedastic residuals will be used to calculate robust confidence intervals and significance tests, if these values differ substantially from the original model then bias is an issue and the robust version will be reported.
+
+In addition to the Frequentist model, a Bayesian model will be reported. Bayes factors will be used to compare potential models against each other hierarchically to establish which model is favourable. The Bayesian estimates of *b* and their associated 95% credible intervals will be interpreted and compared to the non-Bayesian *b*-values.
+
+```{r}
+## Summary statistics and data visualisations
+#anxiety table
+anxiety_tbl <- mindful_tib |> 
+  summarise(
+    variable = "Anxiety",
+    mean =  mean(anxiety) |> round(2),
+    median =  median(anxiety),
+    SD = sd(anxiety) |> round(2),
+    min = min(anxiety),
+    max = max(anxiety),
+    IQR = IQR(anxiety, type=8),
+    variance = var(anxiety) |> round(3)
+  )
+
+#engagement table
+engagement_tbl <- mindful_tib |> 
+  summarise(
+    variable = "Engagement",
+    mean =  mean(engagement) |> round(2),
+    median =  median(engagement),
+    SD = sd(engagement) |> round(2),
+    min = min(engagement),
+    max = max(engagement),
+    IQR = IQR(engagement, type=8),
+    variance = var(engagement) |> round(3)
+  )
+
+#stress table
+stress_tbl <- mindful_tib |> 
+  summarise(
+    variable = "Stress",
+    mean =  mean(stress) |> round(2),
+    median =  median(stress),
+    SD = sd(stress) |> round(2),
+    min = min(stress),
+    max = max(stress),
+    IQR = IQR(stress, type=8),
+    variance = var(stress) |> round(3)
+  )
+
+#merge into one table
+desc_stats <- rbind(anxiety_tbl, engagement_tbl, stress_tbl)
+
+#anxiety histogram
+anx_hist <- mindful_tib |> 
+ggplot(aes(anxiety)) +
+  geom_histogram(binwidth=2, colour = "#0362CC", fill="#0362CC", alpha=0.8)+
+  labs(y="Frequency", x="Anxiety (0-42)")+
+  scale_x_continuous(breaks = seq(0, 42, 2)) +
+  theme_minimal()
+
+#engagement histogram
+eng_hist <- mindful_tib |> 
+ggplot(aes(engagement)) +
+  geom_histogram(binwidth=1, colour = "#008A71", fill="#008A71", alpha=0.8)+
+  labs(y="Frequency", x="Engagement (0-7)")+
+  scale_x_continuous(breaks = seq(0, 7, 1)) +
+  theme_minimal()
+
+#stress histogram
+str_hist <- mindful_tib |> 
+ggplot(aes(stress)) +
+  geom_histogram(binwidth=2, colour = "#FF8200", fill="#FF8200", alpha=0.8)+
+  labs(y="Frequency", x="Stress (0-42)")+
+  scale_x_continuous(breaks = seq(0, 42, 2)) +
+  theme_minimal()
+
+#anxiety and stress scatterplot
+anx_scatter <- mindful_tib |> 
+  ggplot(aes(anxiety, stress)) +
+  geom_point(colour="#0362CC", shape = 18, size = 4, alpha = 0.5, position = "jitter") +
+  geom_smooth(method = "lm", colour = "#FF8200", fill = "#FF8200") +
+  labs(x = "Anxiety (0-42)", y = "Stress (0-42)") +
+  theme_minimal()
+
+#engagement and stress scatterplot
+eng_scatter <- mindful_tib |> 
+  ggplot(aes(engagement, stress)) +
+  geom_point(colour="#008A71", shape = 18, size = 4, alpha = 0.5, position = "jitter") +
+  geom_smooth(method = "lm", colour = "#FF8200", fill = "#FF8200") +
+  labs(x = "Engagement (0-7)", y = "Stress (0-42)") +
+  scale_x_continuous(breaks = seq(0, 7, 1)) +
+  theme_minimal()
+```
+
+```{r}
+#fitting the linear model
+stress_lm <- lm(stress ~ anxiety + engagement, data = mindful_tib, na.action = na.exclude)
+
+#extracting model fit statistics
+fit_stats <- glance(stress_lm)
+
+#parameter estimates
+estimates <- tidy(stress_lm, conf.int = T)
+
+#standardised betas
+estimates_std <- model_parameters(stress_lm, standardize = "refit")
+```
+
+```{r}
+## Model assumptions and unusual cases
+#checking linearity and homoscedasticity
+rsd_fitted <- autoplot(stress_lm, 
+         which = c(1, 3),
+                  colour = "#0081B0",
+                  smooth.colour = "#FF8200",
+                  alpha = 0.5,
+                  size = 1) + 
+  theme_minimal()
+
+#checking normality of residuals
+q_q <- autoplot(stress_lm, 
+         which = 2,
+                  colour = "#FF8200",
+                  alpha = 0.5,
+                  size = 1) + 
+  theme_minimal()
+
+#checking if any assumptions have been violated
+leverage <- autoplot(stress_lm, 
+         which = 5,
+                  colour = "#0081B0",
+                  smooth.colour = "#FF8200",
+                  alpha = 0.3,
+                  size = 1) + 
+  theme_minimal()
+
+#calculating residuals
+rsd <- stress_lm |> 
+  augment() |> 
+  rowid_to_column(var = "case_no") |> 
+  select(case_no, .std.resid, .resid, .cooksd)
+
+#checking percentage of standardised residuals greater than ±1.96
+rsd_196 <- rsd |> 
+  select(-.cooksd) |> 
+  filter(abs(.std.resid) >= 1.96) |> 
+  nrow()/5.34
+
+#checking percentage of standardised residuals greater than ±2.58
+rsd_258 <- rsd |> 
+  select(-.cooksd) |> 
+  filter(abs(.std.resid) >= 2.58) |> 
+  nrow()/5.34
+
+#checking cases with standardised residuals greater than ±3
+rsd_3 <- rsd |> 
+  select(-.cooksd) |> 
+  filter(abs(.std.resid) >= 3) |> 
+  arrange(.std.resid)
+
+#plot of standardised residuals
+rsd_plot <- rsd |> 
+  ggplot(aes(x = case_no, y = .std.resid)) +
+  geom_hline(colour = "#FF8200", yintercept = 0) +
+  geom_point(colour = "#0081B0",
+             alpha = 0.5,
+             size = 1) +
+  scale_x_continuous(breaks = seq(0, 550, 50))+
+  scale_y_continuous(breaks = seq(-3, 3, 1)) +
+  coord_cartesian(ylim = c(-3, 3)) +
+  labs(x = "Participant ID", y = "Standardised residual") +
+  theme_minimal()
+  
+#cook's distance
+cooksd <- autoplot(stress_lm, 
+         which = 4,
+                  colour = "#0081B0",
+                  alpha = 0.5,
+                  size = 1) + 
+  theme_minimal()
+```
+
+```{r}
+#robust model
+stress_lm_rob <- lmRob(stress ~ anxiety + engagement, data = mindful_tib, na.action = na.exclude)
+
+#test for bias
+summary <- summary(stress_lm_rob)
+bias <- summary$biasTest
+
+#robust parameter estimates
+estimates_rob <- tidy(stress_lm_rob)
+
+#robust confidence intervals and significance tests
+parameters_rob <- model_parameters(stress_lm, vcov = "HC3")
+```
+
+```{r}
+#bayes factors
+bayesf <- regressionBF(stress ~ anxiety + engagement, rscaleCont = "medium", data = mindful_tib)
+
+#bayesian model
+stress_bf <- lmBF(stress ~ anxiety + engagement, rscaleCont = "medium", data = mindful_tib)
+
+#bayesian parameter estimates
+estimates_bf <- posterior(stress_bf, iterations = 10000) |> summary()
+```
+
+## **Report**
+
+### Summary statistics and data visualisations
+
+@tbl-desc shows that all of the values for anxiety, engagement, and stress fall within the ranges of their respective scales. It also tells us that the mean anxiety score is 10.54 which is classified as moderate anxiety, and the mean stress score is 18.52 which is on the lower boundary of moderate stress. Additionally, anxiety and stress, which were both measured on a 0-42 scale, have a similar spread demonstrated by the similar standard deviation (and subsequently variance) values. @tbl-desc also shows that the mean number of days engaging with the intervention, based on a self-reported average, was 1.74 days.
+
+```{r}
+#| label: tbl-desc
+#| tbl-cap: "Descriptive statistics for anxiety, engagement, and stress"
+desc_stats  |> 
+  rename_with(str_to_title, .cols = c(1:3, 5, 6, 8)) |> kable()
+```
+
+@fig-hist-1 and @fig-hist-2 show that anxiety scores and days of engagement are extremely positively skewed, which means that higher values are less frequent. They also highlight the gap in anxiety scores towards the top end of the scale (36-38) and, similarly, a gap in engagement scores at 6 days. @fig-hist-3 shows that stress scores were slightly positively skewed and the presence of a dip in scores at the top end of the scale (32-26). These dips towards the end of the scales represent a small range of underrepresented values which may indicate biases in the data collection process.
+
+```{r}
+#| label: fig-hist
+#| fig-cap:
+#| - "Distribution of anxiety scores"
+#| - "Distribution of engagement days"
+#| - "Distribution of stress scores"
+#| layout: [[50, 50], [-25, 50, 25]]
+anx_hist 
+eng_hist 
+str_hist
+```
+
+@fig-scatter-1 suggests that there is a fairly strong positive linear relationship between anxiety and stress and that there are no obvious outliers. The points in @fig-scatter-2 are scattered in a relatively uniform manner and hence do not show a clear pattern between engagement and stress. The trend line shows a slightly negative relationship, suggesting there may be a small weak negative relationship between engagement and stress.
+
+```{r}
+#| label: fig-scatter
+#| fig-cap: 
+#| - "Scatterplot of stress against anxiety"
+#| - "Scatterplot of stress against engagement"
+#| layout-ncol: 2
+anx_scatter
+eng_scatter
+```
+
+### Linear model
+
+@tbl-fit_stats shows the fit statistics for the linear model predicting stress from anxiety and engagement. The model explains 54% of the variance in stress scores and was a significantly better fit to the data compared to a model with no predictors, *F*(2, 531) = 317.09, p \< .001.
+
+```{r}
+#| label: tbl-fit_stats
+#| tbl-cap: "Fit statistics"
+fit_stats |> kable(digits = c(3, 3, 2, 2, 3, 0, 2, 2, 2, 2, 0, 0))
+```
+
+@tbl-estimates shows the model parameter estimates and their associated *t*-tests.
+
+Anxiety significantly predicted stress, $\hat{b}$ = 0.77 \[0.71, 0.83\], *t*(531) = 24.99, p \< .001. The standard error of the *b*-value associated with anxiety is low (SE = 0.03), indicating that the estimate varies little across different samples and hence is likely to be similar to the population value. If the current sample is one of the 95% producing confidence intervals that contain the population value, the increase in stress associated with a 1 point increase in anxiety might be as small as 0.71 or as large as 0.83.
+
+Engagement also significantly predicted stress, $\hat{b}$ = -0.30 \[-0.57, -0.03\], *t*(531) = -2.22, p = .027. The standard error of the *b*-value associated with engagement is high (SE = 0.136) relative to the estimate and hence suggests the estimate varies a reasonable amount across samples and may deviate substantially from the population value. If the current sample is one of the 95% producing confidence intervals that contain the population value, the decrease in stress associated with a 1 day increase in engagement might be as small as 0.03 or as large as 0.57. As the confidence interval almost reaches 0, it is plausible that engagement may, in reality, have no effect on stress.
+
+The equation for this model is:
+
+$$
+\begin{aligned}
+\text{Stress}_i&=\hat{b}_0+\hat{b}_1\text{Anxiety}_i+\hat{b}_2\text{Engagement}_i \\
+&=10.97+0.77\text{Anxiety}_i-0.30\text{Engagement}_i
+\end{aligned}
+$$
+
+To put these parameter estimates into context, consider someone who has not engaged with the intervention and has an anxiety score of 0. Answering one question on the anxiety measure with "sometimes" rather than "never" would increase the anxiety score to 2. Subsequently, the model predicts that stress would increase from 10.97 to 12.51, both of which are within the range categorised as normal. To counteract this small increase through engaging with the intervention, it would take an increase from 0 days engagement to roughly 5 days engagement on average within a week. This demonstrates that engagement, despite being a statistically significant predictor, has very little effect on stress in a real-world context. Anxiety, on the other hand, has a much more considerable real-world impact on stress according to the model.
+
+```{r}
+#| label: tbl-estimates
+#| tbl-cap: "Parameter estimates"
+estimates |> kable(digits = 3)
+```
+
+@tbl-estimates_std provides standardised versions of the parameter estimates, enabling the comparison of effect sizes. Anxiety has a much larger effect, $\hat{\beta}$ = 0.73 \[0.68, 0.79\], than engagement, $\hat{\beta}$ = -0.07 \[-0.12, -0.01\] on stress. This reinforces the conclusions drawn from @tbl-estimates that anxiety has a considerable real-world effect and that engagement has an extremely weak relationship or, possibly, no relationship at all with stress.
+
+```{r}
+#| label: tbl-estimates_std
+#| tbl-cap: "Standardised parameter estimates"
+estimates_std |> kable(digits = 3)
+```
+
+### Model assumptions and unusual cases
+
+The most important assumption of the linear model is that there is a linear relationship between predictor and the outcome variables. @fig-rsd_fitted (left) shows the residuals plotted against the fitted values. The trend line is approximately flat along y=0, indicating linearity between the predictors and outcome.
+
+@fig-rsd_fitted (right) shows the square root of the standardised residuals plotted against the fitted values and is more sensitive to violations of homoscedasticity. Despite the points appearing evenly dispersed for lower fitted values, at higher fitted values the points appear to funnel inwards, which indicates heteroscedasticity, however it is not extremely clear due to the lack of data points at higher fitted values. The use of heteroscedasticity-robust methods will enable the evaluation of whether homoscedasticity has been violated, introducing bias.
+
+```{r}
+#| label: fig-rsd_fitted
+#| fig-cap: "Plot of residuals (left) and the square root of standardised residuals (right) against fitted values"
+rsd_fitted
+```
+
+The points on the Q-Q plot (@fig-q_q) lie almost exactly along the diagonal, indicating that the standardised residuals are normally distributed. This is consistent with expectations based on the Central Limit Theorem due to the large sample size (n=534).
+
+```{r}
+#| label: fig-q_q
+#| fig-cap: 
+#| - "A Q-Q plot of the standardised residuals"
+q_q
+```
+
+The trend line on the plot of residuals against leverage (@fig-leverage) dips on the right-hand side, showing that there are data with high leverage values and negative residuals. This suggests that one of the assumptions of the linear model may have been violated. Whilst one explanation for this could be the heteroscedasticity as seen in @fig-rsd_fitted, it is important to assess whether influential points or outliers are introducing bias to the model.
+
+```{r}
+#| label: fig-leverage
+#| fig-cap: "A plot of standardised residuals against leverage"
+leverage
+```
+
+In an average sample, 95% of standardised residuals should lie between ±1.96, 99% of standardised residuals should lie between ±2.58, and 99.9% of standardised residuals should lie between ±3.29. Based on this, any case for which the magnitude of the standardised residual grossly exceeds 3 is likely to be an outlier.
+
+In the current sample, 94.76% of standardised residuals lie between ±1.96, and 98.50% lie between ±2.58. @tbl-outliers shows that there are only 2 cases that have standardised residuals with a magnitude greater than 3, and neither of these cases grossly exceed 3. Therefore, as visualised by @fig-rsd, an appropriate proportion of standardised residuals fall within the expected ranges, indicating that there are no outliers.
+
+```{r}
+#| label: tbl-outliers
+#| tbl-cap: "Cases with standardised residuals with magnitudes greater than 3"
+rsd_3 |> kable(digits = 3)
+```
+
+```{r}
+#| label: fig-rsd
+#| fig-cap: "A plot of standardised residuals against case number"
+rsd_plot
+```
+
+Cook's distance measures the influence of each individual case on the model as a whole. Cases with a cook's distance greater that 1 are considered to be influential cases. @fig-cooksd shows that all cook's distance values are below 0.06, which is far below the threshold of 1, and so there are no influential cases causing concern.
+
+```{r}
+#| label: fig-cooksd
+#| fig-cap: "A plot showing the Cook's Distance value for each case"
+cooksd
+```
+
+### Robust linear model
+
+@tbl-robust-1 shows the tests for bias and, as the *p*-values are significant, suggests that there is bias present in the original model. The differences between the original parameter estimates (@tbl-estimates) and the robust ones, shown in @tbl-robust-2, provide insight into whether the original model was in fact biased. For anxiety, the original $\hat{b}$ was 0.77 and the robust one is 0.78, which is virtually identical and does not represent a meaningful change. For engagement, the original $\hat{b}$ was -0.30 and the robust one is -0.40, which is a more meaningful change, but still not a large one and remains comfortably within the confidence interval \[-0.57, -0.03\].
+
+The robust confidence intervals and significance tests, which do not rely on the assumption of homoscedasticity, are shown in @tbl-robust-3. The robust confidence intervals for both anxiety and engagement are virtually identical to the non-robust confidence intervals (@tbl-estimates) and both remain significant with almost identical *p*-values.
+
+As the interpretation of the model does not differ substantially between the non-robust and robust models, it suggests that the original model was unbiased and so the original model will be reported.
+
+```{r}
+#| label: tbl-robust
+#| tbl-cap: 
+#| - "Test for bias in the original model"
+#| - "Robust parameter estimates"
+#| - "Parameter estimates for a model robust to heteroscedasticity"
+#| layout-ncol: 1
+bias |> kable(digits = 3)
+estimates_rob |> kable(digits = 3)
+parameters_rob |> kable(digits = 3)
+```
+
+### Bayesian model
+
+@tbl-bayes_factor-1 allows the hierarchical comparison of potential models. Bayes factors quantify the strength of evidence that the model predicts the outcome better than the intercept alone as a ratio of the competing models. This means that the model with the largest Bayes factor best predicts stress. The model with anxiety as a single predictor has the highest Bayes factor, making it the best model. The model with engagement as a single predictor has a Bayes factor less than 1, which suggests the intercept-only model better predicts stress. This Bayes factor of 0.81 can be interpreted as strong evidence for the null hypothesis. However, the model with both anxiety and engagement has an extremely large Bayes factor which is interpreted as extreme evidence for the alternative hypothesis.
+
+Bayesian estimates of $\hat{b}$ are shown in @tbl-bayes_factor-2, and 95% credible intervals, which contain the population value with a probability of 0.95, are shown in @tbl-bayes_factor-3. The Bayesian estimate of $\hat{b}$ is `r estimates_bf$statistics[2,1] |> round(digits = 2)` for anxiety and `r estimates_bf$statistics[3,1]  |> round(digits = 2)` for engagement, which are virtually identical to the non-Bayesian model estimates of 0.77 and -0.30, respectively. @tbl-bayes_factor-3 shows that, for anxiety, there is a 95% chance that the population value of $\hat{b}$ is between `r estimates_bf$quantiles[2,1]  |> round(digits = 2)` and `r estimates_bf$quantiles[2,5]  |> round(digits = 2)`. It also shows that, for engagement, there is a 95% chance that the population value of $\hat{b}$ is between `r estimates_bf$quantiles[3,1]  |> round(digits = 2)` and `r estimates_bf$quantiles[3,5]  |> round(digits = 2)`.
+
+The Bayesian model, consistent with the linear model, suggests that stress can be predicted from anxiety and engagement, with a positive relationship between anxiety and stress, and a negative relationship between engagement and stress. The effect size of engagement, as was concluded from the linear model, is extremely small and hence has little real-world value in terms of encouraging engagement in interventions to reduce stress. Anxiety, on the other hand, as established by the linear model, has a larger effect on stress that has meaningful real-world implications.
+
+```{r}
+#| label: tbl-bayes_factor
+#| tbl-cap: 
+#| - "Bayes factors for all potential models based on the two predictor variables"
+#| - "Bayesian parameter estimates"
+#| - "95% credible interval for Bayesian parameter estimates"
+#| layout-ncol: 1
+bayesf |> kable() |> kableExtra::remove_column(c(3:5))
+estimates_bf$statistics |> kable(digits = 3) |> kableExtra::remove_column(c(4, 5))
+estimates_bf$quantiles |> kable(digits = 3) |> kableExtra::remove_column(c(3:5))
+```
+
+### Summary
+
+To summarise, the hypothesis that, at follow-up, participants' stress will be predicted by both their engagement with the programme to which they were assigned and their anxiety levels was supported by both a linear model and a Bayesian model.
+
+Based on the linear model, both anxiety and engagement were significant predictors of stress. Those with higher anxiety scores also scored higher on the stress scale, and those who had more days of engagement scored lower on the stress scale. Assumptions and unusual cases were assessed and robust models confirmed the conclusions from the linear model, with virtually identical values, indicating that the model was not influenced by biases. The Bayesian model confirmed the conclusions of the linear model, with Bayesian parameter estimates virtually identical to the estimates from the non-Bayesian linear model.
+
+Both models suggest that engagement has a small effect size, with confidence and credible intervals almost reaching 0, which would indicate that the population value may, in reality, be zero and hence engagement may have no relationship with stress. This is further indicated by the Bayes factors which indicated that a model with anxiety as a single predictor best predicts stress, whilst the model with engagement as a single predictor was less likely than the null. Additionally, when considering the model in a real-world context, engagement has a minimal impact on stress, especially when compared to the influence of anxiety.
+
+Overall, whilst the models do support the hypothesis that stress is predicted by anxiety and engagement, it is important to consider the findings in context when applying them to the real world. For example, as engagement demonstrated a smaller effect on stress, it would likely be more effective to target interventions that reduce anxiety rather than encouraging greater engagement with the mindfulness intervention programme.

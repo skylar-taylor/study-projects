@@ -1,0 +1,340 @@
+---
+title: "Moderation"
+author: "Sky Taylor"
+format: 
+  html:
+    self-contained: true
+editor: visual
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+```{r}
+library(tidyverse)
+library(here)
+library(knitr)
+library(BayesFactor)
+library(effectsize)
+library(modelbased)
+library(ggfortify)
+library(broom)
+library(parameters)
+library(ggplot2)
+library(car)
+library(emmeans)
+library(robust)
+
+# load the data
+mindful_tib <- here("docs/an_adventure_in_statistics/mindfulness.csv") |> read_csv()
+```
+
+## **Analysis plan**
+
+This report seeks to determine whether the outcome of `stress` is predicted by the `trial_arm` and moderated by `role`. Due to the expectation that the relationship between the predictor and moderator with the outcome is linear, fitting a linear model is appropriate. The hypothesis being tested is as follows:
+
+> H~1~: At follow-up participants' `stress` will be predicted by the **programme** to which they were assigned (`trial_arm`) but this effect will be moderated by their job `role`. Specifically, the effect of `trial_arm` will be stronger in (1) medical roles compared to management and support worker roles; (2) management roles compared to support worker roles.
+
+Therefore, the model to be fitted is:
+
+$$
+\text{Stress}_i=\hat{b}_0+\hat{b}_1\text{Programme}_i+\hat{b}_2\text{Role}_i+\hat{b}_3[\text{Programme}\times\text{Role}]_i+e_i
+$$
+
+Summary statistics will include calculating the mean and 95% confidence intervals of stress across different levels of the predictor and moderator to inspect similarities and differences, and the number of cases in each combination of predictor and moderator levels to ensure all groups are well represented. A plot of the means and 95% confidence intervals of stress for each programme across the different job roles will be used to visualise the differences in the relationship between programme and stress across job roles to give initial insights into the moderation effect.
+
+A linear model will be fit with `trial_arm`, `role`, and their interaction predicting `stress`. Orthogonal contrasts will be used to meet the requirement of independence of predictor contrasts for the use of Type III sums of squares, which will be used due to the fact that when calculating *F*-statistics they consider all other effects in the model, rather than just those entered before, and so will be unaffected by the order in which predictors are specified. The contrasts will be set manually in accordance with @tbl-role_dummy and @tbl-pro_dummy so the parameter estimates have a meaningful interpretation in relation to the hypothesis (they tell us the relative difference in the effect of programme between the medical and non-medical roles, and between the management and support worker roles).
+
+| Group          | Dummy 1 (medical vs not) | Dummy 2 (management vs support) |
+|------------------|------------------------|------------------------------|
+| Medical        | -2/3                     | 0                               |
+| Management     | 1/3                      | -1/2                            |
+| Support worker | 1/3                      | 1/2                             |
+
+: Contrast coding for the role variable {#tbl-role_dummy}
+
+| Group                    | Dummy |
+|--------------------------|-------|
+| Psychosocial information | -1/2  |
+| Mindfulness              | 1/2   |
+
+: Contrast coding for the programme variable {#tbl-pro_dummy}
+
+The model will be interpreted using *F*-statistics to assess significant effects, with associated *p*-values less than 0.05 indicating a significant effect. Parameter estimates will be used to interpret the interaction between programme and role, specifically determining whether the effect of the programme differs significantly across the different role contrasts, with associated *p*-values less than 0.05 indicating a significant difference. Simple effects analysis will then be used to look at the effect of the predictor (programme) at individual levels of the moderator (role). Specifically this will compare the average stress score for those in the psychosocial information programme with those in the mindfulness programme for people with medical roles, and making this comparison for those with management roles, and then those with support roles to determine the effect of programme within each role group. Effect sizes will be calculated using partial omega squared ($\omega^2_p$) to determine the amount of variance in stress scores that the interaction between programme and role accounts for as this is a less biased measure of effect size than using eta squared.
+
+The assumptions of the linear model and how they will be checked are as follows:
+
+-   Linearity will be checked using the Residual vs Fitted plot in which an approximately straight line at y=0 indicates linearity.
+
+-   Homogeneity of residuals will be checked using Residual vs Fitted and Scale-Location plots in which a random scatter of dots indicates homoscedasticity.
+
+-   Normality of the residuals will be checked using a Q-Q plot of standardised residuals where points lying across the diagonal indicates normality. Sample size will be taken into consideration when assessing the normality of residuals.
+
+-   Influential cases will be categorised based on Cook's Distance, where a value exceeding the threshold of 1 will be considered an influential case.
+
+If the assumption of linearity is not met, the analysis will be abandoned as a linear model is not appropriate. The violation of other assumptions or the introduction of bias due to influential cases will be addressed through the use of robust models.
+
+M- and LS- estimates will be used to test for bias, where associated *p*-values less than 0.05 indicate bias in the model, however these will be interpreted within the context of the sample size. Robust parameter estimates will be used to determine whether bias is a problem in the model. If the robust estimates are largely different from the original estimates then the original model was likely biased and the robust model will be reported. Additionally, a model using standard errors designed for heteroscedastic residuals will be used to calculate robust confidence intervals and significance tests, if these values differ substantially from the original model then bias is an issue and the robust version will be reported.
+
+```{r}
+#Preparing the data
+mindful_tib <- mindful_tib |> 
+  filter(time == "Follow-up") |> 
+  mutate(
+    trial_arm = recode(trial_arm, "'Mindfullness' = 'Mindfulness'") |> as_factor(),
+    role = as_factor(role) |> fct_relevel("Management", after = 1)
+)
+```
+
+```{r}
+#Summary statistics
+mindful_sum <- mindful_tib |> 
+  group_by(trial_arm, role) |> 
+  summarise(
+    mean = mean(stress, na.rm = TRUE),
+    `95% CI lower` = mean_cl_normal(stress)$ymin,
+    `95% CI upper` = mean_cl_normal(stress)$ymax,
+    n = n()
+  ) 
+```
+
+```{r}
+#Visualisation
+plot <- ggplot(mindful_tib, aes(x = trial_arm, y = stress, colour = role)) +
+  stat_summary(fun.data = "mean_cl_normal", geom = "pointrange", position = position_dodge(width = 0.2)) +
+  coord_cartesian(ylim = c(0,42)) +
+  scale_y_continuous(breaks = seq(0, 42, 5)) +
+  scale_colour_manual(values = c( "#0362CC", "#FF8200", "#008A71")) +
+  labs(x = "Programme", y = "Stress (0-42)", colour = "Job role") +
+  theme_minimal()
+```
+
+```{r}
+## Fitting the model
+#setting contrasts
+#role
+med_vs_not <- c(-2/3, 1/3, 1/3) #dummy 1
+man_vs_sup <- c(0, -1/2, 1/2) #dummy 2
+contrasts(mindful_tib$role) <- cbind(med_vs_not, man_vs_sup)
+#programme
+contrasts(mindful_tib$trial_arm) <- c(-1/2, 1/2)
+
+#linear model
+mindful_lm <- lm(stress ~ trial_arm*role, data = mindful_tib)
+
+#F-statistics
+fstat <- Anova(mindful_lm, type = 3)
+
+#parameter estimates
+estimate <- tidy(mindful_lm, conf.int = TRUE)
+
+#simple effects analysis
+simple <- joint_tests(mindful_lm, "role")
+
+#mean stress between programmes across job roles - visualises interaction
+means_plot <- ggplot(mindful_tib, aes(x = role, y = stress, colour = trial_arm)) +
+  stat_summary(fun = "mean", geom = "point", size = 4, alpha = 0.9) +
+  coord_cartesian(ylim = c(0,42)) +
+  scale_y_continuous(breaks = seq(0, 42, 5)) +
+  scale_colour_manual(values = c( "#0362CC", "#FF8200")) +
+  labs(x = "Job role", y = "Stress (0-42)", colour = "Programme") +
+  theme_minimal()
+
+#effect sizes
+size <- fstat |> 
+  omega_squared(ci = 0.95)
+```
+
+```{r}
+## Assumption checks
+rsd_fitted <- autoplot(mindful_lm,
+     which = c(1, 3),
+     colour = "#0362CC",
+     smooth.colour = "#FF8200",
+     alpha = 0.2,
+     size = 1) +
+  theme_minimal()
+
+q_q <- autoplot(mindful_lm,
+     which = 2,
+     colour = "#0362CC",
+     smooth.colour = "#FF8200",
+     alpha = 0.2,
+     size = 1) +
+  theme_minimal()
+
+cooksd <- autoplot(mindful_lm,
+     which = 4,
+     colour = "#0081B0",
+     alpha = 0.5,
+     size = 1) +
+  coord_cartesian(ylim = c(0, 0.11)) +
+  scale_y_continuous(breaks = seq(0, 0.11, 0.02)) +
+  theme_minimal()
+```
+
+```{r}
+#robust model
+mindful_rob <- lmRob(stress ~ trial_arm*role, data = mindful_tib)
+
+#test for bias
+rob_summary <- summary(mindful_rob)
+bias <- rob_summary$biasTest
+
+#robust parameter estimates
+estimate_rob <- tidy(mindful_rob)
+
+#robust confidence intervals and significance tests
+parameters_rob <- model_parameters(mindful_lm, vcov = "HC4")
+```
+
+## **Report**
+
+### Summary statistics and data visualisation
+
+@tbl-stats shows that the mean stress score is almost identical for management and support workers on the psychosocial information programme and that the mean stress scores are very similar for medical and support workers on the mindfulness programme. It also shows that the difference between the average stress scores between the two programmes differs across roles, with medical roles showing the largest difference, management roles showing a difference in the opposite direction, and support workers showing a very small difference. @tbl-stats also shows the number of cases in each combination of groups, highlighting the underrepresentation of people working in management roles, which may introduce biases such as being more sensitive to influential cases.
+
+```{r}
+#| label: tbl-stats
+#| tbl-cap: "Summary statistics for anxiety, engagement, and stress"
+mindful_sum |> 
+  rename(Programme = trial_arm, Role = role, Mean = mean) |> 
+  kable(digits = 2)
+```
+
+@fig-plot visualises the means and confidence intervals from @tbl-stats. This highlights the differences that each role has on the relationship between programme and stress score. When comparing the mindfulness programme to the psychosocial information programme, those in medical roles were less stressed, those in management roles were more stressed, and support workers showed similar levels of stress. The wider confidence intervals for management roles can be explained by the smaller sample size which leads to increased variability.
+
+```{r}
+#| label: fig-plot
+#| fig-cap: "Plot of the stress score means and 95% confidence intervals for different job roles across the two programmes"
+plot
+```
+
+### Linear model
+
+An alpha level of .05 will be used to determine significance for all tests.
+
+@tbl-fstat shows the results of an ANOVA on the linear model predicting stress from the programme, role, and their interaction. It shows that the main effect of programme (trial_arm) was not significant, *F*(1, 528) = 0.47, *p* = .492, but the main effect of role was significant, *F*(2, 528) = 3.17, *p* = .043. However, the main effects are not meaningful given the significant interaction effect, *F*(2, 528) = 4.65, *p* = .010.
+
+```{r}
+#| label: tbl-fstat
+#| tbl-cap: "ANOVA summary table"
+fstat |> 
+  kable(digits = c(2, 0, 2, 3))
+```
+
+@tbl-estimate shows the model parameter estimates and their associated *t*-tests. It shows that the difference between the stress scores of the psychosocial information and mindfulness programmes was significantly larger for those with medical roles compared to those in management and support worker roles, $\hat{b}$ = 5.51 \[1.31, 9.71\], *t* = 2.58, *p* = .010, but was not significantly different for those with management roles compared to those in support worker roles, $\hat{b}$ = -2.84 \[-10.26, 4.57\], *t* = -0.75, *p* = .452.
+
+If the current sample is one of the 95% producing confidence intervals that contain the population value, the relative difference in the effect of programme for medical compared to non-medical roles might be as small as 1.31 or as large as 9.71, and the relative difference in the effect of programme for management compared to social worker roles ranges from -10.26 to 4.57. As this confidence interval contains 0, it is plausible that the true value is 0, which would mean that there is no difference in the strength of the effect of programme between management and social worker roles.
+
+These effects partially support the hypothesis. The effects support the hypothesis that the effect of programme is stronger in medical roles compared to management and support worker roles, however do not support the hypothesis that the effect of programme is stronger in management roles compared to support worker roles.
+
+```{r}
+#| label: tbl-estimate
+#| tbl-cap: "Parameter estimates"
+estimate |> 
+  kable(digits = c(0, 2, 2, 2, 3, 2, 2))
+```
+
+@fig-means shows the mean stress scores across the different job roles, visualising the differences between the effect of each programme. Using the means from @tbl-stats, we can calculate the differences in mean stress scores which are used in the simple effects analysis (@tbl-simple).
+
+$$
+\begin{aligned}
+\text{Programme}_\text{medical}&=\bar{X}_\text{Psychosocial, medical}-\bar{X}_\text{Mindful, medical} \\
+&=21.55-16.99 \\
+&=4.56 \\
+\\
+\text{Programme}_\text{management}&=\bar{X}_\text{Psychosocial, management}-\bar{X}_\text{Mindful, management} \\
+&=17.64-20.00 \\
+&=-2.36 \\
+\\
+\text{Programme}_\text{support}&=\bar{X}_\text{Psychosocial, support}-\bar{X}_\text{Mindful, support} \\
+&=17.62-17.14 \\
+&=0.48
+\end{aligned}
+$$
+
+```{r}
+#| label: fig-means
+#| fig-cap: "Plot of the stress score means for each programme across the different job roles"
+means_plot
+```
+
+Simple effects analysis allows us to inspect the effect of programme at individual levels of role, the results are shown in @tbl-simple. It shows that the effect of being in the psychosocial information programme compared to the mindfulness programme is less significant for management and support workers than medical workers. The difference in mean stress scores between those in the psychosocial information programme and those in the mindfulness programme for medical workers ($M_\text{difference}=4.56$) is significantly different from 0 (*p* \<.001). However, the difference in mean stress scores between those in the psychosocial information programme and those in the mindfulness programme for management workers ($M_\text{difference}=-2.36$) and support workers ($M_\text{difference}=0.48$) are not significantly different from 0 (*p* = .512 and *p* = .670, respectively).
+
+```{r}
+#| label: tbl-simple
+#| tbl-cap: "Simple effects analysis of the effect of programme within different roles"
+simple |> kable(digits = 3)
+```
+
+@tbl-size quantifies effect size using partial omega squared ($\omega_p^2$), showing that the interaction between programme and role explains 1.3% of the variance in stress scores not attributed to other predictors. This value represents a small effect size.
+
+```{r}
+#| label: tbl-size
+#| tbl-cap: "Effect size calculated using partial omega squared"
+size |> kable(digits = 3)
+```
+
+### Model assumptions and influential cases
+
+Linearity is the most important assumption of the linear model. @fig-rsd (left) shows the residuals plotted against the fixed values. The trend line is approximately flat along y=0 which indicates a linear relationship between predictors and outcome.
+
+@fig-rsd (right) shows the square root of the standardised residuals plotted against the fitted values and is more sensitive to violations of homoscedasticity. The points are fairly evenly dispersed vertically at different points of the x-axis, indicating that the assumption of homogeneity of residuals has not been violated.
+
+```{r}
+#| label: fig-rsd
+#| fig-cap: "Plot of residuals (left) and the square root of standardised residuals (right) against fitted values"
+rsd_fitted
+```
+
+The points on the Q-Q plot (@fig-q_q) deviate from the diagonal at the extremes, indicating that normality of residuals may be violated. However, due to the large sample size (n=534), the Central Limit Theorem suggests that a violation of normality will not have a considerable effect on the accuracy of estimates and hence is not of concern.
+
+```{r}
+#| label: fig-q_q
+#| fig-cap: "A Q-Q plot of the standardised residuals"
+q_q
+```
+
+Cook's distance measures the influence of each individual case on the model as a whole. Cases with a cook's distance greater that 1 are considered to be influential cases. @fig-cooksd shows that all cook's distance values are below 0.11, which is far below the threshold of 1, and so there are no influential cases causing concern.
+
+```{r}
+#| label: fig-cooksd
+#| fig-cap: "A plot showing the Cook's Distance value for each case"
+cooksd
+```
+
+### Robust linear model
+
+@tbl-robust-1 shows the tests for bias and, as the *p*-values are significant, suggests that bias in the model is problematic. However as these tests are based on a large sample size (n=534), they have high power to detect small effects that may be practically trivial, and so a significant *p*-value may be due to a Type I error and hence comparing robust models to the original model will reveal whether bias introduced meaningful problems within the model.
+
+The differences between the original parameter estimates (@tbl-estimate) and the robust parameter estimates (@tbl-robust-2) suggest that the original model was not influenced greatly by biases. For the interaction between programme and the contrast between medical and non-medical roles (`trial_arm1:rolemed_vs_not`), the original $\hat{b}$ was 5.51 \[1.31, 9.71\] and the robust one is 5.30, which is very similar and does not change the interpretation. For the interaction between programme and the contrast between management and support worker roles (`trial_arm1:roleman_vs_sup`), the original $\hat{b}$ was -2.84 \[-10.26, 4.57\] and the robust one is -0.43 , which is a larger difference, but remains within the confidence interval of the original estimate, and remains non-significant and hence the use of robust parameter estimates did not alter the interpretation of the results.
+
+The results of fitting the model with heteroscedaticity-consistent standard errors to provide robust confidence intervals and significance tests are shown in @tbl-robust-3. The profile of results for the confidence intervals and *p*-values associated with the terms representing the interaction effect are unchanged when comparing the robust model (@tbl-robust-3) to the original one (@tbl-estimate). The interaction between programme and the contrast between medical and non-medical roles (`trial_arm1:rolemed_vs_not`), remains significant and the 95% confidence intervals do not contain 0. The interaction between programme and the contrast between management and support worker roles (`trial_arm1:roleman_vs_sup`), remains non-significant and the 95% confidence intervals contain 0.
+
+The unchanged profile of results and interpretations across non-robust and robust models indicates that bias was not problematic in the model, which is consistent with the assumption checks. Therefore, the original non-robust model will be reported.
+
+```{r}
+#| label: tbl-robust
+#| tbl-cap: 
+#| - "Test for bias in the original model"
+#| - "Robust parameter estimates"
+#| - "Parameter estimates for a model robust to heteroscedasticity"
+#| layout-ncol: 1
+bias |> kable(digits = 3)
+estimate_rob |> kable(digits = 3)
+parameters_rob |> kable(digits = 3)
+```
+
+### Summary
+
+To summarise, partial support was found for the hypothesis that at follow-up participants' stress will be predicted by the programme to which they were assigned, which will be moderated by their job role where the effect of programme is stronger in (1) medical roles compared to management and support worker roles, and (2) management roles compared to support worker roles.
+
+A linear model was fit, predicting stress from programme, role, and their interaction. Assumption checks and robust models suggested no violations of assumptions or problematic bias, so the original linear model was retained.
+
+There was a significant interaction effect between programme and role, *F*(2, 528) = 4.65, *p* = .010, supporting the hypothesis that the effect of programme on stress was moderated by job role. The hypothesis that the effect of programme was stronger in medical roles compared to management and support worker roles was supported by the associated parameter estimate, $\hat{b}$ = 5.51 \[1.31, 9.71\], *t* = 2.58, *p* = .010. Simple effects analysis revealed that the difference in stress scores was significantly different across programmes for those in medical roles (*p* \< .001), but not in management (*p* = .512) or support worker roles (*p* = .670), further supporting the hypothesis that the effect of programme was stronger in medical roles. However, the non-significant difference in stress scores for both management and support worker roles challenges the hypothesis that the effect of programme was stronger in management roles compared to support worker roles. This hypothesis was also not supported by the associated parameter estimate, $\hat{b}$ = -2.84 \[-10.26, 4.57\], *t* = -0.75, *p* = .452, which was non-significant and had a 95% confidence interval containing 0.
+
+It is important to recognise that the interaction between programme and role only explained a small amount of variance in stress scores ($\omega_p^2=0.013$), indicating that the effect size is small and hence may not have a substantial impact practically. However, when considering the effect size in context, the reduction in stress score associated with being in the mindful programme rather than the psychosocial information programme for those in medical roles (4.56) would reduce someone with moderate stress (10-14) to a classification of normal (0-7) or mild (8-9) stress, which is a meaningful difference.
+
+To conclude, the effect of programme on stress was moderated by job role where the effect of programme was stronger in medical roles than in management and support worker roles, but there was no significant difference in the effect of programme between management roles and support worker roles.
