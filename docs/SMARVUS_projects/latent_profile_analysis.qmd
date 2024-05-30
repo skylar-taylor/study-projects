@@ -1,0 +1,452 @@
+---
+title: "Latent Profile Analysis"
+author: "Sky Taylor"
+format: 
+  html:
+    self-contained: true
+editor: visual
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+```{r}
+library(tidyverse)
+library(tidyLPA)
+library(dplyr)
+library(kableExtra)
+```
+
+# Research Question: What combinations of self-efficacy levels, persistence levels, statistics anxiety, and statistics grades exist?
+
+## Data Prep
+
+```{r}
+#read in data
+smarvus_data <- here::here("docs/SMARVUS_projects/SMARVUS_dissertations.csv") |> readr::read_csv()
+
+#selecting variables
+smarvus_data <- smarvus_data |> 
+  dplyr::select(
+    country, university, eligibility_stats, degree_major, degree_year, age, gender, attention_amnesty, Q7.1_1:Q7.1_24, Q15.1_1:Q15.1_9, Q16.1_1:Q16.1_7, stats_edu_first_module, stats_edu_module_1, grading_scale, grade
+  )
+
+##attention checks
+#how many people failed attention amnesty
+attention_amnesty_exclusion <- smarvus_data |> 
+  dplyr::filter(attention_amnesty == "No" | is.na(attention_amnesty)) |>
+  nrow() 
+#how many poeple failed the statistics anxiety attention check
+anxiety_attention_exclusion <- smarvus_data |> 
+  dplyr::filter(Q7.1_24 != "1" | is.na(Q7.1_24)) |>
+  nrow() 
+#how many people failed the self-efficacy attention check
+se_attention_exclusion <- smarvus_data |> 
+  dplyr::filter(Q15.1_9 != "4" | is.na(Q15.1_9)) |>
+  nrow() 
+
+##eligibility exclusions
+#how many poeple failed stats eligibility question
+non_stats_exclusion <- smarvus_data |> 
+  dplyr::filter(eligibility_stats == "No" | is.na(eligibility_stats)) |>
+  nrow() 
+
+#removing exclusions
+smarvus_data_exclusions <- smarvus_data |> 
+  dplyr::filter(
+    attention_amnesty == "Yes",
+    Q7.1_24 == "1",
+    Q15.1_9 == "4",
+    eligibility_stats == "Yes"
+    )
+
+#removing those without grade data
+smarvus_data_exclusions <- smarvus_data_exclusions |> dplyr::filter(!is.na(grade))
+#selecting those with grade data on the scale 0-100
+smarvus_data_exclusions <- smarvus_data_exclusions |>  
+  filter(
+    university == "Anglia Ruskin University" |
+    university == "Bournemouth University" | 
+    university == "Macquarie University" |
+    university == "Queen's University Belfast" |
+    university == "Teesside University" |
+    university == "University of Bradford" |
+    university == "University of Lincoln" |
+    university == "University of Southampton" |
+    university == "University of Sussex" |
+    university == "University of Western Australia"
+  )
+
+#turn grade data into numerical values
+smarvus_data_exclusions$grade <- parse_number(smarvus_data_exclusions$grade)
+```
+
+## Participant Summaries
+
+```{r}
+#age
+n_age <- smarvus_data_exclusions |> 
+  group_by(age) |> 
+  summarise(n = n()) |> 
+  mutate(percentage = (n / sum(n)) *100)
+n_age
+
+#gender
+n_gender <- smarvus_data_exclusions |> 
+  group_by(gender) |> 
+  summarise(n = n()) |> 
+  mutate(percentage = (n / sum(n)) *100)
+n_gender
+
+#country
+n_country <- smarvus_data_exclusions |> 
+  group_by(country) |> 
+  summarise(n = n()) |> 
+  mutate(percentage = (n / sum(n)) *100)
+n_country
+
+#degree major
+n_major <- smarvus_data_exclusions |> 
+  group_by(degree_major) |> 
+  summarise(n = n()) |> 
+  mutate(percentage = (n / sum(n)) *100)
+n_major
+
+#degree year
+n_year <- smarvus_data_exclusions |> 
+  group_by(degree_year) |> 
+  summarise(n = n()) |> 
+  mutate(percentage = (n / sum(n)) *100)
+n_year
+
+#university
+n_uni <- smarvus_data_exclusions |> 
+  group_by(university) |> 
+  summarise(n = n()) |> 
+  mutate(percentage = (n / sum(n)) *100)
+n_uni
+
+#first statistics module
+n_first <- smarvus_data_exclusions |> 
+  group_by(stats_edu_first_module) |> 
+  summarise(n = n()) |> 
+  mutate(percentage = (n / sum(n)) *100)
+n_first
+```
+
+## Composite Scores
+
+```{r}
+#recode reverse scored items
+composite_data <- smarvus_data_exclusions %>%
+  mutate(Q16.1_2 = 6-Q16.1_2,
+         Q16.1_3 = 6-Q16.1_3,
+         Q16.1_4 = 6-Q16.1_4,
+         Q16.1_5 = 6-Q16.1_5,
+         Q16.1_7 = 6-Q16.1_7)
+
+#statistics anxiety
+composite_data <- composite_data %>%
+  mutate(statistics_anxiety = rowMeans(select(., Q7.1_1:Q7.1_23), na.rm = TRUE))
+#self-efficacy
+composite_data <- composite_data %>%
+  mutate(self_efficacy = rowMeans(select(., Q15.1_1:Q15.1_8), na.rm = TRUE))
+#persistence
+composite_data <- composite_data %>%
+  mutate(persistence = rowMeans(select(., Q16.1_1:Q16.1_7), na.rm = TRUE))
+
+data <- composite_data %>%
+  select(self_efficacy, statistics_anxiety, persistence, grade)
+```
+
+## Latent Profile Analysis
+
+### Fit statistics
+
+```{r}
+lpa_mod <- data %>%
+    dplyr::select(self_efficacy, statistics_anxiety, persistence, grade) %>% 
+    scale() %>%
+    tidyLPA::single_imputation(method = "missForest") %>%
+    tidyLPA::estimate_profiles(1:6) %>%
+    tidyLPA::get_fit()
+lpa_mod
+```
+
+```{r}
+#formatted table
+lpa_mod %>%
+  select(Classes, AIC, BIC, SABIC, Entropy, n_min, BLRT_p) %>%
+  kable(
+    digits = 4,
+    col.names = c("Profiles", "AIC", "BIC", "SABIC", "Entropy", "N(Min)", "BLRT(p)")
+  ) %>%
+  kableExtra::kable_styling()
+```
+
+### Estimating profiles
+
+```{r}
+#plots and estimates for 2-6 profile solutions
+#estimating 2 profiles
+lpa_2 <- data %>%
+    dplyr::select(self_efficacy, statistics_anxiety, persistence, grade) %>% 
+    scale() %>%
+    tidyLPA::single_imputation(method = "missForest") %>%
+    tidyLPA::estimate_profiles(2)
+lpa_2
+
+tidyLPA::plot_profiles(lpa_2)
+tidyLPA::get_estimates(lpa_2)
+
+
+#estimating 3 profiles
+lpa_3 <- data %>%
+    dplyr::select(self_efficacy, statistics_anxiety, persistence, grade) %>% 
+    scale() %>%
+    tidyLPA::single_imputation(method = "missForest") %>%
+    tidyLPA::estimate_profiles(3)
+lpa_3
+
+tidyLPA::plot_profiles(lpa_3)
+tidyLPA::get_estimates(lpa_3)
+
+#estimating 4 profiles
+lpa_4 <- data %>%
+    dplyr::select(self_efficacy, statistics_anxiety, persistence, grade) %>% 
+    scale() %>%
+    tidyLPA::single_imputation(method = "missForest") %>%
+    tidyLPA::estimate_profiles(4)
+lpa_4
+
+tidyLPA::plot_profiles(lpa_4)
+tidyLPA::get_estimates(lpa_4)
+
+#estimating 5 profiles
+lpa_5 <- data %>%
+    dplyr::select(self_efficacy, statistics_anxiety, persistence, grade) %>% 
+    scale() %>%
+    tidyLPA::single_imputation(method = "missForest") %>%
+    tidyLPA::estimate_profiles(5)
+lpa_5
+
+tidyLPA::plot_profiles(lpa_5)
+tidyLPA::get_estimates(lpa_5)
+
+#estimating 6 profiles
+lpa_6 <- data %>%
+    dplyr::select(self_efficacy, statistics_anxiety, persistence, grade) %>% 
+    scale() %>%
+    tidyLPA::single_imputation(method = "missForest") %>%
+    tidyLPA::estimate_profiles(6)
+lpa_6
+
+tidyLPA::plot_profiles(lpa_6)
+tidyLPA::get_estimates(lpa_6)
+```
+
+### Different Covariance Structures
+
+```{r}
+#model 1: variances equal, covariances zero
+mod1 <- data %>%
+    dplyr::select(self_efficacy, statistics_anxiety, persistence, grade) %>% 
+    scale() %>%
+    tidyLPA::single_imputation(method = "missForest") %>%
+    tidyLPA::estimate_profiles(3)
+tidyLPA::plot_profiles(mod1)
+
+#model 2: variances varying, covariances zero
+mod2 <- data %>%
+    dplyr::select(self_efficacy, statistics_anxiety, persistence, grade) %>% 
+    scale() %>%
+    tidyLPA::single_imputation(method = "missForest") %>%
+    tidyLPA::estimate_profiles(3, variances = "varying", covariances = "zero")
+tidyLPA::plot_profiles(mod2)
+
+#model 3: equal variances, equal covariances
+mod3 <- data %>%
+    dplyr::select(self_efficacy, statistics_anxiety, persistence, grade) %>% 
+    scale() %>%
+    tidyLPA::single_imputation(method = "missForest") %>%
+    tidyLPA::estimate_profiles(3, variances = "equal", covariances = "equal")
+tidyLPA::plot_profiles(mod3)
+
+#model 6: varying variances, varying covariances
+mod6 <- data %>%
+    dplyr::select(self_efficacy, statistics_anxiety, persistence, grade) %>% 
+    scale() %>%
+    tidyLPA::single_imputation(method = "missForest") %>%
+    tidyLPA::estimate_profiles(3, variances = "varying", covariances = "varying")
+tidyLPA::plot_profiles(mod6)
+
+#comparing models
+mod_table <- data %>%
+    dplyr::select(self_efficacy, statistics_anxiety, persistence, grade) %>% 
+    scale() %>%
+    tidyLPA::single_imputation(method = "missForest") %>%
+    tidyLPA::estimate_profiles(3, models = c(1,2,3,6))
+mod_table
+
+get_fit(mod_table)
+plot_profiles(mod_table, ci = NULL)
+```
+
+```{r}
+#formatted table
+mod_table %>%
+  get_fit() %>%
+  select(Model, AIC, BIC, SABIC, Entropy, n_min, BLRT_p) %>%
+  kable(
+    digits = 4,
+    col.names = c("Model", "AIC", "BIC", "SABIC", "Entropy", "N(Min)", "BLRT(p)")
+  ) %>%
+  kableExtra::kable_styling()
+```
+
+```{r}
+#retained model
+get_estimates(mod2)
+```
+
+```{r}
+#calculating the size of each profile
+profile <- get_data(mod2)
+profile
+
+profile_data <- data
+
+profile_data$mod2_profile <- profile$Class
+
+profile_data
+count(profile_data, vars = mod2_profile)
+```
+
+## Descriptive Statistics
+
+### Means and Standard Deviations
+
+```{r}
+descriptives <- profile_data %>%
+  dplyr::group_by(mod2_profile) %>%
+  dplyr::summarise(
+    se_mean = mean(self_efficacy),
+    se_sd = sd(self_efficacy),
+    sa_mean = mean(statistics_anxiety),
+    sa_sd = sd(statistics_anxiety),
+    p_mean = mean(persistence),
+    p_sd = sd(persistence),
+    g_mean = mean(grade),
+    g_sd = sd(grade)
+  )
+descriptives %>%
+  kable() %>%
+  kableExtra::kable_styling()
+```
+
+### Correlations
+
+```{r}
+#correlation coefficients within each profile
+profile_data %>%
+  filter(mod2_profile == 1) %>%
+  select(self_efficacy, statistics_anxiety, persistence, grade) %>%
+  cor(method="pearson") %>%
+  kable() %>%
+  kable_styling()
+
+profile_data %>%
+  filter(mod2_profile == 2) %>%
+  select(self_efficacy, statistics_anxiety, persistence, grade) %>%
+  cor(method="pearson")%>%
+  kable() %>%
+  kable_styling()
+
+profile_data %>%
+  filter(mod2_profile == 3) %>%
+  select(self_efficacy, statistics_anxiety, persistence, grade) %>%
+  cor(method="pearson")%>%
+  kable() %>%
+  kable_styling()
+
+#correlation coefficients within the full sample
+profile_data %>%
+  select(self_efficacy, statistics_anxiety, persistence, grade) %>%
+  cor(method="pearson")%>%
+  kable() %>%
+  kable_styling()
+
+#correlation plots
+profile_data %>%
+  filter(mod2_profile == 1) %>%
+  select(self_efficacy, statistics_anxiety, persistence, grade) %>%
+GGally::ggscatmat()
+
+profile_data %>%
+  filter(mod2_profile == 2) %>%
+  select(self_efficacy, statistics_anxiety, persistence, grade) %>%
+GGally::ggscatmat()
+
+profile_data %>%
+  filter(mod2_profile == 3) %>%
+  select(self_efficacy, statistics_anxiety, persistence, grade) %>%
+GGally::ggscatmat()
+
+profile_data %>%
+  select(self_efficacy, statistics_anxiety, persistence, grade) %>%
+GGally::ggscatmat()
+
+
+```
+
+```{r}
+#significance of correlations
+profile_data %>%
+  filter(mod2_profile == 1) %>%
+  select(self_efficacy, statistics_anxiety, persistence, grade) %>%
+  as.matrix() %>%
+  Hmisc::rcorr(type = "pearson")
+
+profile_data %>%
+  filter(mod2_profile == 2) %>%
+  select(self_efficacy, statistics_anxiety, persistence, grade) %>%
+  as.matrix() %>%
+  Hmisc::rcorr(type = "pearson")
+
+profile_data %>%
+  filter(mod2_profile == 3) %>%
+  select(self_efficacy, statistics_anxiety, persistence, grade) %>%
+  as.matrix() %>%
+  Hmisc::rcorr(type = "pearson")
+
+profile_data %>%
+  select(self_efficacy, statistics_anxiety, persistence, grade) %>%
+  as.matrix() %>%
+  Hmisc::rcorr( type = "pearson")
+```
+
+## Profile Plot
+
+```{r}
+estimates_table <- get_estimates(mod2) %>%
+  filter(Category == "Means") %>%
+  select("Parameter", "Estimate", "Class")
+  
+estimates_table$Class <- cut(estimates_table$Class, breaks = c(0,1,2,3), labels = c('1','2','3'))
+  
+estimates_table %>%
+ggplot(aes(x = factor(Parameter, levels=c('statistics_anxiety','persistence','self_efficacy', 'grade' )), y = Estimate, group = Class, colour = Class)) +  geom_point() + geom_line() +
+    scale_x_discrete(name="Variable", 
+                    labels=c("Statistics Anxiety", "Persistence", "Self-Efficacy", "Grade")) +
+  scale_y_continuous(name="Mean Value (Centred)", 
+                    limits=c(-1, 1), 
+                    n.breaks=10) +
+  labs(colour="Profile") +
+  theme_classic()
+  
+
+
+```
+
+# 
